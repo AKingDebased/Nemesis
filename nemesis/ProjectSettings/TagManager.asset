@@ -3,6 +3,11 @@
 --- !u!78 &1
 TagManager:
   tags:
+  - ground
+  - wall
+  - obstacle
+  - hero
+  - minion
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
@@ -12,8 +17,8 @@ TagManager:
   Builtin Layer 5: UI
   Builtin Layer 6: 
   Builtin Layer 7: 
-  User Layer 8: 
-  User Layer 9: 
+  User Layer 8: ground
+  User Layer 9: obstacles
   User Layer 10: 
   User Layer 11: 
   User Layer 12: 
@@ -40,4 +45,8 @@ TagManager:
   - name: Default
     userID: 0
     uniqueID: 0
+    locked: 0
+  - name: 
+    userID: 1
+    uniqueID: 3914156447
     locked: 0

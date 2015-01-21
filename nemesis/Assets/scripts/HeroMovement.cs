@@ -17,12 +17,20 @@ public class HeroMovement : MonoBehaviour {
 	public void Start () {
 		seeker = GetComponent<Seeker>();
 		controller = GetComponent<CharacterController>();
+		objectRooms = GameObject.FindGameObjectsWithTag("room");
+		rooms = new Transform[objectRooms.Length]; //stored rooms' position
 
 		for(int i = 0; i < objectRooms.Length; i++){
 			rooms[i] = objectRooms[i].transform;
 		}
+
+		OrderRoomsNearToFar(rooms);
+
+		for(int i = 0; i < rooms.Length; i++){
+			Debug.Log (rooms);
+		}
 		
-		seeker.pathCallback += OnPathComplete; //autocalls OnPathComplete for all StartPaths
+		seeker.pathCallback += OnPathComplete; 
 	}
 	
 	public void OnPathComplete(Path p){
@@ -32,7 +40,7 @@ public class HeroMovement : MonoBehaviour {
 			path = p;
 			currentWaypoint = 0;
 		}*/
-	}
+	}             
 	
 	public void FixedUpdate(){
 		MoveToNextRoom();
@@ -59,16 +67,14 @@ public class HeroMovement : MonoBehaviour {
 		
 	}
 
-	private Transform GetClosestRoom (Transform[] rooms) //courtesy of edwardrowe on the unity forums
+	private Transform[] OrderRoomsNearToFar (Transform[] rooms) //courtesy of edwardrowe on the unity forums
 	{
-		Transform closestRoom = null;
+		Transform[] orderedRooms = null;
 		float closestDistanceSqr = Mathf.Infinity;
 		Vector3 currentPosition = transform.position;
 
-		foreach(Transform potentialRoom in rooms)
-		{
-			Vector3 directionToRoom = potentialRoom.position - currentPosition;
-			float directionSqrdToRoom = directionToRoom.sqrMagnitude;
+		for(int i = 0; i < rooms.Length; i++){
+			Vector3 directionToRoom = rooms[i].position - currentPosition;
 
 			if(directionSqrdToRoom < closestDistanceSqr)
 			{

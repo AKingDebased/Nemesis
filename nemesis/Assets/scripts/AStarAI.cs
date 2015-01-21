@@ -40,7 +40,6 @@ public class AStarAI : MonoBehaviour {
 
 	private void moveToNextWaypoint(){
 		if(path == null){
-			Debug.Log("i see you");
 			return;
 		}
 		

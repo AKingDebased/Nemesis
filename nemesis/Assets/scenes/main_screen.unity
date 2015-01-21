@@ -2478,8 +2478,8 @@ GameObject:
   - 136: {fileID: 1307634520}
   - 23: {fileID: 1307634519}
   - 114: {fileID: 1307634522}
-  - 114: {fileID: 1307634523}
   - 143: {fileID: 1307634524}
+  - 114: {fileID: 1307634523}
   m_Layer: 0
   m_Name: warrior
   m_TagString: Untagged
@@ -2575,11 +2575,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1307634517}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e93087d0f2f1472d8a863a59a6a3e10, type: 3}
+  m_Script: {fileID: 11500000, guid: 125b50757065047f28cfeef4b7d63d74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {x: -4.07999992, y: 1, z: 22.9599991}
-  speed: 300
+  targetPosition: {x: 0, y: 0, z: 0}
+  speed: 100
   nextWaypointDistance: 3
 --- !u!143 &1307634524
 CharacterController:

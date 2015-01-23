@@ -27,7 +27,7 @@ public class HeroMovement : MonoBehaviour {
 		OrderRoomsNearToFar(rooms);
 
 		for(int i = 0; i < rooms.Length; i++){
-			Debug.Log (rooms);
+			Debug.Log (rooms[i].name);
 		}
 		
 		seeker.pathCallback += OnPathComplete; 
@@ -67,22 +67,19 @@ public class HeroMovement : MonoBehaviour {
 		
 	}
 
-	private Transform[] OrderRoomsNearToFar (Transform[] rooms) //courtesy of edwardrowe on the unity forums
-	{
-		Transform[] orderedRooms = null;
-		float closestDistanceSqr = Mathf.Infinity;
-		Vector3 currentPosition = transform.position;
+	private Transform[] OrderRoomsNearToFar (Transform[] rooms){
+		for(int i = 0; i < rooms.Length - 1; i++){
+			float sqrdMagnitude1 = (transform.position - rooms[i].position).sqrMagnitude;
+			float sqrdMagnitude2 = (transform.position - rooms[i + 1].position).sqrMagnitude;
 
-		for(int i = 0; i < rooms.Length; i++){
-			Vector3 directionToRoom = rooms[i].position - currentPosition;
+			if(sqrdMagnitude1 > sqrdMagnitude2){
+				Transform temp = rooms[i+1];
 
-			if(directionSqrdToRoom < closestDistanceSqr)
-			{
-				closestDistanceSqr = directionSqrdToRoom;
-				closestRoom = potentialRoom;
+				rooms[i] = rooms[i+1];
+				rooms[i+1] = temp;
 			}
 		}
 		
-		return closestRoom;
+		return rooms;
 	}
 }

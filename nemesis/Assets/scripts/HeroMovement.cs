@@ -17,6 +17,7 @@ public class HeroMovement : MonoBehaviour {
 
 		seeker.pathCallback += OnPathComplete;
 
+		//waypoints hey
 		roomWaypoints = new Vector3[rooms.Count];
 
 		for(int i = 0; i < rooms.Count; i++){

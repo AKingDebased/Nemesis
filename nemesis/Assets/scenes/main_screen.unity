@@ -2578,9 +2578,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 125b50757065047f28cfeef4b7d63d74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPosition: {x: 0, y: 0, z: 0}
-  speed: 100
-  nextWaypointDistance: 3
+  rooms:
+  - {fileID: 1415400788}
+  - {fileID: 1719086309}
+  - {fileID: 1130897478}
+  - {fileID: 762185033}
 --- !u!143 &1307634524
 CharacterController:
   m_ObjectHideFlags: 0

@@ -1,38 +1,38 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 using Pathfinding;
 
 public class HeroMovement : MonoBehaviour {
-	public Vector3 targetPosition;
-	public Path path;
-	public float speed = 100;
-	public float nextWaypointDistance = 3;
+	public List<GameObject> rooms = new List<GameObject>();
 
-	private GameObject[] objectRooms;
-	private Transform[] rooms;
 	private Seeker seeker;
 	private CharacterController controller;
-	
+	private Vector3[] roomWaypoints;
+	private ABPath[] paths;
+	 
 	public void Start () {
 		seeker = GetComponent<Seeker>();
 		controller = GetComponent<CharacterController>();
-		objectRooms = GameObject.FindGameObjectsWithTag("room");
-		rooms = new Transform[objectRooms.Length]; //stored rooms' position
 
-		for(int i = 0; i < objectRooms.Length; i++){
-			rooms[i] = objectRooms[i].transform;
-		}
+		seeker.pathCallback += OnPathComplete;
 
-		OrderRoomsNearToFar(rooms);
+		roomWaypoints = new Vector3[rooms.Count];
 
-		for(int i = 0; i < rooms.Length; i++){
-			Debug.Log (rooms[i].name);
-		}
-		
-		seeker.pathCallback += OnPathComplete; 
+		for(int i = 0; i < rooms.Count; i++){
+			roomWaypoints[i] = rooms[i].transform.position;
+		}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
 	}
-	
+
+	public void StartPath (OnPathDelegate config = null){
+		paths = new ABPath[roomWaypoints.Length-1];
+
+		for (int i=0;i<paths.Length;i++) {
+			paths[i] = ABPath.Construct (roomWaypoints[i],roomWaypoints[i+1], OnPathComplete);
+			seeker.StartPath (paths[i]);
+		}
+	}
+
 	public void OnPathComplete(Path p){
 		/*Debug.Log ("path traced.");
 		Debug.Log ("error in path: " + p.error);
@@ -41,45 +41,8 @@ public class HeroMovement : MonoBehaviour {
 			currentWaypoint = 0;
 		}*/
 	}             
-	
-	public void FixedUpdate(){
-		MoveToNextRoom();
-	}
-	
+
 	public void OnDisable () {
 		seeker.pathCallback -= OnPathComplete;
-	}
-
-	private void MoveToNextRoom(){
-		/*if(currentWaypoint >= path.vectorPath.Count){
-			Debug.Log ("end of path reached");
-			return;
-		}
-		
-		Vector3 direction = (path.vectorPath[currentWaypoint] - transform.position).normalized;
-		direction *= speed * Time.fixedDeltaTime;
-		controller.SimpleMove(direction);
-		
-		if(Vector3.Distance (transform.position, path.vectorPath[currentWaypoint]) < nextWaypointDistance){
-			currentWaypoint++;
-			return;
-		}*/
-		
-	}
-
-	private Transform[] OrderRoomsNearToFar (Transform[] rooms){
-		for(int i = 0; i < rooms.Length - 1; i++){
-			float sqrdMagnitude1 = (transform.position - rooms[i].position).sqrMagnitude;
-			float sqrdMagnitude2 = (transform.position - rooms[i + 1].position).sqrMagnitude;
-
-			if(sqrdMagnitude1 > sqrdMagnitude2){
-				Transform temp = rooms[i+1];
-
-				rooms[i] = rooms[i+1];
-				rooms[i+1] = temp;
-			}
-		}
-		
-		return rooms;
 	}
 }

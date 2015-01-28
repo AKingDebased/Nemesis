@@ -3,46 +3,62 @@ using System.Collections.Generic;
 
 using Pathfinding;
 
-public class HeroMovement : MonoBehaviour {
-	public List<GameObject> rooms = new List<GameObject>();
+public class HeroMovement : MonoBehaviour { //courtesy of aron granberg
 
-	private Seeker seeker;
-	private CharacterController controller;
+	public List<Transform> rooms = new List<Transform>();
+	public float speed = 50f;
+	
+	private WaypointPath waypointPath;
 	private Vector3[] roomWaypoints;
-	private ABPath[] paths;
-	 
+	private int currentWaypoint = 0;
+	private ABPath[] pathSegments;
+
+	private CharacterController controller;
+
 	public void Start () {
-		seeker = GetComponent<Seeker>();
 		controller = GetComponent<CharacterController>();
 
-		seeker.pathCallback += OnPathComplete;
-
 		roomWaypoints = new Vector3[rooms.Count];
+		currentWaypoint = 0;
 
 		for(int i = 0; i < rooms.Count; i++){
-			roomWaypoints[i] = rooms[i].transform.position;
-		}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+			roomWaypoints[i] = rooms[i].position;
+		}
+		
+		//Start a new waypointPath to the targetPosition, return the result to the OnPathComplete function
+		waypointPath = new WaypointPath(roomWaypoints, OnPathComplete);
+		waypointPath.StartPath();
+
+		pathSegments = waypointPath.getPaths();
 	}
 
-	public void StartPath (OnPathDelegate config = null){
-		paths = new ABPath[roomWaypoints.Length-1];
+	public void Update () {
+		if (waypointPath == null) {
+			return;
+		}
+		
+		/*if (currentWaypoint == waypointPath.getPaths[Length-1].vectorPath.Count) {
+			Debug.Log ("end of path");
+			currentWaypoint++;
+			return;
+		}*/
 
-		for (int i=0;i<paths.Length;i++) {
-			paths[i] = ABPath.Construct (roomWaypoints[i],roomWaypoints[i+1], OnPathComplete);
-			seeker.StartPath (paths[i]);
+		for(int i = 0; i < pathSegments.Length-1; i++){
+			//Direction to the next waypoint
+			Vector3 dir = (pathSegments[i].vectorPath[currentWaypoint]-transform.position).normalized;
+			dir *= speed;//* Time.deltaTime;
+			//transform.Translate (dir);
+			controller.SimpleMove (dir);
 		}
 	}
 
-	public void OnPathComplete(Path p){
-		/*Debug.Log ("path traced.");
-		Debug.Log ("error in path: " + p.error);
-		if(!p.error){
-			path = p;
-			currentWaypoint = 0;
-		}*/
-	}             
-
-	public void OnDisable () {
-		seeker.pathCallback -= OnPathComplete;
+	void OnPathComplete (WaypointPath p) {
+		if (p.HasError ()) {
+			Debug.LogError ("Noes, could not find the waypointPath!");
+			return;
+		} else {
+			List<Vector3> vp = p.vectorPath;
+			for (int i=0;i<vp.Count-1;i++) Debug.DrawLine (vp[i],vp[i+1],Color.green,2);
+		}
 	}
 }

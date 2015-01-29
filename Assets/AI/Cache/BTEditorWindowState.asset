@@ -31,8 +31,8 @@ MonoBehaviour:
     BehaviorTreeName: HeroMovement
     BehaviorTreeID: 1
     BehaviorTreeBindings: []
-    LastUpdate: 635580831347098470
-    LastModified: 635580826410000000
+    LastUpdate: 635580938606401280
+    LastModified: 635580926940000000
     Errored: 0
   TreeState:
     _branchRepo:
@@ -80,7 +80,7 @@ MonoBehaviour:
       _type: 4
       _stateIndex: 1
       _parent: 0
-      _lastUpdate: 635580831347090180
+      _lastUpdate: 635580938606395280
       _children: 06000000
       _variables: 
       _focused: 0
@@ -156,7 +156,7 @@ MonoBehaviour:
       _type: 19
       _stateIndex: 6
       _parent: 1
-      _lastUpdate: 635580831347097510
+      _lastUpdate: 635580938606400240
       _children: 07000000
       _variables: 
       _focused: 0
@@ -220,7 +220,7 @@ MonoBehaviour:
       _type: 22
       _stateIndex: 7
       _parent: 6
-      _lastUpdate: 635580831347097940
+      _lastUpdate: 635580938606400680
       _children: 08000000
       _variables: 
       _focused: 0
@@ -258,7 +258,7 @@ MonoBehaviour:
         _recordChange: 1
         _changed: 0
       - _field: movespeed
-        _currentValue: 5
+        _currentValue: 15
         _recordChange: 1
         _changed: 0
       - _field: facetarget

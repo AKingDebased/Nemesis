@@ -116,7 +116,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 420854}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: south east room
   m_TagString: room
   m_Icon: {fileID: 0}

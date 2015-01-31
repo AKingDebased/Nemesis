@@ -2560,6 +2560,7 @@ GameObject:
   - 136: {fileID: 1307634520}
   - 23: {fileID: 1307634519}
   - 143: {fileID: 1307634524}
+  - 114: {fileID: 1307634522}
   m_Layer: 10
   m_Name: warrior
   m_TagString: hero
@@ -2622,6 +2623,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1307634517}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1307634522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1307634517}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6667c3f8ea6984f3d958532727e93792, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!143 &1307634524
 CharacterController:
   m_ObjectHideFlags: 0

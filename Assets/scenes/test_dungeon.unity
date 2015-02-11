@@ -938,10 +938,7 @@ GameObject:
   - 33: {fileID: 1259270855}
   - 136: {fileID: 1259270854}
   - 23: {fileID: 1259270853}
-<<<<<<< Updated upstream
   - 114: {fileID: 1259270857}
-=======
->>>>>>> Stashed changes
   m_Layer: 0
   m_Name: hero
   m_TagString: Untagged
@@ -1003,7 +1000,6 @@ Transform:
   - {fileID: 430419960}
   m_Father: {fileID: 1257796751}
   m_RootOrder: 0
-<<<<<<< Updated upstream
 --- !u!114 &1259270857
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1015,8 +1011,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6667c3f8ea6984f3d958532727e93792, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-=======
->>>>>>> Stashed changes
 --- !u!1 &1323559977
 GameObject:
   m_ObjectHideFlags: 0

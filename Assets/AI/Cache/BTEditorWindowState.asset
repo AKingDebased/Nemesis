@@ -29,13 +29,28 @@ MonoBehaviour:
     Errored: 0
   - AssetPath: Assets/AI/BehaviorTrees/HeroMovement.asset
     BehaviorTreeName: HeroMovement
-    BehaviorTreeID: 5
+    BehaviorTreeID: 0
     BehaviorTreeBindings: []
-    LastUpdate: 635594604167229510
-    LastModified: 635594601601249510
+    LastUpdate: 635597241105814196
+    LastModified: 635597236390811704
+    Errored: 0
+  - AssetPath: Assets/AI/BehaviorTrees/WarriorBehavior.asset
+    BehaviorTreeName: WarriorBehavior
+    BehaviorTreeID: 6
+    BehaviorTreeBindings: []
+    LastUpdate: 635597241522065817
+    LastModified: 635597241348858498
     Errored: 0
   TreeState:
     _branchRepo:
+    - _fields: []
+      _type: 0
+      _stateIndex: 0
+      _parent: 0
+      _lastUpdate: 0
+      _children: 
+      _variables: 
+      _focused: 0
     - _fields: []
       _type: 0
       _stateIndex: 0
@@ -82,11 +97,11 @@ MonoBehaviour:
         _recordChange: 1
         _changed: 0
       - _field: movetarget
-        _currentValue: currentWaypoint
+        _currentValue: 
         _recordChange: 1
         _changed: 0
       - _field: movespeed
-        _currentValue: 10
+        _currentValue: 
         _recordChange: 1
         _changed: 0
       - _field: facetarget
@@ -106,15 +121,15 @@ MonoBehaviour:
         _recordChange: 1
         _changed: 0
       _type: 14
-      _stateIndex: 2
-      _parent: 3
+      _stateIndex: 3
+      _parent: 5
       _lastUpdate: 0
       _children: 
       _variables: 
-      _focused: 0
+      _focused: 1
     - _fields:
       - _field: name
-        _currentValue: dungeon crawl
+        _currentValue: waypointpath
         _recordChange: 1
         _changed: 0
       - _field: open
@@ -146,11 +161,11 @@ MonoBehaviour:
         _recordChange: 1
         _changed: 0
       - _field: waypointactiontype
-        _currentValue: patrol
+        _currentValue: path
         _recordChange: 1
         _changed: 0
       - _field: traversetype
-        _currentValue: oneway
+        _currentValue: pingpong
         _recordChange: 1
         _changed: 0
       - _field: traverseorder
@@ -158,7 +173,7 @@ MonoBehaviour:
         _recordChange: 1
         _changed: 0
       - _field: waypointsetvariable
-        _currentValue: HeroRoute
+        _currentValue: 
         _recordChange: 1
         _changed: 0
       - _field: pathtargetvariable
@@ -166,14 +181,14 @@ MonoBehaviour:
         _recordChange: 1
         _changed: 0
       - _field: movetargetvariable
-        _currentValue: currentWaypoint
+        _currentValue: 
         _recordChange: 1
         _changed: 0
-      _type: 22
-      _stateIndex: 3
-      _parent: 4
-      _lastUpdate: 635594604167229510
-      _children: 02000000
+      _type: 23
+      _stateIndex: 4
+      _parent: 5
+      _lastUpdate: 635597241499743585
+      _children: 
       _variables: 
       _focused: 0
     - _fields:
@@ -214,15 +229,15 @@ MonoBehaviour:
         _recordChange: 1
         _changed: 0
       _type: 19
-      _stateIndex: 4
-      _parent: 5
-      _lastUpdate: 635594604167229510
-      _children: 03000000
+      _stateIndex: 5
+      _parent: 6
+      _lastUpdate: 635597241512054816
+      _children: 0400000003000000
       _variables: 
       _focused: 0
     - _fields:
       - _field: name
-        _currentValue: HeroMovement
+        _currentValue: WarriorBehavior
         _recordChange: 1
         _changed: 0
       - _field: open
@@ -254,10 +269,10 @@ MonoBehaviour:
         _recordChange: 1
         _changed: 0
       _type: 4
-      _stateIndex: 5
+      _stateIndex: 6
       _parent: 0
-      _lastUpdate: 635594604167229510
-      _children: 04000000
+      _lastUpdate: 635597241512054816
+      _children: 05000000
       _variables: 
       _focused: 0
-    _freeList: 01000000
+    _freeList: 0100000002000000

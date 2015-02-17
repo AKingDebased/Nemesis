@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: hero
+  m_Name: wizard
   m_Shader: {fileID: 7, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: []
   m_CustomRenderQueue: -1
@@ -25,4 +25,4 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: 0, g: 1, b: .296551704, a: 1}
+        second: {r: .477941155, g: .54634881, b: 1, a: 1}

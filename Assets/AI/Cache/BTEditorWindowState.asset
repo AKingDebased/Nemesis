@@ -29,14 +29,21 @@ MonoBehaviour:
     Errored: 0
   - AssetPath: Assets/AI/BehaviorTrees/HeroMovement.asset
     BehaviorTreeName: HeroMovement
-    BehaviorTreeID: 0
+    BehaviorTreeID: 6
     BehaviorTreeBindings: []
-    LastUpdate: 635597241105814196
-    LastModified: 635597236390811704
+    LastUpdate: 635597262217311324
+    LastModified: 635597241349658578
+    Errored: 0
+  - AssetPath: Assets/AI/BehaviorTrees/MinionBehavior.asset
+    BehaviorTreeName: MinionBehavior
+    BehaviorTreeID: 2
+    BehaviorTreeBindings: []
+    LastUpdate: 635597262461401324
+    LastModified: 635597260313271324
     Errored: 0
   - AssetPath: Assets/AI/BehaviorTrees/WarriorBehavior.asset
     BehaviorTreeName: WarriorBehavior
-    BehaviorTreeID: 6
+    BehaviorTreeID: 0
     BehaviorTreeBindings: []
     LastUpdate: 635597241522065817
     LastModified: 635597241348858498
@@ -51,20 +58,88 @@ MonoBehaviour:
       _children: 
       _variables: 
       _focused: 0
-    - _fields: []
-      _type: 0
-      _stateIndex: 0
-      _parent: 0
-      _lastUpdate: 0
-      _children: 
+    - _fields:
+      - _field: name
+        _currentValue: root
+        _recordChange: 1
+        _changed: 0
+      - _field: open
+        _currentValue: True
+        _recordChange: 0
+        _changed: 0
+      - _field: repeatuntil
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: debugbreak
+        _currentValue: False
+        _recordChange: 1
+        _changed: 0
+      - _field: startingpriority
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: runningpriority
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: priority
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: weight
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: usepriorities
+        _currentValue: False
+        _recordChange: 1
+        _changed: 0
+      _type: 19
+      _stateIndex: 1
+      _parent: 2
+      _lastUpdate: 635597261371981324
+      _children: 08000000090000000a000000
       _variables: 
       _focused: 0
-    - _fields: []
-      _type: 0
-      _stateIndex: 0
+    - _fields:
+      - _field: name
+        _currentValue: MinionBehavior
+        _recordChange: 1
+        _changed: 0
+      - _field: open
+        _currentValue: True
+        _recordChange: 0
+        _changed: 0
+      - _field: repeatuntil
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: debugbreak
+        _currentValue: False
+        _recordChange: 1
+        _changed: 0
+      - _field: startingpriority
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: runningpriority
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: priority
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: weight
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      _type: 4
+      _stateIndex: 2
       _parent: 0
-      _lastUpdate: 0
-      _children: 
+      _lastUpdate: 635597262451371324
+      _children: 01000000
       _variables: 
       _focused: 0
     - _fields:
@@ -97,11 +172,11 @@ MonoBehaviour:
         _recordChange: 1
         _changed: 0
       - _field: movetarget
-        _currentValue: 
+        _currentValue: currentWaypoint
         _recordChange: 1
         _changed: 0
       - _field: movespeed
-        _currentValue: 
+        _currentValue: 10
         _recordChange: 1
         _changed: 0
       - _field: facetarget
@@ -122,14 +197,14 @@ MonoBehaviour:
         _changed: 0
       _type: 14
       _stateIndex: 3
-      _parent: 5
+      _parent: 4
       _lastUpdate: 0
       _children: 
       _variables: 
       _focused: 1
     - _fields:
       - _field: name
-        _currentValue: waypointpath
+        _currentValue: dungeon crawl
         _recordChange: 1
         _changed: 0
       - _field: open
@@ -173,22 +248,22 @@ MonoBehaviour:
         _recordChange: 1
         _changed: 0
       - _field: waypointsetvariable
-        _currentValue: 
+        _currentValue: '"HeroPath"'
         _recordChange: 1
         _changed: 0
       - _field: pathtargetvariable
-        _currentValue: 
+        _currentValue: '"BossRoom"'
         _recordChange: 1
         _changed: 0
       - _field: movetargetvariable
-        _currentValue: 
+        _currentValue: currentWaypoint
         _recordChange: 1
         _changed: 0
       _type: 23
       _stateIndex: 4
       _parent: 5
-      _lastUpdate: 635597241499743585
-      _children: 
+      _lastUpdate: 635597262217311324
+      _children: 03000000
       _variables: 
       _focused: 0
     - _fields:
@@ -231,13 +306,13 @@ MonoBehaviour:
       _type: 19
       _stateIndex: 5
       _parent: 6
-      _lastUpdate: 635597241512054816
-      _children: 0400000003000000
+      _lastUpdate: 635597262217311324
+      _children: 04000000
       _variables: 
       _focused: 0
     - _fields:
       - _field: name
-        _currentValue: WarriorBehavior
+        _currentValue: HeroMovement
         _recordChange: 1
         _changed: 0
       - _field: open
@@ -271,8 +346,184 @@ MonoBehaviour:
       _type: 4
       _stateIndex: 6
       _parent: 0
-      _lastUpdate: 635597241512054816
+      _lastUpdate: 635597262217311324
       _children: 05000000
       _variables: 
       _focused: 0
-    _freeList: 0100000002000000
+    - _fields: []
+      _type: 0
+      _stateIndex: 0
+      _parent: 0
+      _lastUpdate: 0
+      _children: 
+      _variables: 
+      _focused: 0
+    - _fields:
+      - _field: name
+        _currentValue: selector
+        _recordChange: 1
+        _changed: 0
+      - _field: open
+        _currentValue: True
+        _recordChange: 0
+        _changed: 0
+      - _field: repeatuntil
+        _currentValue: success
+        _recordChange: 1
+        _changed: 0
+      - _field: debugbreak
+        _currentValue: False
+        _recordChange: 1
+        _changed: 0
+      - _field: startingpriority
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: runningpriority
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: priority
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: weight
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: usepriorities
+        _currentValue: False
+        _recordChange: 1
+        _changed: 0
+      _type: 18
+      _stateIndex: 8
+      _parent: 1
+      _lastUpdate: 0
+      _children: 
+      _variables: 
+      _focused: 0
+    - _fields:
+      - _field: name
+        _currentValue: detect hero
+        _recordChange: 1
+        _changed: 0
+      - _field: repeatuntil
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: debugbreak
+        _currentValue: False
+        _recordChange: 1
+        _changed: 0
+      - _field: startingpriority
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: runningpriority
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: priority
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: weight
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: sensor
+        _currentValue: '"HeroSensor"'
+        _recordChange: 1
+        _changed: 0
+      - _field: aspect
+        _currentValue: '"WarriorAspect"'
+        _recordChange: 1
+        _changed: 0
+      - _field: aspectvariable
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: entityobjectvariable
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: aspectobjectvariable
+        _currentValue: heroTarget
+        _recordChange: 1
+        _changed: 0
+      - _field: matchtype
+        _currentValue: any
+        _recordChange: 1
+        _changed: 0
+      - _field: consistent
+        _currentValue: True
+        _recordChange: 1
+        _changed: 0
+      _type: 7
+      _stateIndex: 9
+      _parent: 1
+      _lastUpdate: 635597262131111324
+      _children: 
+      _variables: 
+      _focused: 0
+    - _fields:
+      - _field: name
+        _currentValue: move
+        _recordChange: 1
+        _changed: 0
+      - _field: repeatuntil
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: debugbreak
+        _currentValue: False
+        _recordChange: 1
+        _changed: 0
+      - _field: startingpriority
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: runningpriority
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: priority
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: weight
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: movetarget
+        _currentValue: heroTarget
+        _recordChange: 1
+        _changed: 0
+      - _field: movespeed
+        _currentValue: 10
+        _recordChange: 1
+        _changed: 0
+      - _field: facetarget
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: turnspeed
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: closeenoughdistance
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: closeenoughangle
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      _type: 14
+      _stateIndex: 10
+      _parent: 1
+      _lastUpdate: 635597262451371324
+      _children: 
+      _variables: 
+      _focused: 1
+    _freeList: 07000000

@@ -15,14 +15,18 @@ public class AdventurerCombatController : MonoBehaviour
 	public AdventurerGeneration gen;
 	
 	void Start ()
-	{
+	{	
+		//needs refactoring due to AdventurerGenerator changes
 		this.printStats();
-		if (this.gen.getArchetype () == 2)
+		/*if (this.gen.GetArchetype ().Compare()
+
 		{
 			range = 5;
 		}
 
-		else range = 30;
+		else range = 30;*/
+
+		range = 5; //kludge fix
 
 		timeSinceLastAttack = 0;
 	}

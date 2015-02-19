@@ -3,6 +3,7 @@ using System.Collections;
 
 public class AdventurerCombatController : MonoBehaviour
 {
+	Dictionary<string, int> stats = new Dictionary<string, int>();
 
 	private int[] stats = new int[] {100, 100, 100, 50, 50, 50, 20, 30, 40};
 	private string[] statNames = new string[] {"Health", "Mana", "Morale", "Strength", "Willpower", "Dexterity", "Speed", "Defense", "Resilience"};

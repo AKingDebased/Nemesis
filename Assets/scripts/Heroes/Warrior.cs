@@ -3,13 +3,12 @@ using System.Collections;
 
 public class Warrior : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
+
+
+	void Start(){
+		range = 5;
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+	private int[] stats = new int[] {100, 100, 100, 50, 50, 50, 20, 30, 40};
+	private string[] statNames = new string[] {"Health", "Mana", "Morale", "Strength", "Willpower", "Dexterity", "Speed", "Defense", "Resilience"};
+	private int range;
 }

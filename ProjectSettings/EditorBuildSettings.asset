@@ -8,4 +8,4 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/scenes/main_screen.unity
   - enabled: 1
-    path: Assets/scenes/test_dungeon.unity
+    path: Assets/scenes/combat_test.unity

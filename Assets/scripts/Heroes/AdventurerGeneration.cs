@@ -60,4 +60,9 @@ public class AdventurerGeneration : MonoBehaviour
 			string whois = adventurerName + ", " + genders[hero[3]] + classes[hero[2]] + archetypes[hero[1]] + homelands[hero[0]];
 			return whois;
 		}
+
+		public int getArchetype()
+		{
+			return hero[1];
+		}
 }

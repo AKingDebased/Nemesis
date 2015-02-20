@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Warrior : MonoBehaviour {
+public class Warrior : Adventurer {
 
 
 

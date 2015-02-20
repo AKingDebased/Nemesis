@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 public abstract class Adventurer : MonoBehaviour {
 
@@ -17,5 +17,6 @@ public abstract class Adventurer : MonoBehaviour {
 	protected abstract void DoDamage(Enemy enemy);
 
 	protected abstract void TakeDamage(int damage);
+}
 
 

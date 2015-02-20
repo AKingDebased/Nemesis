@@ -3,11 +3,6 @@ using System.Collections;
 
 public class AdventurerCombatController : MonoBehaviour
 {
-	Dictionary<string, int> stats = new Dictionary<string, int>();
-
-	private int[] stats = new int[] {100, 100, 100, 50, 50, 50, 20, 30, 40};
-	private string[] statNames = new string[] {"Health", "Mana", "Morale", "Strength", "Willpower", "Dexterity", "Speed", "Defense", "Resilience"};
-	private int range;
 	private bool combatEngaged;
 	private float timeSinceLastAttack;
 
@@ -80,7 +75,7 @@ public class AdventurerCombatController : MonoBehaviour
 
 	bool attackHit(MinionCombatController enemy)
 	{
-		if (Random.Range(0, 100) + (this.stats[5] * 2) >= enemy.getStat(6)) return true;
+		if (Random.Range(0, 100) + (thisstats[5] * 2) >= enemy.getStat(6)) return true;
 		else return false;
 	}
 

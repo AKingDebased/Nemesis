@@ -10,7 +10,7 @@ public abstract class Adventurer : MonoBehaviour {
 
 	private int range;
 
-	Dictionary<string, int> stats = new Dictionary<string, int>();
+	public Dictionary<string, int> stats = new Dictionary<string, int>();
 	
 	public abstract void Attack(Enemy enemy);
 

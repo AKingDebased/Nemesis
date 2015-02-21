@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class AdventurerCombatController : MonoBehaviour
+public class CombatController : MonoBehaviour
 {
-	private bool combatEngaged;
+	/*private bool combatEngaged;
 	private float timeSinceLastAttack;
 
 	private MinionCombatController currentEnemy;
@@ -12,7 +12,7 @@ public class AdventurerCombatController : MonoBehaviour
 	
 	void Start ()
 	{	
-		//needs refactoring due to AdventurerGenerator changes
+
 		this.printStats();
 		/*if (this.gen.GetArchetype ().Compare()
 
@@ -20,7 +20,7 @@ public class AdventurerCombatController : MonoBehaviour
 			range = 5;
 		}
 
-		else range = 30;*/
+		else range = 30;
 
 		range = 5; //kludge fix
 
@@ -114,5 +114,6 @@ public class AdventurerCombatController : MonoBehaviour
 			combatEngaged = true;
 		}
 	}
+	*/
 }
 	

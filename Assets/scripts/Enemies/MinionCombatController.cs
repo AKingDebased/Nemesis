@@ -9,16 +9,14 @@ public class MinionCombatController : MonoBehaviour {
 	private bool combatEngaged;
 	private float timeSinceLastAttack;
 
-	private AdventurerCombatController currentEnemy;
-	
-	// Use this for initialization
+	private CombatController currentEnemy;
+	/*
 	void Start () {
 		range = 5;
 		timeSinceLastAttack = 0;
 		combatEngaged = false;
 	}
-
-	// Update is called once per frame
+	
 	void Update ()
 	{
 		if (this.stats[0] <= 0)
@@ -42,12 +40,12 @@ public class MinionCombatController : MonoBehaviour {
 		}
 	}
 
-	void attack(AdventurerCombatController enemy)
+	void attack(CombatController enemy)
 	{
 		if (this.attackHit(enemy)) this.doDamage(enemy);
 	}
 
-	void doDamage(AdventurerCombatController enemy)
+	void doDamage(CombatController enemy)
 	{
 		if (this.stats[3] > enemy.getStat(7))
 		{
@@ -65,13 +63,13 @@ public class MinionCombatController : MonoBehaviour {
 		this.stats[0] -= damage;
 	}
 
-	bool attackHit(AdventurerCombatController enemy)
+	bool attackHit(CombatController enemy)
 	{
 		if (Random.Range(0, 100) + (this.stats[5] * 2) >= enemy.getStat(6)) return true;
 		else return false;
 	}
 
-	bool isCrit(AdventurerCombatController enemy)
+	bool isCrit(CombatController enemy)
 	{
 		if ((this.stats[6] / 2) + Random.Range(0, 100) > enemy.getStat(5) * 2) return true;
 		else return false;
@@ -96,6 +94,6 @@ public class MinionCombatController : MonoBehaviour {
 			Debug.Log ("Minion enters combat!");
 			combatEngaged = true;
 		}
-	}
+	}*/
 }
 	

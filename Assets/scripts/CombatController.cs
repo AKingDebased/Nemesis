@@ -3,7 +3,7 @@ using System.Collections;
 
 public class CombatController : MonoBehaviour
 {
-	/*private bool combatEngaged;
+	private bool combatEngaged;
 	private float timeSinceLastAttack;
 
 	private MinionCombatController currentEnemy;
@@ -14,8 +14,8 @@ public class CombatController : MonoBehaviour
 	{	
 
 		this.printStats();
-		/*if (this.gen.GetArchetype ().Compare()
 
+		if (this.gen.GetArchetype ().Compare()
 		{
 			range = 5;
 		}
@@ -114,6 +114,6 @@ public class CombatController : MonoBehaviour
 			combatEngaged = true;
 		}
 	}
-	*/
+
 }
 	

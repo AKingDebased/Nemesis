@@ -1,14 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Warrior /*: Adventurer*/ {
+public class Warrior : Adventurer{
 
+	void Awake(){
+		rangeAttribute = 5;
 
+		stats.Add ("health", 100);
+		stats.Add ("mana", 100);
+		stats.Add ("morale", 100);
+		stats.Add ("strength", 50);
+		stats.Add ("willpower", 50);
+		stats.Add ("dexterity", 50);
+		stats.Add ("speed", 20);
+		stats.Add ("defense", 30);
+		stats.Add ("resilience", 40);
 
-	/*void Start(){
-		range = 5;
 	}
-	private int[] stats = new int[] {100, 100, 100, 50, 50, 50, 20, 30, 40};
-	private string[] statNames = new string[] {"Health", "Mana", "Morale", "Strength", "Willpower", "Dexterity", "Speed", "Defense", "Resilience"};
-	private int range;*/
 }

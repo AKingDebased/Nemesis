@@ -1,10 +1,13 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Warrior : Adventurer {
 
 	void Awake(){
 		range = 5;
+
+		advInfo = AdventurerGenerator.FreshHero();
 
 		stats.Add ("health", 100);
 		stats.Add ("mana", 100);
@@ -15,6 +18,10 @@ public class Warrior : Adventurer {
 		stats.Add ("speed", 20);
 		stats.Add ("defense", 30);
 		stats.Add ("resilience", 40);
+
+		foreach (KeyValuePair<string,string> info in advInfo) {
+			Debug.Log(info.Value);
+		}
 
 	}
 

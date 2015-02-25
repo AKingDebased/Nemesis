@@ -84,9 +84,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 8354284}
   - 111: {fileID: 8354285}
+  - 114: {fileID: 8354286}
   m_Layer: 0
-  m_Name: minion
-  m_TagString: Untagged
+  m_Name: grunt
+  m_TagString: minion
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -129,6 +130,21 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 1
+--- !u!114 &8354286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 8354283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 293796a93f926ab44b63697f58e44686, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 0
+  testAdvObject: {fileID: 1259270852}
+  testAdv: {fileID: 0}
+  timeSinceLastAttack: 0
 --- !u!1 &27650453
 GameObject:
   m_ObjectHideFlags: 0
@@ -2160,7 +2176,7 @@ GameObject:
   - 222: {fileID: 1259270861}
   - 114: {fileID: 1259270857}
   m_Layer: 10
-  m_Name: hero
+  m_Name: warrior
   m_TagString: hero
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2240,6 +2256,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 0
+  testMinionObject: {fileID: 8354283}
+  testMinion: {fileID: 0}
+  timeSinceLastAttack: 0
 --- !u!135 &1259270859
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -3230,6 +3249,10 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 100076, guid: 86c591ebd74142c4d93243d9fa9544da, type: 3}
       propertyPath: m_Name
+      value: grunt
+      objectReference: {fileID: 0}
+    - target: {fileID: 100076, guid: 86c591ebd74142c4d93243d9fa9544da, type: 3}
+      propertyPath: m_TagString
       value: minion
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -3,27 +3,11 @@ using System.Collections;
 
 public class CombatController : MonoBehaviour
 {
-	private bool combatEngaged;
+	/*private bool combatEngaged;
 	private float timeSinceLastAttack;
 
-	private MinionCombatController currentEnemy;
-
-	public AdventurerGeneration gen;
-	
 	void Start ()
 	{	
-
-		this.printStats();
-
-		if (this.gen.GetArchetype ().Compare()
-		{
-			range = 5;
-		}
-
-		else range = 30;
-
-		range = 5; //kludge fix
-
 		timeSinceLastAttack = 0;
 	}
 
@@ -50,7 +34,7 @@ public class CombatController : MonoBehaviour
 		}
 	}
 
-	void attack(MinionCombatController enemy)
+	/*void attack(MinionCombatController enemy)
 	{
 		if (this.attackHit(enemy)) this.doDamage(enemy);
 	}
@@ -89,29 +73,16 @@ public class CombatController : MonoBehaviour
 	{
 		if (Vector3.Distance(target.transform.position, this.gameObject.transform.position) <= range) return true;
 		else return false;
-	}
+	}*/
 	
-	public int getStat(int x)
-	{
-		return this.stats[x];
-	}
-
-	void printStats()
-	{
-		Debug.Log("Stats--");
-		for (int i = 0; i < stats.Length; i++)
-		{
-			Debug.Log(statNames[i] + ": " + stats[i]);
-		}
-	}
 
 	void OnTriggerEnter(Collider other)
 	{
 		if (other.gameObject.tag ==  "minion")
 		{
-			currentEnemy = other.gameObject.GetComponent<MinionCombatController>();
+			//currentEnemy = other.gameObject.GetComponent<MinionCombatController>();
 			Debug.Log ("Hero enters combat!");
-			combatEngaged = true;
+			//combatEngaged = true;
 		}
 	}
 

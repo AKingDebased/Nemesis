@@ -2,9 +2,8 @@ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
-public class AdventurerGeneration : MonoBehaviour
+public class AdventurerGenerator : MonoBehaviour
 {
-
 	Dictionary<string, string> heroInfo = new Dictionary<string, string>();
 
 	private string[] homelands = {"of Rohan", "of Gondor", "of Angmar", "of Gondolin", "of Erebor"};
@@ -28,22 +27,23 @@ public class AdventurerGeneration : MonoBehaviour
 	"riette", "anda", "torin", "asara", "ish", "er", "kentz", "eres", "arch", "nos"};
 
 	
-	void Start ()
+	void Awake()
 	{
 		heroInfo.Add("randomHomeland","");
 		heroInfo.Add("randomArchetype","");
-		heroInfo.Add("randomHeroClass","");
+		heroInfo.Add("randomAdvClass","");
 		heroInfo.Add("randomGender","");
+	}
 
-		this.FreshHero();
-		Debug.Log(GetNamePlate());
+	void Start(){
+
 	}
 
 	void FreshHero()
 	{
 		heroInfo["randomHomeland"] = homelands[Random.Range(0, homelands.Length)];
 		heroInfo["randomArchetype"] = archetypes[Random.Range(0, archetypes.Length)];
-		heroInfo["randomHeroClass"] = heroClasses[Random.Range(0, heroClasses.Length)];			
+		heroInfo["randomAdvClass"] = heroClasses[Random.Range(0, heroClasses.Length)];			
 		heroInfo["randomGender"] = genders[Random.Range(0, genders.Length)];
 		adventurerName = GenerateName();
 	}
@@ -57,17 +57,6 @@ public class AdventurerGeneration : MonoBehaviour
 	{
 		return prefixes[Random.Range(0, 50)] + suffixes[Random.Range(0, 50)];
 	}
-
-	string GetNamePlate()
-	{
-		string whois = adventurerName + ", " + heroInfo["randomGender"] + heroInfo["randomHeroClass"] 
-		+ heroInfo["randomArchetype"] + heroInfo["randomHomeland"];
-
-		return whois;
-	}
-
-	public string GetArchetype()
-	{
-		return heroInfo["randomArchetype"];
-	}
 }
+
+

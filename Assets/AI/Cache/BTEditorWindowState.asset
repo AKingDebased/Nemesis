@@ -29,31 +29,31 @@ MonoBehaviour:
     Errored: 0
   - AssetPath: Assets/AI/BehaviorTrees/HeroMovement.asset
     BehaviorTreeName: HeroMovement
-    BehaviorTreeID: 17
+    BehaviorTreeID: 0
     BehaviorTreeBindings: []
     LastUpdate: 635610964707669308
     LastModified: 635610944854394828
     Errored: 0
   - AssetPath: Assets/AI/BehaviorTrees/MinionBehavior.asset
     BehaviorTreeName: MinionBehavior
-    BehaviorTreeID: 23
+    BehaviorTreeID: 0
     BehaviorTreeBindings: []
-    LastUpdate: 635610975084293971
-    LastModified: 635610973519182618
+    LastUpdate: 635611047511010467
+    LastModified: 635611045515708482
     Errored: 0
   - AssetPath: Assets/AI/BehaviorTrees/MinionMovement.asset
     BehaviorTreeName: MinionMovement
-    BehaviorTreeID: 8
+    BehaviorTreeID: 7
     BehaviorTreeBindings: []
-    LastUpdate: 635611006623794891
-    LastModified: 635610991468617082
+    LastUpdate: 635611047530750852
+    LastModified: 635611041013700996
     Errored: 0
   - AssetPath: Assets/AI/BehaviorTrees/WarriorBehavior.asset
     BehaviorTreeName: WarriorBehavior
-    BehaviorTreeID: 19
+    BehaviorTreeID: 9
     BehaviorTreeBindings: []
-    LastUpdate: 635611011487930638
-    LastModified: 635611010484017081
+    LastUpdate: 635611051717837466
+    LastModified: 635611050597512533
     Errored: 0
   TreeState:
     _branchRepo:
@@ -65,29 +65,17 @@ MonoBehaviour:
       _children: 
       _variables: 
       _focused: 0
-    - _fields: []
-      _type: 0
-      _stateIndex: 0
-      _parent: 0
-      _lastUpdate: 0
-      _children: 
-      _variables: 
-      _focused: 0
-    - _fields: []
-      _type: 0
-      _stateIndex: 0
-      _parent: 0
-      _lastUpdate: 0
-      _children: 
-      _variables: 
-      _focused: 0
     - _fields:
       - _field: name
-        _currentValue: move
+        _currentValue: targetGrunt == null
         _recordChange: 1
         _changed: 0
+      - _field: open
+        _currentValue: True
+        _recordChange: 0
+        _changed: 0
       - _field: repeatuntil
-        _currentValue: failure
+        _currentValue: 
         _recordChange: 1
         _changed: 0
       - _field: debugbreak
@@ -110,33 +98,121 @@ MonoBehaviour:
         _currentValue: 
         _recordChange: 1
         _changed: 0
-      - _field: movetarget
+      - _field: constraint
+        _currentValue: targetGrunt == null
+        _recordChange: 1
+        _changed: 0
+      _type: 5
+      _stateIndex: 1
+      _parent: 2
+      _lastUpdate: 635611051717837466
+      _children: 12000000
+      _variables: 
+      _focused: 0
+    - _fields:
+      - _field: name
+        _currentValue: move or fight
+        _recordChange: 1
+        _changed: 0
+      - _field: open
+        _currentValue: True
+        _recordChange: 0
+        _changed: 0
+      - _field: repeatuntil
+        _currentValue: running
+        _recordChange: 1
+        _changed: 0
+      - _field: debugbreak
+        _currentValue: False
+        _recordChange: 1
+        _changed: 0
+      - _field: startingpriority
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: runningpriority
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: priority
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: weight
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: usepriorities
+        _currentValue: False
+        _recordChange: 1
+        _changed: 0
+      _type: 18
+      _stateIndex: 2
+      _parent: 8
+      _lastUpdate: 635611051717837466
+      _children: 0100000013000000
+      _variables: 
+      _focused: 0
+    - _fields:
+      - _field: name
+        _currentValue: detect
+        _recordChange: 1
+        _changed: 0
+      - _field: repeatuntil
+        _currentValue: running
+        _recordChange: 1
+        _changed: 0
+      - _field: debugbreak
+        _currentValue: False
+        _recordChange: 1
+        _changed: 0
+      - _field: startingpriority
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: runningpriority
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: priority
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: weight
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: sensor
+        _currentValue: '"gruntSensor"'
+        _recordChange: 1
+        _changed: 0
+      - _field: aspect
+        _currentValue: '"gruntAspect"'
+        _recordChange: 1
+        _changed: 0
+      - _field: aspectvariable
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: entityobjectvariable
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: aspectobjectvariable
         _currentValue: targetGrunt
         _recordChange: 1
         _changed: 0
-      - _field: movespeed
-        _currentValue: 10
+      - _field: matchtype
+        _currentValue: best
         _recordChange: 1
         _changed: 0
-      - _field: facetarget
-        _currentValue: 
+      - _field: consistent
+        _currentValue: True
         _recordChange: 1
         _changed: 0
-      - _field: turnspeed
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: closeenoughdistance
-        _currentValue: 5
-        _recordChange: 1
-        _changed: 0
-      - _field: closeenoughangle
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      _type: 14
+      _type: 7
       _stateIndex: 3
-      _parent: 6
+      _parent: 8
       _lastUpdate: 0
       _children: 
       _variables: 
@@ -196,11 +272,11 @@ MonoBehaviour:
         _changed: 0
       _type: 14
       _stateIndex: 4
-      _parent: 7
+      _parent: 6
       _lastUpdate: 0
       _children: 
       _variables: 
-      _focused: 1
+      _focused: 0
     - _fields:
       - _field: name
         _currentValue: Detect Hero
@@ -260,53 +336,9 @@ MonoBehaviour:
         _changed: 0
       _type: 7
       _stateIndex: 5
-      _parent: 7
+      _parent: 6
       _lastUpdate: 0
       _children: 
-      _variables: 
-      _focused: 0
-    - _fields:
-      - _field: name
-        _currentValue: engage
-        _recordChange: 1
-        _changed: 0
-      - _field: open
-        _currentValue: True
-        _recordChange: 0
-        _changed: 0
-      - _field: repeatuntil
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: debugbreak
-        _currentValue: False
-        _recordChange: 1
-        _changed: 0
-      - _field: startingpriority
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: runningpriority
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: priority
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: weight
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: usepriorities
-        _currentValue: False
-        _recordChange: 1
-        _changed: 0
-      _type: 19
-      _stateIndex: 6
-      _parent: 18
-      _lastUpdate: 635611011487930638
-      _children: 03000000
       _variables: 
       _focused: 0
     - _fields:
@@ -347,9 +379,9 @@ MonoBehaviour:
         _recordChange: 1
         _changed: 0
       _type: 19
-      _stateIndex: 7
-      _parent: 8
-      _lastUpdate: 635611006623794891
+      _stateIndex: 6
+      _parent: 7
+      _lastUpdate: 635611047530750852
       _children: 0500000004000000
       _variables: 
       _focused: 0
@@ -387,522 +419,10 @@ MonoBehaviour:
         _recordChange: 1
         _changed: 0
       _type: 4
-      _stateIndex: 8
+      _stateIndex: 7
       _parent: 0
-      _lastUpdate: 635611006623794891
-      _children: 07000000
-      _variables: 
-      _focused: 0
-    - _fields:
-      - _field: name
-        _currentValue: move
-        _recordChange: 1
-        _changed: 0
-      - _field: repeatuntil
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: debugbreak
-        _currentValue: False
-        _recordChange: 1
-        _changed: 0
-      - _field: startingpriority
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: runningpriority
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: priority
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: weight
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: movetarget
-        _currentValue: currentWaypoint
-        _recordChange: 1
-        _changed: 0
-      - _field: movespeed
-        _currentValue: 10
-        _recordChange: 1
-        _changed: 0
-      - _field: facetarget
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: turnspeed
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: closeenoughdistance
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: closeenoughangle
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      _type: 14
-      _stateIndex: 9
-      _parent: 10
-      _lastUpdate: 0
-      _children: 
-      _variables: 
-      _focused: 0
-    - _fields:
-      - _field: name
-        _currentValue: constraint
-        _recordChange: 1
-        _changed: 0
-      - _field: open
-        _currentValue: True
-        _recordChange: 0
-        _changed: 0
-      - _field: repeatuntil
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: debugbreak
-        _currentValue: False
-        _recordChange: 1
-        _changed: 0
-      - _field: startingpriority
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: runningpriority
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: priority
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: weight
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: constraint
-        _currentValue: detectEnemy == false
-        _recordChange: 1
-        _changed: 0
-      _type: 5
-      _stateIndex: 10
-      _parent: 11
-      _lastUpdate: 635610964707669308
-      _children: 09000000
-      _variables: 
-      _focused: 0
-    - _fields:
-      - _field: name
-        _currentValue: dungeon crawl
-        _recordChange: 1
-        _changed: 0
-      - _field: open
-        _currentValue: True
-        _recordChange: 0
-        _changed: 0
-      - _field: repeatuntil
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: debugbreak
-        _currentValue: False
-        _recordChange: 1
-        _changed: 0
-      - _field: startingpriority
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: runningpriority
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: priority
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: weight
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: waypointactiontype
-        _currentValue: patrol
-        _recordChange: 1
-        _changed: 0
-      - _field: traversetype
-        _currentValue: pingpong
-        _recordChange: 1
-        _changed: 0
-      - _field: traverseorder
-        _currentValue: forward
-        _recordChange: 1
-        _changed: 0
-      - _field: waypointsetvariable
-        _currentValue: '"WarriorRoute"'
-        _recordChange: 1
-        _changed: 0
-      - _field: pathtargetvariable
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: movetargetvariable
-        _currentValue: currentWaypoint
-        _recordChange: 1
-        _changed: 0
-      _type: 22
-      _stateIndex: 11
-      _parent: 16
-      _lastUpdate: 635610964707669308
-      _children: 0a000000
-      _variables: 
-      _focused: 0
-    - _fields:
-      - _field: name
-        _currentValue: detect
-        _recordChange: 1
-        _changed: 0
-      - _field: repeatuntil
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: debugbreak
-        _currentValue: False
-        _recordChange: 1
-        _changed: 0
-      - _field: startingpriority
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: runningpriority
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: priority
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: weight
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: sensor
-        _currentValue: '"gruntSensor"'
-        _recordChange: 1
-        _changed: 0
-      - _field: aspect
-        _currentValue: '"gruntAspect"'
-        _recordChange: 1
-        _changed: 0
-      - _field: aspectvariable
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: entityobjectvariable
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: aspectobjectvariable
-        _currentValue: targetGrunt
-        _recordChange: 1
-        _changed: 0
-      - _field: matchtype
-        _currentValue: best
-        _recordChange: 1
-        _changed: 0
-      - _field: consistent
-        _currentValue: True
-        _recordChange: 1
-        _changed: 0
-      _type: 7
-      _stateIndex: 12
-      _parent: 18
-      _lastUpdate: 0
-      _children: 
-      _variables: 
-      _focused: 1
-    - _fields:
-      - _field: name
-        _currentValue: move
-        _recordChange: 1
-        _changed: 0
-      - _field: repeatuntil
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: debugbreak
-        _currentValue: False
-        _recordChange: 1
-        _changed: 0
-      - _field: startingpriority
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: runningpriority
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: priority
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: weight
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: movetarget
-        _currentValue: targetAdv
-        _recordChange: 1
-        _changed: 0
-      - _field: movespeed
-        _currentValue: 10
-        _recordChange: 1
-        _changed: 0
-      - _field: facetarget
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: turnspeed
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: closeenoughdistance
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: closeenoughangle
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      _type: 14
-      _stateIndex: 13
-      _parent: 22
-      _lastUpdate: 0
-      _children: 
-      _variables: 
-      _focused: 0
-    - _fields:
-      - _field: name
-        _currentValue: detect hero
-        _recordChange: 1
-        _changed: 0
-      - _field: repeatuntil
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: debugbreak
-        _currentValue: False
-        _recordChange: 1
-        _changed: 0
-      - _field: startingpriority
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: runningpriority
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: priority
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: weight
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: sensor
-        _currentValue: '"advSensor"'
-        _recordChange: 1
-        _changed: 0
-      - _field: aspect
-        _currentValue: '"warriorAspect"'
-        _recordChange: 1
-        _changed: 0
-      - _field: aspectvariable
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: entityobjectvariable
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: aspectobjectvariable
-        _currentValue: targetAdv
-        _recordChange: 1
-        _changed: 0
-      - _field: matchtype
-        _currentValue: any
-        _recordChange: 1
-        _changed: 0
-      - _field: consistent
-        _currentValue: True
-        _recordChange: 1
-        _changed: 0
-      _type: 7
-      _stateIndex: 14
-      _parent: 22
-      _lastUpdate: 0
-      _children: 
-      _variables: 
-      _focused: 0
-    - _fields:
-      - _field: name
-        _currentValue: Detect Enemy
-        _recordChange: 1
-        _changed: 0
-      - _field: repeatuntil
-        _currentValue: success
-        _recordChange: 1
-        _changed: 0
-      - _field: debugbreak
-        _currentValue: False
-        _recordChange: 1
-        _changed: 0
-      - _field: startingpriority
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: runningpriority
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: priority
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: weight
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: sensor
-        _currentValue: '"heroVisualSensor"'
-        _recordChange: 1
-        _changed: 0
-      - _field: aspect
-        _currentValue: '"enemyVisualAspect"'
-        _recordChange: 1
-        _changed: 0
-      - _field: aspectvariable
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: entityobjectvariable
-        _currentValue: detectEnemy
-        _recordChange: 1
-        _changed: 0
-      - _field: aspectobjectvariable
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: matchtype
-        _currentValue: best
-        _recordChange: 1
-        _changed: 0
-      - _field: consistent
-        _currentValue: False
-        _recordChange: 1
-        _changed: 0
-      _type: 7
-      _stateIndex: 15
-      _parent: 16
-      _lastUpdate: 0
-      _children: 
-      _variables: 
-      _focused: 0
-    - _fields:
-      - _field: name
-        _currentValue: root
-        _recordChange: 1
-        _changed: 0
-      - _field: open
-        _currentValue: True
-        _recordChange: 0
-        _changed: 0
-      - _field: repeatuntil
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: debugbreak
-        _currentValue: False
-        _recordChange: 1
-        _changed: 0
-      - _field: startingpriority
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: runningpriority
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: priority
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: weight
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: fail
-        _currentValue: any
-        _recordChange: 1
-        _changed: 0
-      - _field: succeed
-        _currentValue: all
-        _recordChange: 1
-        _changed: 0
-      - _field: tiebreaker
-        _currentValue: fail
-        _recordChange: 1
-        _changed: 0
-      _type: 15
-      _stateIndex: 16
-      _parent: 17
-      _lastUpdate: 635610964707669308
-      _children: 0f0000000b000000
-      _variables: 
-      _focused: 0
-    - _fields:
-      - _field: name
-        _currentValue: HeroMovement
-        _recordChange: 1
-        _changed: 0
-      - _field: open
-        _currentValue: True
-        _recordChange: 0
-        _changed: 0
-      - _field: repeatuntil
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: debugbreak
-        _currentValue: False
-        _recordChange: 1
-        _changed: 0
-      - _field: startingpriority
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: runningpriority
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: priority
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: weight
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      _type: 4
-      _stateIndex: 17
-      _parent: 0
-      _lastUpdate: 635610964707669308
-      _children: 10000000
+      _lastUpdate: 635611047530750852
+      _children: 06000000
       _variables: 
       _focused: 0
     - _fields:
@@ -951,10 +471,10 @@ MonoBehaviour:
         _recordChange: 1
         _changed: 0
       _type: 15
-      _stateIndex: 18
-      _parent: 19
-      _lastUpdate: 635611011487930638
-      _children: 0c000000060000001c000000
+      _stateIndex: 8
+      _parent: 9
+      _lastUpdate: 635611051717837466
+      _children: 0300000002000000
       _variables: 
       _focused: 0
     - _fields:
@@ -991,10 +511,10 @@ MonoBehaviour:
         _recordChange: 1
         _changed: 0
       _type: 4
-      _stateIndex: 19
+      _stateIndex: 9
       _parent: 0
-      _lastUpdate: 635611011487930638
-      _children: 12000000
+      _lastUpdate: 635611051717837466
+      _children: 08000000
       _variables: 
       _focused: 0
     - _fields: []
@@ -1005,132 +525,28 @@ MonoBehaviour:
       _children: 
       _variables: 
       _focused: 0
-    - _fields:
-      - _field: name
-        _currentValue: selector
-        _recordChange: 1
-        _changed: 0
-      - _field: open
-        _currentValue: True
-        _recordChange: 0
-        _changed: 0
-      - _field: repeatuntil
-        _currentValue: success
-        _recordChange: 1
-        _changed: 0
-      - _field: debugbreak
-        _currentValue: False
-        _recordChange: 1
-        _changed: 0
-      - _field: startingpriority
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: runningpriority
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: priority
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: weight
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: usepriorities
-        _currentValue: False
-        _recordChange: 1
-        _changed: 0
-      _type: 18
-      _stateIndex: 21
-      _parent: 22
+    - _fields: []
+      _type: 0
+      _stateIndex: 0
+      _parent: 0
       _lastUpdate: 0
       _children: 
       _variables: 
-      _focused: 1
-    - _fields:
-      - _field: name
-        _currentValue: root
-        _recordChange: 1
-        _changed: 0
-      - _field: open
-        _currentValue: True
-        _recordChange: 0
-        _changed: 0
-      - _field: repeatuntil
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: debugbreak
-        _currentValue: False
-        _recordChange: 1
-        _changed: 0
-      - _field: startingpriority
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: runningpriority
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: priority
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: weight
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: usepriorities
-        _currentValue: False
-        _recordChange: 1
-        _changed: 0
-      _type: 19
-      _stateIndex: 22
-      _parent: 23
-      _lastUpdate: 635610975084293971
-      _children: 150000000e0000000d000000
+      _focused: 0
+    - _fields: []
+      _type: 0
+      _stateIndex: 0
+      _parent: 0
+      _lastUpdate: 0
+      _children: 
       _variables: 
       _focused: 0
-    - _fields:
-      - _field: name
-        _currentValue: MinionBehavior
-        _recordChange: 1
-        _changed: 0
-      - _field: open
-        _currentValue: True
-        _recordChange: 0
-        _changed: 0
-      - _field: repeatuntil
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: debugbreak
-        _currentValue: False
-        _recordChange: 1
-        _changed: 0
-      - _field: startingpriority
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: runningpriority
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: priority
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: weight
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      _type: 4
-      _stateIndex: 23
+    - _fields: []
+      _type: 0
+      _stateIndex: 0
       _parent: 0
-      _lastUpdate: 635610975084293971
-      _children: 16000000
+      _lastUpdate: 0
+      _children: 
       _variables: 
       _focused: 0
     - _fields: []
@@ -1167,51 +583,7 @@ MonoBehaviour:
       _focused: 0
     - _fields:
       - _field: name
-        _currentValue: targetGrunt == null
-        _recordChange: 1
-        _changed: 0
-      - _field: open
-        _currentValue: True
-        _recordChange: 0
-        _changed: 0
-      - _field: repeatuntil
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: debugbreak
-        _currentValue: False
-        _recordChange: 1
-        _changed: 0
-      - _field: startingpriority
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: runningpriority
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: priority
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: weight
-        _currentValue: 
-        _recordChange: 1
-        _changed: 0
-      - _field: constraint
-        _currentValue: '"targetGrunt == null"'
-        _recordChange: 1
-        _changed: 0
-      _type: 5
-      _stateIndex: 28
-      _parent: 18
-      _lastUpdate: 635611011487930638
-      _children: 1d000000
-      _variables: 
-      _focused: 0
-    - _fields:
-      - _field: name
-        _currentValue: moveToEnd
+        _currentValue: move
         _recordChange: 1
         _changed: 0
       - _field: repeatuntil
@@ -1263,10 +635,114 @@ MonoBehaviour:
         _recordChange: 1
         _changed: 0
       _type: 14
-      _stateIndex: 29
-      _parent: 28
+      _stateIndex: 18
+      _parent: 1
       _lastUpdate: 0
       _children: 
       _variables: 
       _focused: 0
-    _freeList: 01000000020000001400000018000000190000001a0000001b000000
+    - _fields:
+      - _field: name
+        _currentValue: targetGrunt != null
+        _recordChange: 1
+        _changed: 0
+      - _field: open
+        _currentValue: True
+        _recordChange: 0
+        _changed: 0
+      - _field: repeatuntil
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: debugbreak
+        _currentValue: False
+        _recordChange: 1
+        _changed: 0
+      - _field: startingpriority
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: runningpriority
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: priority
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: weight
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: constraint
+        _currentValue: targetGrunt != null
+        _recordChange: 1
+        _changed: 0
+      _type: 5
+      _stateIndex: 19
+      _parent: 2
+      _lastUpdate: 635611051717837466
+      _children: 14000000
+      _variables: 
+      _focused: 0
+    - _fields:
+      - _field: name
+        _currentValue: move
+        _recordChange: 1
+        _changed: 0
+      - _field: repeatuntil
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: debugbreak
+        _currentValue: False
+        _recordChange: 1
+        _changed: 0
+      - _field: startingpriority
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: runningpriority
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: priority
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: weight
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: movetarget
+        _currentValue: targetGrunt
+        _recordChange: 1
+        _changed: 0
+      - _field: movespeed
+        _currentValue: 15
+        _recordChange: 1
+        _changed: 0
+      - _field: facetarget
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: turnspeed
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      - _field: closeenoughdistance
+        _currentValue: 2
+        _recordChange: 1
+        _changed: 0
+      - _field: closeenoughangle
+        _currentValue: 
+        _recordChange: 1
+        _changed: 0
+      _type: 14
+      _stateIndex: 20
+      _parent: 19
+      _lastUpdate: 0
+      _children: 
+      _variables: 
+      _focused: 0
+    _freeList: 0a0000000b0000000c0000000d0000000e0000000f0000001000000011000000

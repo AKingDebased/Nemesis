@@ -235,8 +235,8 @@ MonoBehaviour:
       id="_positionOffset" /><field value="0,0,0" type="UnityEngine.Vector3" id="_angleOffset"
       /><field type="System.Collections.Generic.List" id="_filters" elementtype="RAIN.Perception.Sensors.Filters.RAINSensorFilter"
       /><field value="15.35628" type="System.Single" id="_range" /><field value="False"
-      type="System.Boolean" id="_canDetectSelf" /><field value="80" type="System.Single"
-      id="_horizontalAngle" /><field value="80" type="System.Single" id="_verticalAngle"
+      type="System.Boolean" id="_canDetectSelf" /><field value="360" type="System.Single"
+      id="_horizontalAngle" /><field value="180" type="System.Single" id="_verticalAngle"
       /><field value="False" type="System.Boolean" id="_lineOfSight" /><field value="-5"
       type="UnityEngine.LayerMask" id="_lineOfSightMask" /></reference></references></component>
     _serializedGameObjects:
@@ -1309,12 +1309,12 @@ MonoBehaviour:
       type="System.Boolean" id="_isActive" /><field value="0.6,0.5529412,0.009411765,1"
       type="UnityEngine.Color" id="_sensorColor" /><field type="UnityEngine.Transform"
       id="_mountPoint" gameobject="1" /><field value="0,0,0" type="UnityEngine.Vector3"
-      id="_positionOffset" /><field value="359.426,95.62633,269.9435" type="UnityEngine.Vector3"
+      id="_positionOffset" /><field value="359.4234,91.37208,269.9863" type="UnityEngine.Vector3"
       id="_angleOffset" /><field type="System.Collections.Generic.List" id="_filters"
       elementtype="RAIN.Perception.Sensors.Filters.RAINSensorFilter" /><field value="20.01056"
       type="System.Single" id="_range" /><field value="False" type="System.Boolean"
-      id="_canDetectSelf" /><field value="80" type="System.Single" id="_horizontalAngle"
-      /><field value="80" type="System.Single" id="_verticalAngle" /><field value="False"
+      id="_canDetectSelf" /><field value="140" type="System.Single" id="_horizontalAngle"
+      /><field value="180" type="System.Single" id="_verticalAngle" /><field value="False"
       type="System.Boolean" id="_lineOfSight" /><field value="-5" type="UnityEngine.LayerMask"
       id="_lineOfSightMask" /></reference></references></component>
     _serializedGameObjects:
@@ -2186,8 +2186,8 @@ Prefab:
         id="_angleOffset" /><field type="System.Collections.Generic.List" id="_filters"
         elementtype="RAIN.Perception.Sensors.Filters.RAINSensorFilter" /><field value="15.35628"
         type="System.Single" id="_range" /><field value="False" type="System.Boolean"
-        id="_canDetectSelf" /><field value="80" type="System.Single" id="_horizontalAngle"
-        /><field value="80" type="System.Single" id="_verticalAngle" /><field value="False"
+        id="_canDetectSelf" /><field value="360" type="System.Single" id="_horizontalAngle"
+        /><field value="180" type="System.Single" id="_verticalAngle" /><field value="False"
         type="System.Boolean" id="_lineOfSight" /><field value="-5" type="UnityEngine.LayerMask"
         id="_lineOfSightMask" /></reference></references></component>
       objectReference: {fileID: 0}

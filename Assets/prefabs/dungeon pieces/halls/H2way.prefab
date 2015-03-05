@@ -675,7 +675,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 496140}
   m_Layer: 0
-  m_Name: corner
+  m_Name: H2way
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

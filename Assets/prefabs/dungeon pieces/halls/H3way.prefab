@@ -81,7 +81,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 456350}
   m_Layer: 0
-  m_Name: threeway
+  m_Name: H3way
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

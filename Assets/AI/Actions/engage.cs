@@ -14,7 +14,11 @@ public class engage : RAINAction
 
     public override ActionResult Execute(RAIN.Core.AI ai)
     {
-		
+		GameObject targetEnemy = ai.WorkingMemory.GetItem<GameObject>("targetEnemy");
+		GameObject thisAdv = ai.Body;
+
+		ai.Body.GetComponent<Warrior>().addToThreats(targetEnemy);
+		ai.Body.GetComponent<Warrior>().Engage(targetEnemy);
         return ActionResult.SUCCESS;
     }
 

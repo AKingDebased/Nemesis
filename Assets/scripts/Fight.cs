@@ -13,21 +13,16 @@ public class Fight : MonoBehaviour {
 	}
 	
 	void Update () {
-		if(stats.health < 0){
-			Debug.Log ("warrior falls!");
-			Destroy(gameObject);
-		}
-
 		if(engaged){
 			if (timeSinceLastAttack * 10 >= stats.speed)
 			{
-				this.Attack(currentTarget);
-				Debug.Log ("grunt health: " + currentTarget.GetComponent<Stats>().health);
+				this.Attack(currentTarget); //needs an inRange qualifier
+				Debug.Log (gameObject.name + " health: " + currentTarget.GetComponent<Stats>().health);
 				timeSinceLastAttack = 0;				
 			} else timeSinceLastAttack += Time.deltaTime;
 			
 			if(this.stats.health < 0){
-				Debug.Log ("warrior falls!");
+				Debug.Log (gameObject.name + " falls!");
 				Destroy(gameObject);
 			}
 		}
@@ -35,10 +30,10 @@ public class Fight : MonoBehaviour {
 	
 	private void Attack(GameObject currentTarget){
 		if (this.AttackHit(currentTarget)){
-			Debug.Log ("warrior hit!");
+			Debug.Log (gameObject.name + " hit!");
 			this.DoDamage(currentTarget);
 		} else {
-			Debug.Log ("warrior miss!");
+			Debug.Log (gameObject.name + " miss!");
 		}
 	}
 	
@@ -52,7 +47,7 @@ public class Fight : MonoBehaviour {
 			int damage = (this.stats.strength - currentTarget.GetComponent<Stats>().defense);
 			
 			if (this.IsCrit(currentTarget)) {
-				Debug.Log ("WARRIOR CRIT BABY");
+				Debug.Log (gameObject.name + " crits!");
 				currentTarget.GetComponent<Fight>().TakeDamage(damage * (this.stats.dexterity /10));
 			} else currentTarget.GetComponent<Fight>().TakeDamage(damage);
 		}

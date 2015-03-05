@@ -44,6 +44,4 @@ public class Stats : MonoBehaviour {
 			resilience = 20;
 		}
 	}
-	
-	
 }

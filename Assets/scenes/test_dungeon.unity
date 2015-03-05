@@ -103,7 +103,7 @@ Renderer:
   m_GameObject: {fileID: 49983045}
   m_Enabled: 1
   m_CastShadows: 1
-  m_ReceiveShadows: 1
+  m_ReceiveShadows: 0
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
@@ -1885,6 +1885,10 @@ Prefab:
       objectReference: {fileID: 49983049}
     - target: {fileID: 11426696, guid: b19e2ccb6b4569948af419fae77637d7, type: 2}
       propertyPath: _dataSerializer._serializedCustomData.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326696, guid: b19e2ccb6b4569948af419fae77637d7, type: 2}
+      propertyPath: m_ReceiveShadows
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

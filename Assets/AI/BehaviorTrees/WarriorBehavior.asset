@@ -17,9 +17,9 @@ MonoBehaviour:
       debugbreak=&quot;False&quot;&gt;&lt;parallel tiebreaker=&quot;fail&quot; succeed=&quot;all&quot;
       repeatuntil=&quot;&quot; name=&quot;parallel&quot; fail=&quot;any&quot; debugbreak=&quot;False&quot;&gt;&lt;detect
       sensor=&quot;&amp;quot;gruntSensor&amp;quot;&quot; repeatuntil=&quot;running&quot;
-      name=&quot;detect&quot; matchtype=&quot;best&quot; entityobjectvariable=&quot;&quot;
+      name=&quot;detect&quot; matchtype=&quot;best&quot; entityobjectvariable=&quot;targetEnemy&quot;
       debugbreak=&quot;False&quot; consistent=&quot;True&quot; aspectvariable=&quot;&quot;
-      aspectobjectvariable=&quot;targetEnemy&quot; aspect=&quot;&amp;quot;gruntAspect&amp;quot;&quot;
+      aspectobjectvariable=&quot;&quot; aspect=&quot;&amp;quot;gruntAspect&amp;quot;&quot;
       /&gt;&lt;selector usepriorities=&quot;False&quot; repeatuntil=&quot;running&quot;
       name=&quot;move or fight&quot; debugbreak=&quot;False&quot;&gt;&lt;constraint
       repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;targetEnemy == null&quot;

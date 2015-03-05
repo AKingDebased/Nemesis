@@ -13,6 +13,11 @@ public class Fight : MonoBehaviour {
 	}
 	
 	void Update () {
+		if(stats.health < 0){
+			Debug.Log ("warrior falls!");
+			Destroy(gameObject);
+		}
+
 		if(engaged){
 			if (timeSinceLastAttack * 10 >= stats.speed)
 			{
@@ -21,7 +26,7 @@ public class Fight : MonoBehaviour {
 				timeSinceLastAttack = 0;				
 			} else timeSinceLastAttack += Time.deltaTime;
 			
-			if(stats.health < 0){
+			if(this.stats.health < 0){
 				Debug.Log ("warrior falls!");
 				Destroy(gameObject);
 			}

@@ -17,13 +17,15 @@ public class Fight : MonoBehaviour {
 			if (timeSinceLastAttack * 10 >= stats.speed)
 			{
 				this.Attack(currentTarget); //needs an inRange qualifier
-				Debug.Log (gameObject.name + " health: " + currentTarget.GetComponent<Stats>().health);
+				Debug.Log (currentTarget.name + " health: " + currentTarget.GetComponent<Stats>().health);
 				timeSinceLastAttack = 0;				
 			} else timeSinceLastAttack += Time.deltaTime;
 			
 			if(this.stats.health < 0){
 				Debug.Log (gameObject.name + " falls!");
 				Destroy(gameObject);
+				engaged = false;
+				currentTarget.GetComponent<Fight>().engaged = false;
 			}
 		}
 	}

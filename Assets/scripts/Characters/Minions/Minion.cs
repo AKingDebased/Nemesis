@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Minion : Character {
+public abstract class Minion : Character {
 
 
 }

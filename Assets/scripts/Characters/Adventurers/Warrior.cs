@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Warrior : Adventurer {
+	public float timeSinceLastAttack = 0;
+	public bool engaged = false;
+
 
 	void Awake(){
 		range = 5;
@@ -15,45 +18,74 @@ public class Warrior : Adventurer {
 		stats.Add ("strength", 50);
 		stats.Add ("willpower", 50);
 		stats.Add ("dexterity", 50);
-		stats.Add ("speed", 20);
-		stats.Add ("defense", 30);
+		stats.Add ("speed", 50);
+		stats.Add ("defense", 20);
 		stats.Add ("resilience", 40);
+	}
 
-		foreach (KeyValuePair<string,string> info in advInfo) {
-			Debug.Log(info.Value);
+	public void Update(){
+		if (engaged){
+			Fight (highestThreat()){
+
+			}
 		}
 
 	}
 
-	public override void Attack(Minion minion){
-		if (this.AttackHit(minion)) this.DoDamage(minion);
-	}
-
-	private bool AttackHit(Minion minion){
-		if (Random.Range (0, 100) + (this.stats ["dexterity"] * 2) >= minion.stats["dexterity"]) {
-			return true;
-		} else return false;
+	public void Fight(GameObject target){
 		
-	}
-
-	private void DoDamage (Minion minion){
-		if (this.stats["strength"] > minion.stats["defense"])
+	if (timeSinceLastAttack * 10 >= stats["speed"])
 		{
-			int damage = (this.stats["strength"] - minion.stats["defense"]);
+			this.Attack(target);
+			Debug.Log ("grunt health: " + target.stats["health"]);
+			timeSinceLastAttack = 0;				
+		} else timeSinceLastAttack += Time.deltaTime;
 			
-			if (this.isCrit(minion)) {
-				minion.TakeDamage(damage * (this.stats["dexterity"]/10));
-			} else minion.TakeDamage(damage);
+		if(stats["health"] < 0){
+			Debug.Log ("warrior falls!");
+			Destroy(gameObject);
 		}
-		
-		else minion.TakeDamage(1);
+	}
+	
+
+	public override void Attack(GameObject target){
+		if (this.AttackHit(target)){
+			Debug.Log ("warrior hit!");
+			this.DoDamage(target);
+		} else {
+			Debug.Log ("warrior miss!");
+		}
 	}
 
-	private bool isCrit(Minion minion)
+	public void addToThreats(GameObject target){
+		this.threats.Add (target.name,100);
+	}
+
+	private GameObject highestThreat(){
+		this.threats.Max();
+	}
+
+	private bool AttackHit(GameObject target){
+		return (Random.Range (0, 100) + (this.stats ["dexterity"] * 2) >= target.stats["speed"]);
+	}
+
+	private void DoDamage (GameObject target){
+		if (this.stats["strength"] > target.stats["defense"])
+		{
+			int damage = (this.stats["strength"] - target.stats["defense"]);
+			
+			if (this.IsCrit(target)) {
+				Debug.Log ("WARRIOR CRIT BABY");
+				target.TakeDamage(damage * (this.stats["dexterity"]/10));
+			} else target.TakeDamage(damage);
+		}
+		
+		else target.TakeDamage(1);
+	}
+
+	private bool IsCrit(GameObject target)
 	{
-		if ((this.stats ["dexterity"] / 2) + Random.Range (0, 100) > minion.stats ["dexterity"] * 2) {
-			return true;
-		} else return false;
+		return ((this.stats ["dexterity"] / 2) + Random.Range (0, 100) > target.stats ["dexterity"] * 2);
 	}
 
 	/*private bool InRange(GameObject target)

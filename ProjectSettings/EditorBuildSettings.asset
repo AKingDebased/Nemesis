@@ -7,5 +7,7 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 0
     path: Assets/scenes/main_screen.unity
-  - enabled: 1
+  - enabled: 0
     path: Assets/scenes/combat_test.unity
+  - enabled: 1
+    path: Assets/scenes/test_asset_dungeon.unity

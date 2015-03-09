@@ -14,7 +14,7 @@ public class Fight : MonoBehaviour {
 	
 	void Update () {
 		if(engaged){
-			if (timeSinceLastAttack >= (1/(stats.speed/10))
+			if (timeSinceLastAttack >= (1/(stats.speed/10)))
 			{
 				this.Attack(currentTarget); 
 				Debug.Log (currentTarget.name + " health: " + currentTarget.GetComponent<Stats>().health);

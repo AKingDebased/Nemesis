@@ -16,16 +16,15 @@ public class Fight : MonoBehaviour {
 		if(engaged){
 			if (timeSinceLastAttack * 10 >= stats.speed)
 			{
-				this.Attack(currentTarget); //needs an inRange qualifier
+				this.Attack(currentTarget); 
 				Debug.Log (currentTarget.name + " health: " + currentTarget.GetComponent<Stats>().health);
 				timeSinceLastAttack = 0;				
 			} else timeSinceLastAttack += Time.deltaTime;
-			
-			if(this.stats.health < 0){
+
+			if(this.stats.health < 0){ //needs to disengage after the last enemy in a group is killed
 				Debug.Log (gameObject.name + " falls!");
 				Destroy(gameObject);
 				engaged = false;
-				currentTarget.GetComponent<Fight>().engaged = false;
 			}
 		}
 	}
@@ -33,6 +32,7 @@ public class Fight : MonoBehaviour {
 	private void Attack(GameObject currentTarget){
 		if (this.AttackHit(currentTarget)){
 			Debug.Log (gameObject.name + " hit!");
+			GetComponent<AudioSource>().Play();
 			this.DoDamage(currentTarget);
 		} else {
 			Debug.Log (gameObject.name + " miss!");

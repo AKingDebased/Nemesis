@@ -14,7 +14,7 @@ public class Fight : MonoBehaviour {
 	
 	void Update () {
 		if(engaged){
-			if (timeSinceLastAttack >= (1/(stats.speed/10)))
+			if (timeSinceLastAttack >= (1/stats.speed/10))
 			{
 				this.Attack(currentTarget); 
 				Debug.Log (currentTarget.name + " health: " + currentTarget.GetComponent<Stats>().health);
@@ -65,11 +65,5 @@ public class Fight : MonoBehaviour {
 	private void TakeDamage(int damage){
 		this.stats.health -= damage;
 	}
-	
-	/*private bool InRange(GameObject currentTarget)
-	{
-		if (Vector3.Distance(currentTarget.transform.position, this.gameObject.transform.position) <= range) return true;
-		else return false;
-	}*/
 }
 

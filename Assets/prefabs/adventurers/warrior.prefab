@@ -274,7 +274,7 @@ MonoBehaviour:
   strength: 50
   willpower: 50
   dexterity: 25
-  speed: 45
+  speed: 10
   defense: 70
   resilience: 40
 --- !u!114 &11492200

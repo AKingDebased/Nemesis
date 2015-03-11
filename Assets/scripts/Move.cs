@@ -6,7 +6,6 @@ public class Move : MonoBehaviour {
 	public Transform target;
 
 	void Awake(){
-		target 
 	}
 
 	void Update () {

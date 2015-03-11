@@ -8,11 +8,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -1591671967, guid: e0781e12b13132b45bf09c20fcd34d12, type: 3}
+  m_Script: {fileID: 0}
   m_Name: RAINProjectState
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: RAINEditor:RAINEditor:RAINProjectState
   _version: 1
   _updateMetaformRequired: 0
   _lastLoadSaveDirectory: 
+<<<<<<< HEAD
   _lastUpdateCheck: 03/11/2015 01:44:56
   _lastMetricsUpdate: 03/11/2015 01:44:54
+=======
+  _lastUpdateCheck: 03/09/2015 15:02:28
+  _lastMetricsUpdate: 03/10/2015 10:07:33
+>>>>>>> origin/development

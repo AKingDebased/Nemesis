@@ -3,13 +3,9 @@ using System.Collections;
 
 public class Shoot : MonoBehaviour {
 
-	// Use this for initialization
+	public GameObject projectile;
+
 	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+		Instantiate(projectile, transform.position, Quaternion.identity);
 	}
 }

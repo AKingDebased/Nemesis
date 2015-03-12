@@ -1,15 +1,24 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Xml;
 
-public class Dialogue : MonoBehaviour {
+public class Dialogue : MonoBehaviour
+{
 
 	// Use this for initialization
-	void Start () {
-	
+	void Start ()
+	{
+
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
 	
+	}
+
+	void onGUI()
+	{
+
 	}
 }

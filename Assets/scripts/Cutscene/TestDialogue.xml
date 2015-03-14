@@ -1,25 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
 <scene scID="1">
 	<characterList>
 		<character charID="A">Magenta</character>
 		<character charID="B">Cyan</character>
 	</characterList>
 
-	<character charID="A">
-		<text flag="intro">It's you.</text>
-	</character>
+	<dialogue>
+		<character charID="A">
+			<text flag="intro">It's you.</text>
+		</character>
 
-	<character charID="B">
-		<text flag="intro">How are you gentlemen.
-			All your base are belong to us.
-			You are on the way to destruction.</text>
-	</character>
+		<character charID="B">
+			<text flag="intro">How are you gentlemen.
+				All your base are belong to us.
+				You are on the way to destruction.</text>
+		</character>
 
-	<character charID="A">
-		<text>What you say!</text>
-	</character>
+		<character charID="A">
+			<text>What you say!</text>
+		</character>
 
-	<character charID="B">
-		<text>You have no chance to survive make your time.
-			Ha ha ha.</text>
-	</character>
+		<character charID="B">
+			<text>You have no chance to survive make your time.
+				Ha ha ha.</text>
+		</character>
+	</dialogue>
 </scene>

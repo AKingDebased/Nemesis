@@ -14,9 +14,8 @@ public class engage : RAINAction
 
     public override ActionResult Execute(RAIN.Core.AI ai)
     {
-		ai.Body.GetComponent<Fight>().currentTarget = ai.WorkingMemory.GetItem<GameObject>("targetEnemy");
-		ai.Body.GetComponent<Fight>().engaged = true;
-        return ActionResult.SUCCESS;
+		ai.Body.GetComponent<PhysicalFight>().Fight(ai.WorkingMemory.GetItem<GameObject>("targetEnemy"));
+		return ActionResult.SUCCESS;
     }
 
     public override void Stop(RAIN.Core.AI ai)

@@ -28,8 +28,8 @@ GameObject:
   - 136: {fileID: 13628070}
   - 23: {fileID: 2328070}
   - 114: {fileID: 11443666}
-  - 114: {fileID: 11467638}
   - 114: {fileID: 11425088}
+  - 114: {fileID: 11429900}
   m_Layer: 8
   m_Name: wizard
   m_TagString: hero
@@ -56,8 +56,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 128072}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -32.7999992, y: 1, z: 39.0499992}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -56.7999992, y: 3, z: 71.4000015}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 428070}
   m_Father: {fileID: 0}
@@ -107,7 +107,7 @@ MonoBehaviour:
   fireSound: {fileID: 8300000, guid: ba4682d39543941c1a1b2e1d2be60dd0, type: 3}
   projectileObj: {fileID: 149340, guid: 16ae03b7025784bc683186ae422617a1, type: 2}
   target: {fileID: 0}
-  speed: 20
+  speed: 2000
 --- !u!114 &11428070
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -158,6 +158,19 @@ MonoBehaviour:
     _serializedGameObjects:
     - {fileID: 128072}
     _serializedCustomData: []
+--- !u!114 &11429900
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 128072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d8c9fa5779e140889909b443fb60640, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  engaged: 0
+  currentTarget: {fileID: 0}
 --- !u!114 &11443666
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -178,19 +191,6 @@ MonoBehaviour:
   speed: 0
   defense: 0
   resilience: 0
---- !u!114 &11467638
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 128072}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b484c381cfc36294eabef032ac349c51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  engaged: 0
-  currentTarget: {fileID: 0}
 --- !u!136 &13628070
 CapsuleCollider:
   m_ObjectHideFlags: 1

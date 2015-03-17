@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Fight : MonoBehaviour {
+public class MagicFight : MonoBehaviour {
 	public bool engaged = false;
 	public GameObject currentTarget;
 	
@@ -20,7 +20,7 @@ public class Fight : MonoBehaviour {
 				Debug.Log (currentTarget.name + " health: " + currentTarget.GetComponent<Stats>().health);
 				timeSinceLastAttack = 0;				
 			} else timeSinceLastAttack += Time.deltaTime;
-
+			
 			if(this.stats.health < 0){ //needs to disengage after the last enemy in a group is killed
 				Debug.Log (gameObject.name + " falls!");
 				Destroy(gameObject);
@@ -50,18 +50,21 @@ public class Fight : MonoBehaviour {
 			
 			if (this.IsCrit(currentTarget)) {
 				Debug.Log (gameObject.name + " crits!");
-				currentTarget.GetComponent<Fight>().TakeDamage(damage * (this.stats.dexterity /10));
-			} else currentTarget.GetComponent<Fight>().TakeDamage(damage);
+				currentTarget.GetComponent<PhysicalFight>().TakeDamage(damage * (this.stats.dexterity /10));
+			} else currentTarget.GetComponent<PhysicalFight>().TakeDamage(damage); //needs to reference GameObject's 
+																				   //Fight script through some sort of
+																				   //interface, accounting for
+																				   //cases of physical or magical fights
 		}
 		
-		else currentTarget.GetComponent<Fight>().TakeDamage(1);
+		else currentTarget.GetComponent<PhysicalFight>().TakeDamage(1);
 	}
 	
 	private bool IsCrit(GameObject currentTarget)
 	{
 		return ((this.stats.dexterity / 2) + Random.Range (0, 100) > currentTarget.GetComponent<Stats>().dexterity * 2);
 	}
-
+	
 	private void TakeDamage(int damage){
 		this.stats.health -= damage;
 	}

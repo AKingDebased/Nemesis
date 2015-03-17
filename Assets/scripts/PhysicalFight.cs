@@ -19,32 +19,32 @@ public class PhysicalFight : MonoBehaviour
 
 	private IEnumerator CoFight(GameObject currentTarget)
 	{
-		float timeSinceLastAttack = 0;
+		float timeSinceLastAttack = 0.0f;
 		bool engaged = true;
 		Stats enemyStats = currentTarget.GetComponent<Stats>();
-			
+
 		while(engaged)
-		{
-			if (timeSinceLastAttack >= (stats.speed / 10))
-			{
-				this.Attack(currentTarget); 
-				Debug.Log (currentTarget.name + " health: " + enemyStats.health);
-				timeSinceLastAttack = 0;				
-			} else timeSinceLastAttack += Time.deltaTime;
-				
+		{	
 			if(this.stats.health < 0)
 			{ 
 				Debug.Log (gameObject.name + " falls!");
 				Destroy(gameObject);
 				engaged = false;
 			}
-				
+			
 			if(enemyStats.health < 0){
 				Debug.Log (gameObject.name + " killed " + currentTarget.name);
 				engaged = false;
 			}
-				
-			yield return 0;
+
+			if(timeSinceLastAttack > (stats.speed/10)){
+				this.Attack(currentTarget); 
+				Debug.Log (currentTarget.name + " health: " + enemyStats.health);
+				Debug.Log(gameObject.name + " is attacking");
+				timeSinceLastAttack = 0.0f;
+			} else timeSinceLastAttack += Time.deltaTime;
+
+			yield return null;
 		}
 	}
 	

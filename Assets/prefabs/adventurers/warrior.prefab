@@ -198,8 +198,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6802920bd0514c258e818d96fed58f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  engaged: 0
-  currentTarget: {fileID: 0}
   attackSound: {fileID: 8300000, guid: 0d175ec31445d4d20ab77180c010fab6, type: 3}
 --- !u!114 &11492198
 MonoBehaviour:
@@ -218,7 +216,7 @@ MonoBehaviour:
   strength: 50
   willpower: 50
   dexterity: 25
-  speed: 10
+  speed: 60
   defense: 70
   resilience: 40
 --- !u!114 &11492202

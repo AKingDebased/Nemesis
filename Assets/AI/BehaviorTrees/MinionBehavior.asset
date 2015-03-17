@@ -26,8 +26,8 @@ MonoBehaviour:
       movespeed=&quot;10&quot; facetarget=&quot;&quot; debugbreak=&quot;False&quot;
       closeenoughdistance=&quot;5&quot; closeenoughangle=&quot;&quot; /&gt;&lt;action
       repeatuntil=&quot;&quot; parametervalues=&quot;&quot; parameters=&quot;&quot;
-      namespace=&quot;&quot; name=&quot;action&quot; debugbreak=&quot;False&quot;
-      classname=&quot;engage&quot; /&gt;&lt;/constraint&gt;&lt;/parallel&gt;&lt;/behaviortree&gt;"
+      namespace=&quot;&quot; name=&quot;engage&quot; debugbreak=&quot;False&quot;
+      classname=&quot;Engage&quot; /&gt;&lt;/constraint&gt;&lt;/parallel&gt;&lt;/behaviortree&gt;"
       type="System.String" id="treeData" /><field type="System.Array" id="treeBindings"
       elementtype="System.String" /></fields><references /></scriptableobject>
     _serializedGameObjects: []

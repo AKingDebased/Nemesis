@@ -6,10 +6,9 @@ public class CoroutineTest : MonoBehaviour {
 	float timer = 0.0f;
 
 	void Start () {
-		//StartCoroutine(Countdown());
-		//StartCoroutine(Hello());
-		TimeCounter();
+		UpdateSim ();
 	}
+
 
 	void Update(){
 		while(count){
@@ -21,6 +20,11 @@ public class CoroutineTest : MonoBehaviour {
 				count = false;
 			}
 		}
+	}
+
+	public void UpdateSim(){
+
+		StartCoroutine (CoUpdateSim ());
 	}
 	
 	IEnumerator Countdown(){
@@ -61,6 +65,31 @@ public class CoroutineTest : MonoBehaviour {
 	        seconds++;
 		    Debug.Log (seconds + " seconds have passed");
 	    }
+	}
+
+	IEnumerator CoUpdateSim(){
+		float timeSinceLastAttack = 0.0f;
+		bool engaged = true;
+		int health = 5;
+
+		while(engaged)
+		{	
+			if (health == 0 ) 
+			{
+				Debug.Log ("exiting combat");
+				engaged = false;
+			}
+
+			if(timeSinceLastAttack > 5.0f){
+
+				Debug.Log ("attack");
+				health--;
+				Debug.Log ("health is now " + health);
+				timeSinceLastAttack = 0;
+			} else timeSinceLastAttack += Time.deltaTime;
+
+			yield return null;
+		}
 	}
 }
 

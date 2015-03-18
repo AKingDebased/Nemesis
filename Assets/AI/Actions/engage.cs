@@ -16,10 +16,18 @@ public class Engage : RAINAction
     {
 
 		GameObject targetEnemy = ai.WorkingMemory.GetItem<GameObject>("targetEnemy");
+
+		if(targetEnemy == null)
+		{
+			Debug.Log ("no target");
+			return ActionResult.FAILURE;
+		}
+
 		ai.Body.GetComponent<PhysicalFight>().Fight(targetEnemy);
 
-		return ActionResult.SUCCESS;
-    }
+
+		return ActionResult.FAILURE;
+	}
 
     public override void Stop(RAIN.Core.AI ai)
     {

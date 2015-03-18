@@ -47,7 +47,11 @@ public class PhysicalFight : MonoBehaviour
 			yield return null;
 		}
 	}
-	
+
+	public void ReportName()
+	{
+		Debug.Log (gameObject.name);
+	}
 	public void TakeDamage(int damage){
 		this.stats.health -= damage;
 	}

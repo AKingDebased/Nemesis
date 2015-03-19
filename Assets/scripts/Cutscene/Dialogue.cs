@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class Dialogue : MonoBehaviour
 {
 	public string dialogueFile;
-	public Text dialogueBox;
-	public Text nameBox;
+	public Text dialogueText;
+	public Text nameText;
 
 	private XmlDocument scene;
 	private XmlNodeList dialogueList;
@@ -24,24 +24,23 @@ public class Dialogue : MonoBehaviour
 
   		 speakerList = scene.GetElementsByTagName("speaker");
 
- 		 nameBox.text = speakerList[0].Attributes["character"].Value;
- 		 dialogueBox.text = speakerList[0].ChildNodes[0].InnerText;
+ 		 nameText.text = speakerList[0].Attributes["character"].Value;
+ 		 dialogueText.text = speakerList[0].ChildNodes[0].InnerText;
 	}
 
 	void Update()
 	{
-		if (Input.GetKeyDown("space") && dialogueBox.gameObject != null  && nameBox.gameObject != null)
+		if (Input.GetKeyDown("space") && this.gameObject != null)
 		{
 			if (spTracker == speakerList.Count)
 			{
-				Destroy(dialogueBox.gameObject);
-				Destroy(nameBox.gameObject);
+				Destroy(this.gameObject);
 			}
 
 			else
 			{
-				nameBox.text = speakerList[spTracker].Attributes["character"].Value;
-				dialogueBox.text = speakerList[spTracker].ChildNodes[diaTracker].InnerText;
+				nameText.text = speakerList[spTracker].Attributes["character"].Value;
+				dialogueText.text = speakerList[spTracker].ChildNodes[diaTracker].InnerText;
 
 				if (diaTracker == speakerList[spTracker].ChildNodes.Count - 1)
 				{

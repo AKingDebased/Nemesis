@@ -16,6 +16,8 @@ public class Dialogue : MonoBehaviour
 
 	private int spTracker = 1;
 	private int diaTracker = 0;
+
+	private bool speakerA = true;
  
 	void Start()
 	{

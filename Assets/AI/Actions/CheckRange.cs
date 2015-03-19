@@ -22,9 +22,10 @@ public class CheckRange : RAINAction
 
 	private bool InRange(RAIN.Core.AI ai){
 		GameObject target = ai.WorkingMemory.GetItem<GameObject>("target");
+		float range = ai.Body.GetComponent<Stats>().range;
 
 		return target != null && 
-			Vector3.Distance(target.transform.position, ai.Body.transform.position) <= 8; //MAGIC NUMBER OH NO
+			Vector3.Distance(target.transform.position, ai.Body.transform.position) <= range; //MAGIC NUMBER OH NO
 	}
 
     public override void Stop(RAIN.Core.AI ai)

@@ -14,5 +14,10 @@ public class Stats : MonoBehaviour {
 	public int speed = 0;
 	public int defense = 0;
 	public int resilience = 0;
+	public int range = 0;
+
+	public void TakeDamage(int damage){
+		this.health -= damage;
+	}
 	
 }

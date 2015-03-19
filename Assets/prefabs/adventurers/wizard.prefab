@@ -128,15 +128,14 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 128072}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 39aa094537a6f4fa79f2ebba993a2ae3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fireSound: {fileID: 8300000, guid: ba4682d39543941c1a1b2e1d2be60dd0, type: 3}
   projectileObj: {fileID: 149340, guid: 16ae03b7025784bc683186ae422617a1, type: 2}
-  target: {fileID: 0}
-  speed: 2000
+  speed: 100
 --- !u!114 &11428070
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -214,8 +213,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d8c9fa5779e140889909b443fb60640, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  engaged: 0
-  currentTarget: {fileID: 0}
+  attackSound: {fileID: 0}
 --- !u!114 &11443666
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -236,6 +234,7 @@ MonoBehaviour:
   speed: 40
   defense: 20
   resilience: 70
+  range: 25
 --- !u!114 &11480482
 MonoBehaviour:
   m_ObjectHideFlags: 1

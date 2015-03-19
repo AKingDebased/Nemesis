@@ -25,8 +25,8 @@ MonoBehaviour:
       name=&quot;target != null &amp;amp;&amp;amp; !inRange&quot; debugbreak=&quot;False&quot;
       constraint=&quot;target != null &amp;amp;&amp;amp; !inRange&quot;&gt;&lt;move
       turnspeed=&quot;&quot; repeatuntil=&quot;&quot; name=&quot;move&quot; movetarget=&quot;target&quot;
-      movespeed=&quot;25&quot; facetarget=&quot;&quot; debugbreak=&quot;False&quot;
-      closeenoughdistance=&quot;5&quot; closeenoughangle=&quot;&quot; /&gt;&lt;expression
+      movespeed=&quot;15&quot; facetarget=&quot;&quot; debugbreak=&quot;False&quot;
+      closeenoughdistance=&quot;8&quot; closeenoughangle=&quot;&quot; /&gt;&lt;expression
       returnvalue=&quot;evaluate&quot; repeatuntil=&quot;&quot; name=&quot;inRange
       = true&quot; expression=&quot;inRange = true&quot; debugbreak=&quot;False&quot;
       /&gt;&lt;/constraint&gt;&lt;constraint repeatuntil=&quot;&quot; priority=&quot;&quot;

@@ -30,6 +30,7 @@ GameObject:
   - 114: {fileID: 11443666}
   - 114: {fileID: 11425088}
   - 114: {fileID: 11429900}
+  - 114: {fileID: 11481740}
   m_Layer: 8
   m_Name: wizard
   m_TagString: hero
@@ -192,7 +193,7 @@ MonoBehaviour:
       id="_mountPoint" gameobject="2" /><field value="0,0,0" type="UnityEngine.Vector3"
       id="_positionOffset" /><field value="0,0,0" type="UnityEngine.Vector3" id="_angleOffset"
       /><field type="System.Collections.Generic.List" id="_filters" elementtype="RAIN.Perception.Sensors.Filters.RAINSensorFilter"
-      /><field value="13.18415" type="System.Single" id="_range" /><field value="False"
+      /><field value="23.37154" type="System.Single" id="_range" /><field value="False"
       type="System.Boolean" id="_canDetectSelf" /><field value="360" type="System.Single"
       id="_horizontalAngle" /><field value="360" type="System.Single" id="_verticalAngle"
       /><field value="False" type="System.Boolean" id="_lineOfSight" /><field value="-5"
@@ -269,6 +270,21 @@ MonoBehaviour:
     - {fileID: 128072}
     - {fileID: 428072}
     _serializedCustomData: []
+--- !u!114 &11481740
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 128072}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afe1a6e9bc8a84f9a9dfa1aeff70c88d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collisionSound: {fileID: 0}
+  target: {fileID: 0}
+  collisionEffect: {fileID: 0}
+  speed: 18
 --- !u!136 &13628070
 CapsuleCollider:
   m_ObjectHideFlags: 1

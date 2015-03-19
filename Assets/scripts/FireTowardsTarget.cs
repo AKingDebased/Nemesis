@@ -12,6 +12,11 @@ public class FireTowardsTarget : MonoBehaviour {
 	}
 
 	void Update(){
+		if(target == null){
+			Impact ();
+			enabled = false;
+		}
+
 		float step = Time.deltaTime * speed;
 		
 		transform.position = Vector3.MoveTowards(transform.position, target.transform.position, step);
@@ -19,9 +24,13 @@ public class FireTowardsTarget : MonoBehaviour {
 	
 	void OnTriggerEnter(Collider other) {
 		if(other.gameObject.GetInstanceID() == target.GetInstanceID()){
-			AudioSource.PlayClipAtPoint(collisionSound,transform.position);
-			Instantiate (collisionEffect, transform.position, Quaternion.identity);
-			Destroy(gameObject);
+			Impact ();
 		}
+	}
+
+	private void Impact(){
+		AudioSource.PlayClipAtPoint(collisionSound,transform.position);
+		Instantiate (collisionEffect, transform.position, Quaternion.identity);
+		Destroy(gameObject);
 	}
 }

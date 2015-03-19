@@ -43,7 +43,7 @@ public class WarriorFight : MonoBehaviour {
 	}
 	
 	private void DoDamage (GameObject target){
-		if (this.stats.strength > target.GetComponent<Stats>().defense)
+		if (this.stats.strength > target.GetComponent<Stats>().defense) //we should do more than just one damage if strength is lower than defense
 		{
 			int damage = (this.stats.strength - target.GetComponent<Stats>().defense);
 			

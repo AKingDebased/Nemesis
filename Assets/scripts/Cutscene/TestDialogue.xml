@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+
+<scene scID="1">
+	<dialogue>
+		<speaker character="Magenta">
+			<text>It's you.</text>
+		</speaker>
+
+		<speaker character="Cyan">
+			<text>How are you gentlemen. All your base are belong to us.</text>
+			<text>You are on the way to destruction.</text>
+		</speaker>
+
+		<speaker character="Magenta">
+			<text>What you say!</text>
+		</speaker>
+
+		<speaker character="Cyan">
+			<text>You have no chance to survive make your time.</text>
+			<text>Ha ha ha.</text>
+		</speaker>
+	</dialogue>
+</scene>

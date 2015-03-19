@@ -377,7 +377,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55b2ed2a3e60546488757dfa0f25f24e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  localizedStringsFile: Assets/scripts/Cutscene/TestDialogue.xml
+  dialogueFile: Assets/scripts/Cutscene/TestDialogue.xml
+  dialogueBox: {fileID: 2063155361}
+  nameBox: {fileID: 2032192407}
 --- !u!1 &1456484341
 GameObject:
   m_ObjectHideFlags: 0

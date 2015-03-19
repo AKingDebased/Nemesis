@@ -1,53 +1,57 @@
 ﻿using System;
-using UnityEngine;
-using System.IO;
 using System.Xml;
- 
+
+using UnityEngine;
+using UnityEngine.UI;
  
 public class Dialogue : MonoBehaviour
 {
-	public string localizedStringsFile;
-	string language;
-	string grouping;
-	XmlDocument root;
-	XmlNamespaceManager nsmgr;
+	public string dialogueFile;
+	public Text dialogueBox;
+	public Text nameBox;
+
+	private XmlDocument scene;
+	private XmlNodeList dialogueList;
+	private XmlNodeList speakerList;
+
+	private int spTracker = 1;
+	private int diaTracker = 0;
  
-	void Start ()
+	void Start()
 	{
-	     // Get the file into the document.
-	     root = new XmlDocument();
-	     root.Load(localizedStringsFile);
+	     scene = new XmlDocument();
+	     scene.Load(dialogueFile);
 
-	     nsmgr = new XmlNamespaceManager(root.NameTable);
+  		 speakerList = scene.GetElementsByTagName("speaker");
 
-	     
-	 
-	     language = root.SelectSingleNode ("scene/characterlist/character").InnerText;
-	     grouping = root.SelectSingleNode ("scene/characterlist/character").InnerText;
-	 
+ 		 nameBox.text = speakerList[0].Attributes["character"].Value;
+ 		 dialogueBox.text = speakerList[0].ChildNodes[0].InnerText;
 	}
 
-	 /* 
-	 * <summary>Retrieves the string by its ID. Only works when the referenced file
-	 * is both monolingual and monogrouped. Will throw a NullReference Exception
-	 * when the file doesn't meet the requirements.</summary>
-	 * <param name="id">The ID of the requested string.</param>
-	 * <returns>A string with the required text.</returns>
-	 */
-
-	public string GetText (string id)
+	void Update()
 	{
-	  try {
-	      if (language == "multilingual" || grouping == "multi") {
-	           throw new NullReferenceException ("The referenced file is" + "multilangual and/or multigrouped.");
-	     } else {
-	           string n = root.SelectSingleNode ("localizableStrings" + "/group/string[@id='" + id + "']/text").InnerText;
-	            return n;
-	      }
-	 
-	   } catch (NullReferenceException ex) {
-	      string s = "Missing string (" + ex.ToString () + ")";
-	      return s;
-	  }
+		if (Input.GetKeyDown("space") && dialogueBox.gameObject != null  && nameBox.gameObject != null)
+		{
+			if (spTracker == speakerList.Count)
+			{
+				Destroy(dialogueBox.gameObject);
+				Destroy(nameBox.gameObject);
+			}
+
+			else
+			{
+				nameBox.text = speakerList[spTracker].Attributes["character"].Value;
+				dialogueBox.text = speakerList[spTracker].ChildNodes[diaTracker].InnerText;
+
+				if (diaTracker == speakerList[spTracker].ChildNodes.Count - 1)
+				{
+					spTracker++;
+					diaTracker = 0;
+				}
+
+				else diaTracker++;
+			}
+		}
 	}
+
 }

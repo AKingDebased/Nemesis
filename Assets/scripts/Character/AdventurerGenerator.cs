@@ -51,5 +51,3 @@ public class AdventurerGenerator : MonoBehaviour
 		return prefixes[Random.Range(0, 50)] + suffixes[Random.Range(0, 50)];
 	}
 }
-
-

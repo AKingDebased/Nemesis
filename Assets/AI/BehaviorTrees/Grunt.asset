@@ -35,7 +35,7 @@ MonoBehaviour:
       waitforsec=&quot;3.0&quot; returnvalue=&quot;success&quot; name=&quot;attack
       delay&quot; debugbreak=&quot;False&quot; /&gt;&lt;action repeatuntil=&quot;&quot;
       parametervalues=&quot;&quot; parameters=&quot;&quot; namespace=&quot;&quot;
-      name=&quot;WarAttack&quot; debugbreak=&quot;False&quot; classname=&quot;WarAttack&quot;
+      name=&quot;PhysicalAttack&quot; debugbreak=&quot;False&quot; classname=&quot;PhysicalAttack&quot;
       /&gt;&lt;/constraint&gt;&lt;/selector&gt;&lt;/parallel&gt;&lt;/behaviortree&gt;"
       type="System.String" id="treeData" /><field type="System.Array" id="treeBindings"
       elementtype="System.String" /></fields><references /></scriptableobject>

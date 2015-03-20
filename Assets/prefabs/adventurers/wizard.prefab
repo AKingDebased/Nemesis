@@ -29,8 +29,8 @@ GameObject:
   - 23: {fileID: 2328070}
   - 114: {fileID: 11443666}
   - 114: {fileID: 11425088}
+  - 114: {fileID: 11429900}
   - 114: {fileID: 11481740}
-  - 114: {fileID: 11437270}
   m_Layer: 8
   m_Name: wizard
   m_TagString: hero
@@ -156,16 +156,15 @@ MonoBehaviour:
       id="_ai" /></fields><references><reference type="RAIN.Core.AI" refcount="1"
       id="0"><field value="True" type="System.Boolean" id="_isActive" /><field type="UnityEngine.GameObject"
       id="_body" gameobject="0" /><field type="RAIN.Memory.BasicMemory" reference="1"
-      id="_workingMemory" childrenvisible="True" /><field type="RAIN.Minds.BasicMind"
+      id="_workingMemory" childrenvisible="False" /><field type="RAIN.Minds.BasicMind"
       reference="2" id="_mind" childrenvisible="False" /><field type="RAIN.Motion.BasicMotor"
       reference="3" id="_motor" /><field type="RAIN.Animation.BasicAnimator" reference="4"
       id="_animator" /><field type="RAIN.Navigation.BasicNavigator" reference="5"
       id="_navigator" /><field type="RAIN.Perception.BasicSenses" reference="6" id="_senses"
-      childrenvisible="False" /><field type="System.Collections.Generic.List" id="_customElements"
+      childrenvisible="True" /><field type="System.Collections.Generic.List" id="_customElements"
       elementtype="RAIN.Core.CustomAIElement" /></reference><reference type="RAIN.Memory.BasicMemory"
       refcount="1" id="1"><field type="System.Collections.Generic.List" id="_memoryItems"
-      elementtype="RAIN.Memory.BasicMemory+MemoryItem"><field type="RAIN.Memory.BasicMemory+MemoryItem"
-      reference="8" id="element0" /></field></reference><reference type="RAIN.Minds.BasicMind"
+      elementtype="RAIN.Memory.BasicMemory+MemoryItem" /></reference><reference type="RAIN.Minds.BasicMind"
       refcount="1" id="2"><field type="RAIN.BehaviorTrees.BTAsset" id="_behaviorTreeAsset"
       gameobject="1" /><field type="System.Collections.Generic.List" id="_behaviorTreeBindings"
       elementtype="RAIN.BehaviorTrees.BTAssetBinding" /></reference><reference type="RAIN.Motion.BasicMotor"
@@ -198,16 +197,13 @@ MonoBehaviour:
       type="System.Boolean" id="_canDetectSelf" /><field value="360" type="System.Single"
       id="_horizontalAngle" /><field value="360" type="System.Single" id="_verticalAngle"
       /><field value="False" type="System.Boolean" id="_lineOfSight" /><field value="-5"
-      type="UnityEngine.LayerMask" id="_lineOfSightMask" /></reference><reference
-      type="RAIN.Memory.BasicMemory+MemoryItem" refcount="1" id="8"><field value="inRange"
-      type="System.String" id="Key" /><field value="System.Boolean" type="System.Type"
-      id="ValueType" /><field value="False" type="System.Boolean" id="Value" /></reference></references></component>
+      type="UnityEngine.LayerMask" id="_lineOfSightMask" /></reference></references></component>
     _serializedGameObjects:
     - {fileID: 128072}
     - {fileID: 11400000, guid: 4194fb13c88e34cd8a75df39ae22d45c, type: 2}
     - {fileID: 428072}
     _serializedCustomData: []
---- !u!114 &11437270
+--- !u!114 &11429900
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -215,9 +211,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 128072}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8caa1cd8539724166a581cebe12e6294, type: 3}
+  m_Script: {fileID: 11500000, guid: 8d8c9fa5779e140889909b443fb60640, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackSound: {fileID: 0}
 --- !u!114 &11443666
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -229,7 +226,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a83d08c596d40db43bbd39f3a8ebdf6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 0}
   health: 100
   mana: 100
   gumption: 100

@@ -28,7 +28,7 @@ GameObject:
   - 136: {fileID: 13660454}
   - 23: {fileID: 2397302}
   - 114: {fileID: 11464584}
-  - 114: {fileID: 11465916}
+  - 114: {fileID: 11473636}
   m_Layer: 8
   m_Name: rogue
   m_TagString: hero
@@ -166,29 +166,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a83d08c596d40db43bbd39f3a8ebdf6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 0}
   health: 100
   mana: 100
   gumption: 100
-  strength: 65
+  strength: 40
   willpower: 20
-  dexterity: 75
+  dexterity: 60
   speed: 10
-  defense: 40
+  defense: 20
   resilience: 20
-  range: 12
---- !u!114 &11465916
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 192622}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da99ed304c0a4410a980785ee70f59dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackSound: {fileID: 8300000, guid: cf10eea1c1eb74a85a2cb72c37a7fea5, type: 3}
+  range: 8
 --- !u!114 &11466432
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -239,7 +226,7 @@ MonoBehaviour:
       refcount="1" id="6"><field type="System.Collections.Generic.List" id="_sensors"
       elementtype="RAIN.Perception.Sensors.RAINSensor"><field type="RAIN.Perception.Sensors.VisualSensor"
       reference="8" id="element0" /></field></reference><reference type="RAIN.Memory.BasicMemory+MemoryItem"
-      refcount="1" id="7"><field value="inRange" type="System.String" id="Key" /><field
+      refcount="1" id="7"><field value="engaged" type="System.String" id="Key" /><field
       value="System.Boolean" type="System.Type" id="ValueType" /><field value="False"
       type="System.Boolean" id="Value" /></reference><reference type="RAIN.Perception.Sensors.VisualSensor"
       refcount="1" id="8"><field value="True" type="System.Boolean" id="_showVisual"
@@ -249,7 +236,7 @@ MonoBehaviour:
       id="_mountPoint" gameobject="2" /><field value="0,0,0" type="UnityEngine.Vector3"
       id="_positionOffset" /><field value="0,0,0" type="UnityEngine.Vector3" id="_angleOffset"
       /><field type="System.Collections.Generic.List" id="_filters" elementtype="RAIN.Perception.Sensors.Filters.RAINSensorFilter"
-      /><field value="21.58455" type="System.Single" id="_range" /><field value="False"
+      /><field value="12.43777" type="System.Single" id="_range" /><field value="False"
       type="System.Boolean" id="_canDetectSelf" /><field value="360" type="System.Single"
       id="_horizontalAngle" /><field value="360" type="System.Single" id="_verticalAngle"
       /><field value="False" type="System.Boolean" id="_lineOfSight" /><field value="-5"
@@ -259,6 +246,18 @@ MonoBehaviour:
     - {fileID: 11400000, guid: d25c9972497e448c5ad5001aff8d14df, type: 2}
     - {fileID: 487870}
     _serializedCustomData: []
+--- !u!114 &11473636
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 192622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6802920bd0514c258e818d96fed58f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackSound: {fileID: 8300000, guid: cf10eea1c1eb74a85a2cb72c37a7fea5, type: 3}
 --- !u!136 &13660454
 CapsuleCollider:
   m_ObjectHideFlags: 1

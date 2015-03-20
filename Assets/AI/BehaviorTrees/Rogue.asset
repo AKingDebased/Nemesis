@@ -48,7 +48,7 @@ MonoBehaviour:
       inRange&quot;&gt;&lt;timer waitforsec=&quot;1.0&quot; returnvalue=&quot;success&quot;
       name=&quot;attack delay&quot; debugbreak=&quot;False&quot; /&gt;&lt;action repeatuntil=&quot;&quot;
       parametervalues=&quot;&quot; parameters=&quot;&quot; namespace=&quot;(global)&quot;
-      name=&quot;PhysicalAttack&quot; debugbreak=&quot;False&quot; classname=&quot;PhysicalAttack&quot;
+      name=&quot;RgeAttack&quot; debugbreak=&quot;False&quot; classname=&quot;RgeAttack&quot;
       /&gt;&lt;action repeatuntil=&quot;&quot; parametervalues=&quot;&quot; parameters=&quot;&quot;
       namespace=&quot;&quot; name=&quot;check range&quot; debugbreak=&quot;False&quot;
       classname=&quot;CheckRange&quot; /&gt;&lt;/constraint&gt;&lt;constraint repeatuntil=&quot;&quot;

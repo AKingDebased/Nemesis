@@ -12,7 +12,7 @@ GameObject:
   - 136: {fileID: 13689770}
   - 23: {fileID: 2389770}
   - 114: {fileID: 11447964}
-  - 114: {fileID: 11447120}
+  - 114: {fileID: 11473998}
   m_Layer: 8
   m_Name: grunt
   m_TagString: minion
@@ -59,7 +59,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 189770}
   m_LocalRotation: {x: 0, y: -.704135835, z: 0, w: .710065305}
-  m_LocalPosition: {x: -6.0999999, y: 3, z: 42.5999985}
+  m_LocalPosition: {x: -7, y: 3, z: 40.7000008}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 492788}
@@ -121,18 +121,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 189770}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &11447120
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 189770}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da99ed304c0a4410a980785ee70f59dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attackSound: {fileID: 8300000, guid: f5b9c225ebe034e7dabfbc9c76ef1f2e, type: 3}
 --- !u!114 &11447964
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -144,17 +132,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a83d08c596d40db43bbd39f3a8ebdf6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 0}
   health: 150
   mana: 100
   gumption: 100
-  strength: 60
+  strength: 30
   willpower: 30
   dexterity: 20
   speed: 30
-  defense: 40
+  defense: 30
   resilience: 30
-  range: 8
+  range: 0
+--- !u!114 &11473998
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 189770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6802920bd0514c258e818d96fed58f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackSound: {fileID: 8300000, guid: f5b9c225ebe034e7dabfbc9c76ef1f2e, type: 3}
 --- !u!114 &11492788
 MonoBehaviour:
   m_ObjectHideFlags: 1

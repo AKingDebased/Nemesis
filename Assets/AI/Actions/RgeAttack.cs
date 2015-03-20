@@ -5,7 +5,7 @@ using RAIN.Action;
 using RAIN.Core;
 
 [RAINAction]
-public class WizAttack : RAINAction
+public class RgeAttack : RAINAction
 {
 	public override void Start(RAIN.Core.AI ai)
 	{
@@ -16,7 +16,7 @@ public class WizAttack : RAINAction
 	{
 		GameObject target = ai.WorkingMemory.GetItem<GameObject>("target");
 		
-		ai.Body.GetComponent<WizardFight>().Fight(target);
+		ai.Body.GetComponent<RogueFight>().Fight(target);
 		return ActionResult.SUCCESS;
 	}
 	

@@ -7,21 +7,27 @@ using UnityEngine.UI;
 public class Dialogue : MonoBehaviour
 {
 	public string dialogueFile;
-	public Text dialogueText;
-	public Text nameText;
 
+	private GameObject dialogueObject;
+	private Text dialogueText;
+	private Text nameText;
 	private XmlNodeList dialogueList;
 	private XmlNodeList speakerList;
-
 	private int spTracker = 1;
 	private int diaTracker = 0;
  
 	void Start()
 	{
-	    XmlDocument scene = new XmlDocument();
-	    scene.Load(dialogueFile);
+		XmlDocument scene = new XmlDocument();
+		scene.Load(dialogueFile);
+		speakerList = scene.GetElementsByTagName("speaker");
 
-  		speakerList = scene.GetElementsByTagName("speaker");
+		dialogueObject = (GameObject)Instantiate(Resources.Load("dialogue"));
+		dialogueObject.transform.SetParent(this.gameObject.transform, false);
+
+		Text[] textList = this.gameObject.GetComponentsInChildren<Text>();
+		dialogueText = textList [0];
+		nameText = textList[1];
 
  		nameText.text = speakerList[0].Attributes["character"].Value;
  		dialogueText.text = speakerList[0].ChildNodes[0].InnerText;
@@ -32,7 +38,7 @@ public class Dialogue : MonoBehaviour
 		if (Input.GetKeyDown("space") && this.gameObject != null)
 		{
 			if (spTracker != speakerList.Count) this.NextLine();
-			else Destroy(this.gameObject);
+			else Destroy(dialogueObject);
 		}
 	}
 
@@ -49,5 +55,4 @@ public class Dialogue : MonoBehaviour
 
 		else diaTracker++;
 	}
-
 }

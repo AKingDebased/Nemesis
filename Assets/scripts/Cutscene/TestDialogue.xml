@@ -1,23 +1,34 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<dialogue>
+	<scene>
+			<speaker character="Magenta">
+				<text>It's you.</text>
+			</speaker>
 
-<scene scID="1">
-	<dialogue>
-		<speaker character="Magenta">
-			<text>It's you.</text>
-		</speaker>
+			<speaker character="Cyan">
+				<text>How are you gentlemen. All your base are belong to us.</text>
+				<text>You are on the way to destruction.</text>
+			</speaker>
 
-		<speaker character="Cyan">
-			<text>How are you gentlemen. All your base are belong to us.</text>
-			<text>You are on the way to destruction.</text>
-		</speaker>
+			<speaker character="Magenta">
+				<text>What you say!</text>
+			</speaker>
 
-		<speaker character="Magenta">
-			<text>What you say!</text>
-		</speaker>
+			<speaker character="Cyan">
+				<text>You have no chance to survive make your time.</text>
+				<text>Ha ha ha.</text>
+			</speaker>
+	</scene>
 
-		<speaker character="Cyan">
-			<text>You have no chance to survive make your time.</text>
-			<text>Ha ha ha.</text>
-		</speaker>
-	</dialogue>
-</scene>
+	<scene>
+			<speaker character="Cyan">
+				<text>Captain!!</text>
+			</speaker>
+
+			<speaker character="Magenta">
+				<text>Take off every "zig"!!</text>
+				<text>You know what you doing. Move "zig."</text>
+				<text>For great justice.</text>
+			</speaker>
+	</scene>
+</dialogue>

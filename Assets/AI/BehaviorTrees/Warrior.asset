@@ -18,8 +18,8 @@ MonoBehaviour:
       repeatuntil=&quot;&quot; name=&quot;move and detect&quot; fail=&quot;any&quot;
       debugbreak=&quot;False&quot;&gt;&lt;detect sensor=&quot;&amp;quot;minionSensor&amp;quot;&quot;
       repeatuntil=&quot;running&quot; name=&quot;detect minion&quot; matchtype=&quot;best&quot;
-      entityobjectvariable=&quot;target&quot; debugbreak=&quot;False&quot; consistent=&quot;True&quot;
-      aspectvariable=&quot;&quot; aspectobjectvariable=&quot;&quot; aspect=&quot;&amp;quot;minionAspect&amp;quot;&quot;
+      entityobjectvariable=&quot;&quot; debugbreak=&quot;False&quot; consistent=&quot;True&quot;
+      aspectvariable=&quot;&quot; aspectobjectvariable=&quot;target&quot; aspect=&quot;&amp;quot;minionAspect&amp;quot;&quot;
       /&gt;&lt;selector usepriorities=&quot;False&quot; repeatuntil=&quot;&quot; name=&quot;move
       or fight&quot; debugbreak=&quot;False&quot;&gt;&lt;sequencer usepriorities=&quot;False&quot;
       repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;move through dungeon&quot;

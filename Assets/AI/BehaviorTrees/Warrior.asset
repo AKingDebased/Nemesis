@@ -29,27 +29,38 @@ MonoBehaviour:
       waypointsetvariable=&quot;&amp;quot;dungeon crawl&amp;quot;&quot; waypointactiontype=&quot;path&quot;
       traversetype=&quot;pingpong&quot; traverseorder=&quot;forward&quot; repeatuntil=&quot;&quot;
       pathtargetvariable=&quot;&amp;quot;end room&amp;quot;&quot; name=&quot;waypointpath&quot;
-      movetargetvariable=&quot;nextWaypoint&quot; debugbreak=&quot;False&quot;&gt;&lt;move
-      turnspeed=&quot;&quot; repeatuntil=&quot;&quot; name=&quot;move&quot; movetarget=&quot;nextWaypoint&quot;
-      movespeed=&quot;15&quot; facetarget=&quot;&quot; debugbreak=&quot;False&quot;
-      closeenoughdistance=&quot;&quot; closeenoughangle=&quot;&quot; /&gt;&lt;/waypointpath&gt;&lt;/constraint&gt;&lt;/sequencer&gt;&lt;selector
+      movetargetvariable=&quot;nextWaypoint&quot; debugbreak=&quot;False&quot;&gt;&lt;parallel
+      tiebreaker=&quot;fail&quot; succeed=&quot;any&quot; repeatuntil=&quot;&quot;
+      name=&quot;run&quot; fail=&quot;any&quot; debugbreak=&quot;False&quot;&gt;&lt;animate
+      repeatuntil=&quot;&quot; name=&quot;run&quot; debugbreak=&quot;False&quot; animationstate=&quot;run&quot;
+      /&gt;&lt;move turnspeed=&quot;&quot; repeatuntil=&quot;&quot; name=&quot;move&quot;
+      movetarget=&quot;nextWaypoint&quot; movespeed=&quot;15&quot; facetarget=&quot;&quot;
+      debugbreak=&quot;False&quot; closeenoughdistance=&quot;&quot; closeenoughangle=&quot;&quot;
+      /&gt;&lt;/parallel&gt;&lt;/waypointpath&gt;&lt;/constraint&gt;&lt;/sequencer&gt;&lt;selector
       usepriorities=&quot;False&quot; repeatuntil=&quot;&quot; priority=&quot;&quot;
       name=&quot;fight&quot; debugbreak=&quot;False&quot;&gt;&lt;constraint repeatuntil=&quot;&quot;
       priority=&quot;&quot; name=&quot;target != null &amp;amp;&amp;amp; !inRange&quot;
       debugbreak=&quot;False&quot; constraint=&quot;target != null &amp;amp;&amp;amp;
-      !inRange&quot;&gt;&lt;move turnspeed=&quot;&quot; repeatuntil=&quot;&quot; name=&quot;move&quot;
-      movetarget=&quot;target&quot; movespeed=&quot;25&quot; facetarget=&quot;&quot;
-      debugbreak=&quot;False&quot; closeenoughdistance=&quot;20&quot; closeenoughangle=&quot;&quot;
-      /&gt;&lt;action repeatuntil=&quot;&quot; parametervalues=&quot;&quot; parameters=&quot;&quot;
-      namespace=&quot;(global)&quot; name=&quot;check range&quot; debugbreak=&quot;False&quot;
-      classname=&quot;CheckRange&quot; /&gt;&lt;/constraint&gt;&lt;constraint repeatuntil=&quot;&quot;
-      priority=&quot;&quot; name=&quot;target != null &amp;amp;&amp;amp; inRange&quot;
-      debugbreak=&quot;False&quot; constraint=&quot;target != null &amp;amp;&amp;amp;
+      !inRange&quot;&gt;&lt;parallel tiebreaker=&quot;fail&quot; succeed=&quot;any&quot;
+      repeatuntil=&quot;&quot; name=&quot;run&quot; fail=&quot;any&quot; debugbreak=&quot;False&quot;&gt;&lt;move
+      turnspeed=&quot;&quot; repeatuntil=&quot;&quot; name=&quot;move&quot; movetarget=&quot;target&quot;
+      movespeed=&quot;25&quot; facetarget=&quot;&quot; debugbreak=&quot;False&quot;
+      closeenoughdistance=&quot;20&quot; closeenoughangle=&quot;&quot; /&gt;&lt;animate
+      repeatuntil=&quot;&quot; name=&quot;run&quot; debugbreak=&quot;False&quot; animationstate=&quot;run&quot;
+      /&gt;&lt;/parallel&gt;&lt;action repeatuntil=&quot;&quot; parametervalues=&quot;&quot;
+      parameters=&quot;&quot; namespace=&quot;(global)&quot; name=&quot;check range&quot;
+      debugbreak=&quot;False&quot; classname=&quot;CheckRange&quot; /&gt;&lt;/constraint&gt;&lt;constraint
+      repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;target != null &amp;amp;&amp;amp;
+      inRange&quot; debugbreak=&quot;False&quot; constraint=&quot;target != null &amp;amp;&amp;amp;
       inRange&quot;&gt;&lt;timer waitforsec=&quot;2.0&quot; returnvalue=&quot;success&quot;
-      name=&quot;attack delay&quot; debugbreak=&quot;False&quot; /&gt;&lt;action repeatuntil=&quot;&quot;
-      parametervalues=&quot;&quot; parameters=&quot;&quot; namespace=&quot;&quot;
-      name=&quot;PhysicalAttack&quot; debugbreak=&quot;False&quot; classname=&quot;PhysicalAttack&quot;
-      /&gt;&lt;action repeatuntil=&quot;&quot; parametervalues=&quot;&quot; parameters=&quot;&quot;
+      name=&quot;attack delay&quot; debugbreak=&quot;False&quot; /&gt;&lt;parallel
+      tiebreaker=&quot;fail&quot; succeed=&quot;any&quot; repeatuntil=&quot;&quot;
+      name=&quot;parallel&quot; fail=&quot;any&quot; debugbreak=&quot;False&quot;&gt;&lt;animate
+      repeatuntil=&quot;&quot; name=&quot;attack&quot; debugbreak=&quot;False&quot;
+      animationstate=&quot;attack&quot; /&gt;&lt;action repeatuntil=&quot;&quot; parametervalues=&quot;&quot;
+      parameters=&quot;&quot; namespace=&quot;&quot; name=&quot;PhysicalAttack&quot;
+      debugbreak=&quot;False&quot; classname=&quot;PhysicalAttack&quot; /&gt;&lt;/parallel&gt;&lt;action
+      repeatuntil=&quot;&quot; parametervalues=&quot;&quot; parameters=&quot;&quot;
       namespace=&quot;&quot; name=&quot;check range&quot; debugbreak=&quot;False&quot;
       classname=&quot;CheckRange&quot; /&gt;&lt;/constraint&gt;&lt;constraint repeatuntil=&quot;&quot;
       priority=&quot;&quot; name=&quot;target == null &amp;amp;&amp;amp; inRange&quot;

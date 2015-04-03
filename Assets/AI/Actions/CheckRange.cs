@@ -13,8 +13,7 @@ public class CheckRange : RAINAction
     }
 
     public override ActionResult Execute(RAIN.Core.AI ai)
-    {	
-
+    {
 		ai.WorkingMemory.SetItem<bool>("inRange", InRange(ai));
 
 		return ActionResult.SUCCESS;
@@ -25,7 +24,7 @@ public class CheckRange : RAINAction
 		float range = ai.Body.GetComponent<Stats>().range;
 
 		return target != null && 
-			Vector3.Distance(target.transform.position, ai.Body.transform.position) <= range; //MAGIC NUMBER OH NO
+			Vector3.Distance(target.transform.position, ai.Body.transform.position) <= range; 
 	}
 
     public override void Stop(RAIN.Core.AI ai)

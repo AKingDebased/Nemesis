@@ -18,22 +18,22 @@ MonoBehaviour:
       repeatuntil=&quot;&quot; name=&quot;move and detect&quot; fail=&quot;any&quot;
       debugbreak=&quot;False&quot;&gt;&lt;detect sensor=&quot;&amp;quot;advSensor&amp;quot;&quot;
       repeatuntil=&quot;running&quot; name=&quot;detect hero&quot; matchtype=&quot;best&quot;
-      entityobjectvariable=&quot;target&quot; debugbreak=&quot;False&quot; consistent=&quot;True&quot;
-      aspectvariable=&quot;&quot; aspectobjectvariable=&quot;&quot; aspect=&quot;&amp;quot;advAspect&amp;quot;&quot;
+      entityobjectvariable=&quot;&quot; debugbreak=&quot;False&quot; consistent=&quot;True&quot;
+      aspectvariable=&quot;&quot; aspectobjectvariable=&quot;target&quot; aspect=&quot;&amp;quot;advAspect&amp;quot;&quot;
       /&gt;&lt;selector usepriorities=&quot;False&quot; repeatuntil=&quot;&quot; name=&quot;fight&quot;
       debugbreak=&quot;False&quot;&gt;&lt;constraint repeatuntil=&quot;&quot; priority=&quot;&quot;
       name=&quot;target != null &amp;amp;&amp;amp; !inRange&quot; debugbreak=&quot;False&quot;
       constraint=&quot;target != null &amp;amp;&amp;amp; !inRange&quot;&gt;&lt;move
       turnspeed=&quot;&quot; repeatuntil=&quot;&quot; name=&quot;move&quot; movetarget=&quot;target&quot;
       movespeed=&quot;15&quot; facetarget=&quot;&quot; debugbreak=&quot;False&quot;
-      closeenoughdistance=&quot;10&quot; closeenoughangle=&quot;&quot; /&gt;&lt;expression
-      returnvalue=&quot;evaluate&quot; repeatuntil=&quot;&quot; name=&quot;inRange
-      = true&quot; expression=&quot;inRange = true&quot; debugbreak=&quot;False&quot;
-      /&gt;&lt;/constraint&gt;&lt;constraint repeatuntil=&quot;&quot; priority=&quot;&quot;
-      name=&quot;target != null &amp;amp;&amp;amp; inRange&quot; debugbreak=&quot;False&quot;
-      constraint=&quot;target != null &amp;amp;&amp;amp; inRange&quot;&gt;&lt;timer
-      waitforsec=&quot;3.0&quot; returnvalue=&quot;success&quot; name=&quot;attack
-      delay&quot; debugbreak=&quot;False&quot; /&gt;&lt;action repeatuntil=&quot;&quot;
+      closeenoughdistance=&quot;10&quot; closeenoughangle=&quot;&quot; /&gt;&lt;action
+      repeatuntil=&quot;&quot; parametervalues=&quot;&quot; parameters=&quot;&quot;
+      namespace=&quot;&quot; name=&quot;check range&quot; debugbreak=&quot;False&quot;
+      classname=&quot;CheckRange&quot; /&gt;&lt;/constraint&gt;&lt;constraint repeatuntil=&quot;&quot;
+      priority=&quot;&quot; name=&quot;target != null &amp;amp;&amp;amp; inRange&quot;
+      debugbreak=&quot;False&quot; constraint=&quot;target != null &amp;amp;&amp;amp;
+      inRange&quot;&gt;&lt;timer waitforsec=&quot;3.0&quot; returnvalue=&quot;success&quot;
+      name=&quot;attack delay&quot; debugbreak=&quot;False&quot; /&gt;&lt;action repeatuntil=&quot;&quot;
       parametervalues=&quot;&quot; parameters=&quot;&quot; namespace=&quot;&quot;
       name=&quot;PhysicalAttack&quot; debugbreak=&quot;False&quot; classname=&quot;PhysicalAttack&quot;
       /&gt;&lt;/constraint&gt;&lt;/selector&gt;&lt;/parallel&gt;&lt;/behaviortree&gt;"

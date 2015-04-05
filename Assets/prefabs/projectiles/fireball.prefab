@@ -8,7 +8,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 472972}
-  - 114: {fileID: 11448016}
   - 135: {fileID: 13536980}
   - 54: {fileID: 5435372}
   - 114: {fileID: 11490566}
@@ -168,20 +167,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &11448016
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 149340}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f8052e8aeeb840b9a90134f96c50726, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  collisionSound: {fileID: 8300000, guid: a8d4222ea52784697b1b6cbbb1ea9578, type: 3}
-  target: {fileID: 0}
-  speed: 15
 --- !u!114 &11490566
 MonoBehaviour:
   m_ObjectHideFlags: 1

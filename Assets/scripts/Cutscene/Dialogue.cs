@@ -15,6 +15,7 @@ public class Dialogue : MonoBehaviour
 	private XmlNodeList speakerList;
 	private int spTracker = 1;
 	private int diaTracker = 0;
+	private bool decision = false;
  
 	void Start()
 	{
@@ -26,7 +27,8 @@ public class Dialogue : MonoBehaviour
 	{
 		if (Input.GetKeyDown("space") && dialogueObject != null)
 		{
-			if (spTracker != speakerList.Count) this.NextLine();
+			if (spTracker != speakerList.Count && !decision) this.NextLine();
+			else if (decision){}
 			else Destroy(dialogueObject);
 		}
 	}
@@ -45,17 +47,36 @@ public class Dialogue : MonoBehaviour
 		dialogueObject.transform.SetParent(this.gameObject.transform, false);
 		
 		Text[] textList = this.gameObject.GetComponentsInChildren<Text>();
-		dialogueText = textList [0];
+		dialogueText = textList[0];
 		nameText = textList[1];
 		
 		nameText.text = speakerList[0].Attributes["character"].Value;
 		dialogueText.text = speakerList[0].ChildNodes[0].InnerText;
 	}
 
+
+
 	void NextLine()
 	{
-		nameText.text = speakerList[spTracker].Attributes["character"].Value;
-		dialogueText.text = speakerList[spTracker].ChildNodes[diaTracker].InnerText;
+		if (speakerList [spTracker].Name == "decision")
+		{
+			GameObject decisionObject = (GameObject)Instantiate(Resources.Load("decision"));
+			decisionObject.transform.SetParent(this.gameObject.transform, false);
+			decision = true;
+
+			Text[] choiceList = decisionObject.GetComponentsInChildren<Text>();
+
+			for (int i = 0; i < choiceList.Length; i++)
+			{
+				choiceList[i].text = speakerList[spTracker].ChildNodes[i].InnerText;
+			}
+		}
+
+		else
+		{
+			nameText.text = speakerList[spTracker].Attributes["character"].Value;
+			dialogueText.text = speakerList[spTracker].ChildNodes[diaTracker].InnerText;
+		}
 
 		if (diaTracker == speakerList[spTracker].ChildNodes.Count - 1)
 		{

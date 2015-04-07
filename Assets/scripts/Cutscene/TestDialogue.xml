@@ -31,4 +31,16 @@
 				<text>For great justice.</text>
 			</speaker>
 	</scene>
+	
+	<scene>
+			<speaker character="Cyan">
+				<text>What do you do?</text>
+			</speaker>
+			
+			<decision>
+				<prompt>What do you do?</prompt>
+				<choice>No</choice>
+				<choice>Fuck no</choice>
+			</decision>
+	</scene>
 </dialogue>

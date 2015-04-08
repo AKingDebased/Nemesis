@@ -64,14 +64,22 @@ public class Dialogue : MonoBehaviour
 		
 		for (int i = 0; i < choiceList.Length; i++)
 		{
+			int local_i = i;
+
+			/* APPARENTLY i IN A C# FOR LOOP ISN'T ACTUALLY i's VALUE, JUST A REFERENCE TO IT
+			 * SO I HAVE TO DO THIS INEFFICIENT GARBAGE
+			 * A+
+			 */
+
 			choiceList[i].text = speakerList[spTracker].ChildNodes[i].InnerText;
-			if (i > 0) this.GetComponentsInChildren<Button>()[i-1].onClick.AddListener(() => makeChoice());
+			if (i > 0) decisionObject.GetComponentsInChildren<Button>()[i-1].onClick.AddListener(() => makeChoice(local_i-1));
 		}
 	}
 
-	public void makeChoice()
+	public void makeChoice(int x)
 	{
-		Debug.Log ("DICKS");
+		Debug.Log ("Button #" + x);
+		Destroy(GameObject.Find("decision(Clone)"));
 	}
 
 	void NextLine()

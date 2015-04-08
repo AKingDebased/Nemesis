@@ -10,12 +10,11 @@ public class Dialogue : MonoBehaviour
 	public int sceneID;
 
 	private GameObject dialogueObject;
+	private XmlNodeList speakerList;
 	private Text dialogueText;
 	private Text nameText;
-	private XmlNodeList speakerList;
-	private int spTracker = 1;
-	private int diaTracker = 0;
-	private bool decision = false;
+	private int spTracker;
+	private int diaTracker;
  
 	void Start()
 	{
@@ -27,8 +26,8 @@ public class Dialogue : MonoBehaviour
 	{
 		if (Input.GetKeyDown("space") && dialogueObject != null)
 		{
-			if (spTracker != speakerList.Count && !decision) this.NextLine();
-			else if (decision){}
+			if (spTracker != speakerList.Count && !GameObject.Find("decision(Clone)")) this.NextLine();
+			else if (GameObject.Find("decision(Clone)")){}
 			else Destroy(dialogueObject);
 		}
 	}
@@ -45,20 +44,13 @@ public class Dialogue : MonoBehaviour
 	{
 		dialogueObject = (GameObject)Instantiate(Resources.Load("dialogue"));
 		dialogueObject.transform.SetParent(this.gameObject.transform, false);
-		
-		Text[] textList = this.gameObject.GetComponentsInChildren<Text>();
-		dialogueText = textList[0];
-		nameText = textList[1];
-		
-		nameText.text = speakerList[0].Attributes["character"].Value;
-		dialogueText.text = speakerList[0].ChildNodes[0].InnerText;
+		this.FillElements();
 	}
 
 	void CreateDecisionElements()
 	{
 		GameObject decisionObject = (GameObject)Instantiate (Resources.Load ("decision"));
 		decisionObject.transform.SetParent(this.gameObject.transform, false);
-		decision = true;
 		
 		Text[] choiceList = decisionObject.GetComponentsInChildren<Text> ();
 		
@@ -66,9 +58,10 @@ public class Dialogue : MonoBehaviour
 		{
 			int local_i = i;
 
-			/* APPARENTLY i IN A C# FOR LOOP ISN'T ACTUALLY i's VALUE, JUST A REFERENCE TO IT
+			/* 
+			 * APPARENTLY i IN A C# FOR LOOP ISN'T ACTUALLY i's VALUE, JUST A REFERENCE TO IT
 			 * SO I HAVE TO DO THIS INEFFICIENT GARBAGE
-			 * A+
+			 * A+ FOR EFFORT, C#
 			 */
 
 			choiceList[i].text = speakerList[spTracker].ChildNodes[i].InnerText;
@@ -76,10 +69,23 @@ public class Dialogue : MonoBehaviour
 		}
 	}
 
+	void FillElements()
+	{
+		Text[] textList = this.gameObject.GetComponentsInChildren<Text>();
+		dialogueText = textList[0];
+		nameText = textList[1];
+		spTracker = 1;
+		diaTracker = 0;
+		nameText.text = speakerList[0].Attributes["character"].Value;
+		dialogueText.text = speakerList[0].ChildNodes[0].InnerText;
+	}
+
 	public void makeChoice(int x)
 	{
 		Debug.Log ("Button #" + x);
 		Destroy(GameObject.Find("decision(Clone)"));
+		this.LoadXML (dialogueFile, x);
+		this.FillElements();
 	}
 
 	void NextLine()

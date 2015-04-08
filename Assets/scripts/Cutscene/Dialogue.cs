@@ -54,22 +54,31 @@ public class Dialogue : MonoBehaviour
 		dialogueText.text = speakerList[0].ChildNodes[0].InnerText;
 	}
 
+	void CreateDecisionElements()
+	{
+		GameObject decisionObject = (GameObject)Instantiate (Resources.Load ("decision"));
+		decisionObject.transform.SetParent(this.gameObject.transform, false);
+		decision = true;
+		
+		Text[] choiceList = decisionObject.GetComponentsInChildren<Text> ();
+		
+		for (int i = 0; i < choiceList.Length; i++)
+		{
+			choiceList[i].text = speakerList[spTracker].ChildNodes[i].InnerText;
+			if (i > 0) this.GetComponentsInChildren<Button>()[i-1].onClick.AddListener(() => makeChoice());
+		}
+	}
 
+	public void makeChoice()
+	{
+		Debug.Log ("DICKS");
+	}
 
 	void NextLine()
 	{
 		if (speakerList [spTracker].Name == "decision")
 		{
-			GameObject decisionObject = (GameObject)Instantiate(Resources.Load("decision"));
-			decisionObject.transform.SetParent(this.gameObject.transform, false);
-			decision = true;
-
-			Text[] choiceList = decisionObject.GetComponentsInChildren<Text>();
-
-			for (int i = 0; i < choiceList.Length; i++)
-			{
-				choiceList[i].text = speakerList[spTracker].ChildNodes[i].InnerText;
-			}
+			this.CreateDecisionElements();
 		}
 
 		else
@@ -86,4 +95,6 @@ public class Dialogue : MonoBehaviour
 
 		else diaTracker++;
 	}
+
+
 }

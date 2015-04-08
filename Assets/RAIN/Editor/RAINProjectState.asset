@@ -13,6 +13,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _version: 1
   _updateMetaformRequired: 0
+<<<<<<< Updated upstream
   _lastLoadSaveDirectory: C:/Users/Gabriel/Desktop
   _lastUpdateCheck: 4/7/2015 5:48:51 PM
+<<<<<<< HEAD
   _lastMetricsUpdate: 4/8/2015 4:50:21 PM
+=======
+  _lastMetricsUpdate: 4/7/2015 5:48:50 PM
+=======
+  _lastLoadSaveDirectory: 
+  _lastUpdateCheck: 04/07/2015 17:41:51
+  _lastMetricsUpdate: 04/07/2015 17:41:50
+>>>>>>> Stashed changes
+>>>>>>> origin/development

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <dialogue>
+
 	<scene>
 			<speaker character="Magenta">
 				<text>It's you.</text>
@@ -31,6 +32,7 @@
 				<text>For great justice.</text>
 			</speaker>
 	</scene>
+<<<<<<< Updated upstream
 	
 	<scene>
 			<speaker character="Cyan">
@@ -55,4 +57,7 @@
 				</speaker>
 			</result>
 	</scene>
+=======
+
+>>>>>>> Stashed changes
 </dialogue>

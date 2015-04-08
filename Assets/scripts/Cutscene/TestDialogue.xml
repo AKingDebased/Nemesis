@@ -42,5 +42,18 @@
 				<choice>No</choice>
 				<choice>Fuck no</choice>
 			</decision>
+			
+			<result>
+				<speaker character="Cyan">
+					<text>This is option 0.</text>
+				</speaker>
+			</speaker>
+			</result>
+			
+			<result>
+				<speaker character="Magenta">
+					<text>This is option 1.</text>
+				</speaker>
+			</result>
 	</scene>
 </dialogue>

@@ -525,6 +525,7 @@ GameObject:
   - 95: {fileID: 9575274}
   - 114: {fileID: 11447120}
   - 114: {fileID: 11447964}
+  - 114: {fileID: 11487752}
   m_Layer: 0
   m_Name: grunt
   m_TagString: minion
@@ -775,7 +776,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 134400}
   m_LocalRotation: {x: -.5, y: .5, z: .5, w: .5}
-  m_LocalPosition: {x: -.00455273129, y: .492080897, z: .00723576639}
+  m_LocalPosition: {x: .317999989, y: .492000014, z: -.0599999987}
   m_LocalScale: {x: .99999994, y: .99999994, z: 1}
   m_Children:
   - {fileID: 410060}
@@ -1007,7 +1008,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 130986}
   m_LocalRotation: {x: -.707106829, y: 0, z: -0, w: .707106829}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: .305000007, y: .31099999, z: .0149999997}
   m_LocalScale: {x: 1.34829998, y: 1.34829974, z: 1.34829974}
   m_Children: []
   m_Father: {fileID: 489770}
@@ -1056,8 +1057,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 189770}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -102.940002, y: .0299999993, z: -5.48000002}
+  m_LocalRotation: {x: 0, y: -.707106829, z: 0, w: .707106709}
+  m_LocalPosition: {x: -3.81264687, y: .5, z: 30.3038349}
   m_LocalScale: {x: 8, y: 8, z: 8}
   m_Children:
   - {fileID: 424598}
@@ -1273,13 +1274,24 @@ MonoBehaviour:
   health: 100
   mana: 100
   gumption: 100
-  strength: 30
+  strength: 35
   willpower: 10
-  dexterity: 30
-  speed: 35
-  defense: 40
+  dexterity: 15
+  speed: 15
+  defense: 10
   resilience: 10
   range: 10
+--- !u!114 &11487752
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 189770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2f712e29fbeb45818c7dc7b95cf297d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11492788
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1335,7 +1347,7 @@ MonoBehaviour:
       refcount="1" id="6"><field type="System.Collections.Generic.List" id="_sensors"
       elementtype="RAIN.Perception.Sensors.RAINSensor"><field type="RAIN.Perception.Sensors.VisualSensor"
       reference="13" id="element0" /></field></reference><reference type="RAIN.Memory.BasicMemory+MemoryItem"
-      refcount="1" id="7"><field value="isEngaged" type="System.String" id="Key" /><field
+      refcount="1" id="7"><field value="inRange" type="System.String" id="Key" /><field
       value="System.Boolean" type="System.Type" id="ValueType" /><field value="False"
       type="System.Boolean" id="Value" /></reference><reference type="RAIN.Animation.MecanimAnimator+IKTarget"
       refcount="1" id="8"><field value="False" type="System.Boolean" id="isActive"
@@ -1369,14 +1381,14 @@ MonoBehaviour:
       type="System.Boolean" id="_showVisual" /><field value="advSensor" type="System.String"
       id="_sensorName" /><field value="True" type="System.Boolean" id="_isActive"
       /><field value="0.6,0,0.6,1" type="UnityEngine.Color" id="_sensorColor" /><field
-      type="UnityEngine.Transform" id="_mountPoint" gameobject="1" /><field value="0,0,0"
+      type="UnityEngine.Transform" id="_mountPoint" gameobject="1" /><field value="0.3344729,0.8905392,-0.02915319"
       type="UnityEngine.Vector3" id="_positionOffset" /><field value="0,0,0" type="UnityEngine.Vector3"
       id="_angleOffset" /><field type="System.Collections.Generic.List" id="_filters"
-      elementtype="RAIN.Perception.Sensors.Filters.RAINSensorFilter" /><field value="80.12827"
+      elementtype="RAIN.Perception.Sensors.Filters.RAINSensorFilter" /><field value="38"
       type="System.Single" id="_range" /><field value="False" type="System.Boolean"
       id="_canDetectSelf" /><field value="360" type="System.Single" id="_horizontalAngle"
-      /><field value="360" type="System.Single" id="_verticalAngle" /><field value="False"
-      type="System.Boolean" id="_lineOfSight" /><field value="-5" type="UnityEngine.LayerMask"
+      /><field value="360" type="System.Single" id="_verticalAngle" /><field value="True"
+      type="System.Boolean" id="_lineOfSight" /><field value="-1" type="UnityEngine.LayerMask"
       id="_lineOfSightMask" /></reference></references></component>
     _serializedGameObjects:
     - {fileID: 189770}
@@ -1409,10 +1421,10 @@ MonoBehaviour:
       value="True" type="System.Boolean" id="_isActive" /><field value="0,0.6,0.6,1"
       type="UnityEngine.Color" id="_aspectColor" /><field value="-0.5" type="System.Single"
       id="_outlineColorOffset" /><field value="0.4" type="System.Single" id="_selectionColorOffset"
-      /><field value="0.1" type="System.Single" id="_visualSize" /><field type="UnityEngine.Transform"
-      id="_mountPoint" gameobject="1" /><field value="0,0,0" type="UnityEngine.Vector3"
-      id="_positionOffset" /><field value="0,0,0" type="UnityEngine.Vector3" id="_angleOffset"
-      /></reference></references></component>
+      /><field value="1" type="System.Single" id="_visualSize" /><field type="UnityEngine.Transform"
+      id="_mountPoint" gameobject="1" /><field value="0.2879088,0.6728058,-8.895148E-06"
+      type="UnityEngine.Vector3" id="_positionOffset" /><field value="0,0,0" type="UnityEngine.Vector3"
+      id="_angleOffset" /></reference></references></component>
     _serializedGameObjects:
     - {fileID: 189770}
     - {fileID: 489770}

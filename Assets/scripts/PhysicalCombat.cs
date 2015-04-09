@@ -43,13 +43,13 @@ public class PhysicalCombat : MonoBehaviour {
 	}
 	
 	private void DoDamage (GameObject target){
-		if (this.stats.strength > target.GetComponent<Stats>().defense) //we should do more than just one damage if strength is lower than defense
-		{
+		if (this.stats.strength > target.GetComponent<Stats>().defense){ //do more than 1 damage when strength is less than defense
+
 			int damage = (this.stats.strength - target.GetComponent<Stats>().defense);
 			
 			if (this.IsCrit(target)) {
 				Debug.Log (gameObject.name + " crits!");
-				target.GetComponent<Stats>().TakeDamage(damage * (this.stats.dexterity /10));
+				target.GetComponent<Stats>().TakeDamage(damage * (this.stats.dexterity / 10));
 			} else target.GetComponent<Stats>().TakeDamage(damage); 
 		}
 		

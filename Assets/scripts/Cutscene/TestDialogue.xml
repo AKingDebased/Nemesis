@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <dialogue>
-
 	<scene>
 			<speaker character="Magenta">
 				<text>It's you.</text>
@@ -43,18 +42,5 @@
 				<choice>No</choice>
 				<choice>Fuck no</choice>
 			</decision>
-			
-			<result>
-				<speaker character="Cyan">
-					<text>This is option 0.</text>
-				</speaker>
-			</result>
-			
-			<result>
-				<speaker character="Magenta">
-					<text>This is option 1.</text>
-				</speaker>
-			</result>
 	</scene>
-	
 </dialogue>

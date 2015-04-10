@@ -23,7 +23,6 @@ public class Stats : MonoBehaviour {
 			SetHealthBar(health);
 		} //naive fix to ignore minions
 	}
-
 	public void TakeDamage(int damage){
 		this.health -= damage;
 
@@ -36,5 +35,5 @@ public class Stats : MonoBehaviour {
 		healthBar.maxValue = health;
 		healthBar.value = health;
 	}
-	
+
 }

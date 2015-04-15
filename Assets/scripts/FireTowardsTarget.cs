@@ -7,8 +7,11 @@ public class FireTowardsTarget : MonoBehaviour {
 	public GameObject collisionEffect;
 	public float speed = 18;
 
+	private AudioSource collisionSource;
+
 	void Start(){
 		collisionEffect = Resources.Load("fire explosion") as GameObject;
+		collisionSource = this.GetComponent<AudioSource>();
 	}
 
 	void Update(){
@@ -29,7 +32,7 @@ public class FireTowardsTarget : MonoBehaviour {
 	}
 
 	private void Impact(){
-		AudioSource.PlayClipAtPoint(collisionSound,transform.position);
+		collisionSource.PlayOneShot(collisionSound);
 		Instantiate (collisionEffect, transform.position, Quaternion.identity);
 		Destroy(gameObject);
 	}

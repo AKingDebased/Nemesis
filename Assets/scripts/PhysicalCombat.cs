@@ -4,11 +4,12 @@ using System;
 
 public class PhysicalCombat : MonoBehaviour {
 	public AudioClip attackSound;
-	
+	private AudioSource warriorSource;
 	private Stats stats;
 	
 	void Awake (){
 		stats = gameObject.GetComponent<Stats>();
+		warriorSource = this.GetComponent<AudioSource>();
 	}
 
 	public void Fight(GameObject target){
@@ -31,7 +32,7 @@ public class PhysicalCombat : MonoBehaviour {
 	private void Attack(GameObject target){
 		if (this.AttackHit(target)){
 			Debug.Log (gameObject.name + " hits!");
-			AudioSource.PlayClipAtPoint(attackSound,transform.position);
+			warriorSource.PlayOneShot(attackSound);
 			this.DoDamage(target);
 		} else {
 			Debug.Log (gameObject.name + " misses!");

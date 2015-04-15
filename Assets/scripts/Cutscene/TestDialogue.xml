@@ -40,8 +40,8 @@
 			
 			<decision>
 				<prompt>What do you do?</prompt>
-				<choice>No</choice>
-				<choice>Fuck no</choice>
+				<choice>Option 0</choice>
+				<choice>Option 1</choice>
 			</decision>
 			
 			<result>

@@ -4,8 +4,7 @@ using System.Xml;
 using UnityEngine;
 using UnityEngine.UI;
  
-public class Dialogue : MonoBehaviour
-{
+public class Dialogue : MonoBehaviour {
 	public string dialogueFile;
 	public int sceneID;
 
@@ -16,61 +15,48 @@ public class Dialogue : MonoBehaviour
 	private int spTracker;
 	private int diaTracker;
  
-	void Start()
-	{
+	void Start() {
 		this.LoadXML(dialogueFile, sceneID);
 		this.CreateUIElements();
 	}
 
-	void Update()
-	{
-		if (Input.GetKeyDown("space") && dialogueObject != null)
-		{
-			if (spTracker != speakerList.Count && !GameObject.Find("decision(Clone)")) this.NextLine();
+	void Update() {
+		if (Input.GetKeyDown("space") && dialogueObject != null) {
+			if (spTracker != speakerList.Count && !GameObject.Find("decision(Clone)"))
+				this.NextLine();
 			else if (GameObject.Find("decision(Clone)")){}
 			else Destroy(dialogueObject);
 		}
 	}
 
-	void LoadXML(string file, int sceneID)
-	{
+	void LoadXML(string file, int sceneID) {
 		XmlDocument sceneDoc = new XmlDocument();
 		sceneDoc.Load("Assets/scripts/Cutscene/" + file + ".xml");
 		XmlNode sceneNode = sceneDoc.GetElementsByTagName("scene")[sceneID];
 		speakerList = sceneNode.ChildNodes;
 	}
 
-	void CreateUIElements()
-	{
+	void CreateUIElements() {
 		dialogueObject = (GameObject)Instantiate(Resources.Load("dialogue"));
 		dialogueObject.transform.SetParent(this.gameObject.transform, false);
 		this.FillElements();
 	}
 
-	void CreateDecisionElements()
-	{
+	void CreateDecisionElements() {
 		GameObject decisionObject = (GameObject)Instantiate (Resources.Load ("decision"));
 		decisionObject.transform.SetParent(this.gameObject.transform, false);
 		
 		Text[] choiceList = decisionObject.GetComponentsInChildren<Text> ();
 		
-		for (int i = 0; i < choiceList.Length; i++)
-		{
-			int local_i = i;
-
-			/* 
-			 * APPARENTLY i IN A C# FOR LOOP ISN'T ACTUALLY i's VALUE, JUST A REFERENCE TO IT
-			 * SO I HAVE TO DO THIS INEFFICIENT GARBAGE
-			 * A+ FOR EFFORT, C#
-			 */
-
+		for (int i = 0; i < choiceList.Length; i++) {
+			int local_i = i; //C# for loops are dumb and i is only a reference
 			choiceList[i].text = speakerList[spTracker].ChildNodes[i].InnerText;
-			if (i > 0) decisionObject.GetComponentsInChildren<Button>()[i-1].onClick.AddListener(() => makeChoice(local_i-1));
+			if (i > 0)
+				decisionObject.GetComponentsInChildren<Button>()[i-1].onClick.AddListener(() => makeChoice(local_i-1));
 		}
 	}
 
-	void FillElements()
-	{
+	void FillElements() {
 		Text[] textList = this.gameObject.GetComponentsInChildren<Text>();
 		dialogueText = textList[0];
 		nameText = textList[1];
@@ -80,35 +66,27 @@ public class Dialogue : MonoBehaviour
 		dialogueText.text = speakerList[0].ChildNodes[0].InnerText;
 	}
 
-	public void makeChoice(int x)
-	{
+	public void makeChoice(int x) {
 		Debug.Log ("Button #" + x);
 		Destroy(GameObject.Find("decision(Clone)"));
-		this.LoadXML (dialogueFile, x);
+		speakerList = speakerList[spTracker+x].NextSibling.ChildNodes;
 		this.FillElements();
 	}
 
-	void NextLine()
-	{
+	void NextLine() {
 		if (speakerList [spTracker].Name == "decision")
-		{
 			this.CreateDecisionElements();
-		}
 
-		else
-		{
+		else {
 			nameText.text = speakerList[spTracker].Attributes["character"].Value;
 			dialogueText.text = speakerList[spTracker].ChildNodes[diaTracker].InnerText;
 		}
 
-		if (diaTracker == speakerList[spTracker].ChildNodes.Count - 1)
-		{
+		if (diaTracker == speakerList[spTracker].ChildNodes.Count - 1) {
 			spTracker++;
 			diaTracker = 0;
 		}
 
 		else diaTracker++;
 	}
-
-
 }

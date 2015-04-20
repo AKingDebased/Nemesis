@@ -5,7 +5,7 @@ AnimatorController:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: WizardAnimator
+  m_Name: Grunt
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: attacking
@@ -195,7 +195,7 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_Motion: {fileID: 7400014, guid: 013ee0a8b56bacd44b928eab033163af, type: 3}
+  m_Motion: {fileID: 7400004, guid: 86c591ebd74142c4d93243d9fa9544da, type: 3}
   m_Tag: 
 --- !u!1102 &110263468
 AnimatorState:
@@ -214,7 +214,7 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_Motion: {fileID: 7400004, guid: 013ee0a8b56bacd44b928eab033163af, type: 3}
+  m_Motion: {fileID: 7400002, guid: 86c591ebd74142c4d93243d9fa9544da, type: 3}
   m_Tag: 
 --- !u!1102 &110277300
 AnimatorState:
@@ -223,7 +223,7 @@ AnimatorState:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: attack
-  m_Speed: 5
+  m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
   - {fileID: 110124364}
@@ -233,7 +233,7 @@ AnimatorState:
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
   m_Mirror: 0
-  m_Motion: {fileID: 7400018, guid: 013ee0a8b56bacd44b928eab033163af, type: 3}
+  m_Motion: {fileID: 7400008, guid: 86c591ebd74142c4d93243d9fa9544da, type: 3}
   m_Tag: 
 --- !u!1107 &110714896
 AnimatorStateMachine:

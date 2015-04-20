@@ -515,8 +515,8 @@ GameObject:
   - 82: {fileID: 8216530}
   - 114: {fileID: 11423882}
   - 114: {fileID: 11480050}
-  - 54: {fileID: 5478876}
   - 136: {fileID: 13608282}
+  - 54: {fileID: 5453008}
   m_Layer: 0
   m_Name: warrior
   m_TagString: hero
@@ -2104,7 +2104,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 179192}
   m_Mesh: {fileID: 4300000, guid: 0f18b361ed8c75a4f95f59ba3d5fb45c, type: 3}
---- !u!54 &5478876
+--- !u!54 &5453008
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -2507,6 +2507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c437c8a30be84fdeb3fa21cb2d59875, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  testArray: 0000000000000000
 --- !u!114 &11499500
 MonoBehaviour:
   m_ObjectHideFlags: 1

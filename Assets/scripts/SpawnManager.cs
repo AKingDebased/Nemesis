@@ -1,12 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class SpawnManager : MonoBehaviour {
 	private Ray ray;
 	private RaycastHit hit;
-	
-	public GameObject minion;
-	
+	private GameObject minion;
+
+	public Text uiText;
+
 	void Update () {
 		InstantiateAtRayCast ();
 		SelectSpawnMinion ();
@@ -15,14 +17,17 @@ public class SpawnManager : MonoBehaviour {
 	private void SelectSpawnMinion(){
 		if(Input.GetKeyDown (KeyCode.Alpha1)){
 			minion = Resources.Load ("minions/grunt") as GameObject;
+			UpdateUI();
 		}			
 		
 		if(Input.GetKeyDown (KeyCode.Alpha2)){
 			minion = Resources.Load ("minions/shanker") as GameObject;
+			UpdateUI();
 		}
 		
 		if(Input.GetKeyDown (KeyCode.Alpha3)){
 			minion = Resources.Load("minions/mage") as GameObject;
+			UpdateUI();
 		}
 		
 		if(Input.GetKeyDown (KeyCode.Alpha4)){
@@ -37,5 +42,9 @@ public class SpawnManager : MonoBehaviour {
 				Instantiate (minion, hit.point,Quaternion.identity);
 			}
 		}
+	}
+
+	private void UpdateUI(){
+		uiText.text = minion.name;
 	}
 }

@@ -29,16 +29,11 @@ public class SpawnManager : MonoBehaviour {
 			minion = Resources.Load("minions/mage") as GameObject;
 			UpdateUI();
 		}
-		
-		if(Input.GetKeyDown (KeyCode.Alpha4)){
-			Debug.Log ("4");
-		}
 	}
 
 	private void InstantiateAtRayCast(){
 		if (Input.GetMouseButtonDown(0)){
 			if(Physics.Raycast(Camera.main.ScreenPointToRay(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0)), out hit)){
-				Debug.Log ("hit");
 				Instantiate (minion, hit.point,Quaternion.identity);
 			}
 		}

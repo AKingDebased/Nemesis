@@ -129,9 +129,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 439782}
-  - 114: {fileID: 11465082}
   - 82: {fileID: 8214312}
   - 65: {fileID: 6544800}
+  - 114: {fileID: 11408610}
   m_Layer: 9
   m_Name: Trap
   m_TagString: Untagged
@@ -218,7 +218,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 172624}
   m_LocalRotation: {x: .499999851, y: -.500000119, z: -.500000119, w: -.499999851}
-  m_LocalPosition: {x: 55.0999985, y: 0, z: -6.80000019}
+  m_LocalPosition: {x: 43.8236694, y: .49999997, z: -4.32637405}
   m_LocalScale: {x: 1, y: 1, z: 2}
   m_Children:
   - {fileID: 461614}
@@ -401,7 +401,7 @@ EllipsoidParticleEmitter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169234}
   serializedVersion: 2
-  m_Enabled: 1
+  m_Enabled: 0
   m_Emit: 1
   minSize: 2
   maxSize: 4
@@ -428,7 +428,7 @@ EllipsoidParticleEmitter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 186986}
   serializedVersion: 2
-  m_Enabled: 1
+  m_Enabled: 0
   m_Emit: 1
   minSize: 1
   maxSize: 5
@@ -455,7 +455,7 @@ EllipsoidParticleEmitter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 130600}
   serializedVersion: 2
-  m_Enabled: 1
+  m_Enabled: 0
   m_Emit: 1
   minSize: 4
   maxSize: 4
@@ -882,7 +882,7 @@ Light:
   m_ShadowRadius: 0
   m_ShadowAngle: 0
   m_AreaSize: {x: 1, y: 1}
---- !u!114 &11465082
+--- !u!114 &11408610
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

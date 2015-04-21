@@ -19,16 +19,12 @@ public class Stats : MonoBehaviour {
 	public int range = 0;
 
 	void Start(){
-		if(gameObject.tag != "minion"){
-			SetHealthBar(health);
-		} //naive fix to ignore minions
+		SetHealthBar(health);
 	}
+
 	public void TakeDamage(int damage){
 		this.health -= damage;
-
-		if(gameObject.tag != "minion"){ //naive fix to ignore minions
-			healthBar.value -= damage;
-		}
+		healthBar.value = health;
 	}
 
 	private void SetHealthBar(int health){

@@ -6,19 +6,18 @@ using UnityEngine.UI;
 public class TrapPlacement : MonoBehaviour {
 
 	private GameObject trap;
-	public Camera gameCamera;
-
+	
 	void Update () {
-		if (GameObject.Find("Trap(Clone)")) {
+		if (GameObject.Find("trap(Clone)")) {
 			Vector3 mouse = Input.mousePosition;
 			mouse = new Vector3(mouse.x, mouse.y, transform.position.y);
-			Vector3 point = gameCamera.ScreenToWorldPoint(mouse);
+			Vector3 point = Camera.main.ScreenToWorldPoint(mouse); //defaults to main camera
 			trap.transform.position = new Vector3(point.x, (float) 0.005, point.z);
 		}
 	}
 
 	public void NewTrap() {
-		trap = (GameObject)Instantiate (Resources.Load ("Trap"));
+		trap = (GameObject)Instantiate (Resources.Load ("trap"));
 		trap.GetComponent<BoxCollider>().enabled = !trap.GetComponent<BoxCollider>().enabled;
 		Cursor.visible = false;
 	}

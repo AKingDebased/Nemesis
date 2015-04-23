@@ -11,14 +11,13 @@ public class ResourceManager : MonoBehaviour {
 		goldDisplay.text = gold.ToString();
 	}
 
-	public bool SubtractGold(int gold){
-		if(this.gold - gold >= 0){
-			this.gold -= gold;
-			UpdateUI ();
-			return true;
-		} else {
-			return false;
-		}
+	public void SubtractGold(int gold){
+		this.gold -= gold;
+		UpdateUI ();
+	}
+
+	public bool ValidPurchase(){
+		return this.gold - 20 >= 0; //remove these magic numbers
 	}
 
 	private void UpdateUI(){

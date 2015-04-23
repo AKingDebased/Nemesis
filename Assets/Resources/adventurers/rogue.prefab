@@ -1559,7 +1559,7 @@ MonoBehaviour:
       type="System.Boolean" id="_lineOfSight" /><field value="-1" type="UnityEngine.LayerMask"
       id="_lineOfSightMask" /></reference><reference type="RAIN.Memory.BasicMemory+MemoryItem"
       refcount="1" id="14"><field value="moveSpeed" type="System.String" id="Key"
-      /><field value="System.Single" type="System.Type" id="ValueType" /><field value="10"
+      /><field value="System.Single" type="System.Type" id="ValueType" /><field value="15"
       type="System.Single" id="Value" /></reference><reference type="RAIN.Memory.BasicMemory+MemoryItem"
       refcount="1" id="15"><field value="turnSpeed" type="System.String" id="Key"
       /><field value="System.Single" type="System.Type" id="ValueType" /><field value="100"

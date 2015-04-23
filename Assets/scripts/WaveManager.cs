@@ -1,15 +1,19 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 public class WaveManager : MonoBehaviour {
+	bool waveStarted = false;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+	public GameObject spawnPoint;
+	public List<GameObject> adventurers = new List<GameObject>();
+
+	public void StartWave(){
+		if(!waveStarted){
+			foreach (GameObject adventurer in adventurers){
+				Instantiate(adventurer,spawnPoint.transform.position,Quaternion.identity);
+			}
+		}
+
+		waveStarted = true;
 	}
 }

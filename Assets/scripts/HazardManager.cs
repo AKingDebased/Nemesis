@@ -37,9 +37,10 @@ public class HazardManager : MonoBehaviour {
 
 	private void InstantiateAtRayCast(){
 		if (Input.GetMouseButtonDown(0)){
-			if(resourceManager.GetComponent<ResourceManager>().SubtractGold(20)){
-				if(Physics.Raycast(Camera.main.ScreenPointToRay(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0)), out hit)){
+			if(Physics.Raycast(Camera.main.ScreenPointToRay(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0)), out hit)){
+				if(resourceManager.GetComponent<ResourceManager>().ValidPurchase()){
 					Instantiate (hazard, hit.point,Quaternion.identity);
+					resourceManager.GetComponent<ResourceManager>().SubtractGold(20);
 				}
 			}
 		}

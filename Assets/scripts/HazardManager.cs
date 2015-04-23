@@ -11,6 +11,7 @@ public class HazardManager : MonoBehaviour {
 
 	void Update () {
 		SelectHazard ();
+		InstantiateAtRayCast();
 	}
 	
 	private void SelectHazard(){
@@ -31,26 +32,15 @@ public class HazardManager : MonoBehaviour {
 			UpdateUI();
 			InstantiateAtRayCast();
 		}
-
-		if(Input.GetKeyDown (KeyCode.Alpha4)){
-			hazard = Resources.Load("trap") as GameObject;
-			UpdateUI();
-			NewTrap ();
-		}
 	}
 
 	private void InstantiateAtRayCast(){
 		if (Input.GetMouseButtonDown(0)){
+			Debug.Log ("ass");
 			if(Physics.Raycast(Camera.main.ScreenPointToRay(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0)), out hit)){
 				Instantiate (hazard, hit.point,Quaternion.identity);
 			}
 		}
-	}
-
-	private void NewTrap() {
-		Instantiate (Resources.Load ("trap"));
-		hazard.GetComponent<BoxCollider>().enabled = false;
-		Cursor.visible = false;
 	}
 
 	private void UpdateUI(){

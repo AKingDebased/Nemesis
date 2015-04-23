@@ -1483,7 +1483,10 @@ MonoBehaviour:
       /><field type="System.Collections.Generic.List" id="_customElements" elementtype="RAIN.Core.CustomAIElement"
       /></reference><reference type="RAIN.Memory.BasicMemory" refcount="1" id="1"><field
       type="System.Collections.Generic.List" id="_memoryItems" elementtype="RAIN.Memory.BasicMemory+MemoryItem"><field
-      type="RAIN.Memory.BasicMemory+MemoryItem" reference="2" id="element0" /></field></reference><reference
+      type="RAIN.Memory.BasicMemory+MemoryItem" reference="2" id="element0" /><field
+      type="RAIN.Memory.BasicMemory+MemoryItem" reference="14" id="element1" /><field
+      type="RAIN.Memory.BasicMemory+MemoryItem" reference="15" id="element2" /><field
+      type="RAIN.Memory.BasicMemory+MemoryItem" reference="16" id="element3" /></field></reference><reference
       type="RAIN.Memory.BasicMemory+MemoryItem" refcount="1" id="2"><field value="inRange"
       type="System.String" id="Key" /><field value="System.Boolean" type="System.Type"
       id="ValueType" /><field value="False" type="System.Boolean" id="Value" /></reference><reference
@@ -1554,7 +1557,16 @@ MonoBehaviour:
       id="_canDetectSelf" /><field value="360" type="System.Single" id="_horizontalAngle"
       /><field value="360" type="System.Single" id="_verticalAngle" /><field value="True"
       type="System.Boolean" id="_lineOfSight" /><field value="-1" type="UnityEngine.LayerMask"
-      id="_lineOfSightMask" /></reference></references></component>
+      id="_lineOfSightMask" /></reference><reference type="RAIN.Memory.BasicMemory+MemoryItem"
+      refcount="1" id="14"><field value="moveSpeed" type="System.String" id="Key"
+      /><field value="System.Single" type="System.Type" id="ValueType" /><field value="10"
+      type="System.Single" id="Value" /></reference><reference type="RAIN.Memory.BasicMemory+MemoryItem"
+      refcount="1" id="15"><field value="turnSpeed" type="System.String" id="Key"
+      /><field value="System.Single" type="System.Type" id="ValueType" /><field value="100"
+      type="System.Single" id="Value" /></reference><reference type="RAIN.Memory.BasicMemory+MemoryItem"
+      refcount="1" id="16"><field value="attackDelay" type="System.String" id="Key"
+      /><field value="System.Single" type="System.Type" id="ValueType" /><field value="2"
+      type="System.Single" id="Value" /></reference></references></component>
     _serializedGameObjects:
     - {fileID: 170820}
     - {fileID: 11400000, guid: d25c9972497e448c5ad5001aff8d14df, type: 2}

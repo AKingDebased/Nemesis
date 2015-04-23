@@ -28,7 +28,7 @@ public class MagicalCombat : MonoBehaviour {
 	
 	private void Attack(GameObject target){
 		gameObject.GetComponent<FireProjectile>().Fire(target);
-		//this.DoDamage(target);
+		this.DoDamage(target);
 	}
 	
 	private void DoDamage (GameObject target){

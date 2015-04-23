@@ -8,7 +8,7 @@ public class TrapPlacement : MonoBehaviour {
 	private GameObject trap;
 	
 	void Update () {
-		if (GameObject.Find("trap(Clone)")) {
+		if (GameObject.Find("Trap(Clone)")) {
 			Vector3 mouse = Input.mousePosition;
 			mouse = new Vector3(mouse.x, mouse.y, transform.position.y);
 			Vector3 point = Camera.main.ScreenToWorldPoint(mouse); //defaults to main camera
@@ -17,7 +17,7 @@ public class TrapPlacement : MonoBehaviour {
 	}
 
 	public void NewTrap() {
-		trap = (GameObject)Instantiate (Resources.Load ("trap"));
+		trap = (GameObject)Instantiate (Resources.Load ("Trap"));
 		trap.GetComponent<BoxCollider>().enabled = !trap.GetComponent<BoxCollider>().enabled;
 		Cursor.visible = false;
 	}

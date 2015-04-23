@@ -8,6 +8,7 @@ public class HazardManager : MonoBehaviour {
 	private GameObject hazard;
 
 	public Text uiText;
+	public GameObject resourceManager;
 
 	void Update () {
 		SelectHazard ();
@@ -36,9 +37,10 @@ public class HazardManager : MonoBehaviour {
 
 	private void InstantiateAtRayCast(){
 		if (Input.GetMouseButtonDown(0)){
-			Debug.Log ("ass");
-			if(Physics.Raycast(Camera.main.ScreenPointToRay(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0)), out hit)){
-				Instantiate (hazard, hit.point,Quaternion.identity);
+			if(resourceManager.GetComponent<ResourceManager>().SubtractGold(20)){
+				if(Physics.Raycast(Camera.main.ScreenPointToRay(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0)), out hit)){
+					Instantiate (hazard, hit.point,Quaternion.identity);
+				}
 			}
 		}
 	}

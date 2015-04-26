@@ -15,20 +15,12 @@ public class FireTowardsTarget : MonoBehaviour {
 	}
 
 	void Update(){
-		if(target == null){
-			Impact ();
-			enabled = false;
-		}
-
 		float step = Time.deltaTime * speed;
-		
 		transform.position = Vector3.MoveTowards(transform.position, target.transform.position, step);
 	}
 	
-	void OnTriggerEnter(Collider other) {
-		if(other.gameObject.GetInstanceID() == target.GetInstanceID()){
-			Impact ();
-		}
+	void OnCollisionEnter(Collision other) {
+		Impact ();
 	}
 
 	private void Impact(){

@@ -1,60 +1,16 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <dialogue>
-
-	<scene>
-			<speaker character="Magenta">
-				<text>It's you.</text>
-			</speaker>
-
-			<speaker character="Cyan">
-				<text>How are you gentlemen. All your base are belong to us.</text>
-				<text>You are on the way to destruction.</text>
-			</speaker>
-
-			<speaker character="Magenta">
-				<text>What you say!</text>
-			</speaker>
-
-			<speaker character="Cyan">
-				<text>You have no chance to survive make your time.</text>
-				<text>Ha ha ha.</text>
-			</speaker>
-	</scene>
-
 	<scene>
 			<speaker character="Cyan">
-				<text>Captain!!</text>
-			</speaker>
-
-			<speaker character="Magenta">
-				<text>Take off every "zig"!!</text>
-				<text>You know what you doing. Move "zig."</text>
-				<text>For great justice.</text>
-			</speaker>
-	</scene>
-	
-	<scene>
-			<speaker character="Cyan">
-				<text>What do you do?</text>
+				<text>Welcome to Nemesis.</text>
+				<text>Lots of tutorial information will go here!</text>
 			</speaker>
 			
 			<decision>
-				<prompt>What do you do?</prompt>
-				<choice>Option 0</choice>
-				<choice>Option 1</choice>
+				<prompt>Would you like to repeat this tutorial?</prompt>
+				<choice flag="repeat">Yes</choice>
+				<choice>No</choice>
 			</decision>
-			
-			<result>
-				<speaker character="Cyan">
-					<text>This is option 0.</text>
-				</speaker>
-			</result>
-			
-			<result>
-				<speaker character="Magenta">
-					<text>This is option 1.</text>
-				</speaker>
-			</result>
 	</scene>
 	
 </dialogue>

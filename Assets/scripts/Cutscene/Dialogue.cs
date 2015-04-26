@@ -5,9 +5,6 @@ using UnityEngine;
 using UnityEngine.UI;
  
 public class Dialogue : MonoBehaviour {
-	public string dialogueFile;
-	public int sceneID;
-
 	private GameObject dialogueObject;
 	private XmlNodeList speakerList;
 	private Text dialogueText;
@@ -16,8 +13,6 @@ public class Dialogue : MonoBehaviour {
 	private int diaTracker;
  
 	void Start() {
-		this.LoadXML(dialogueFile, sceneID);
-		this.CreateUIElements();
 	}
 
 	void Update() {
@@ -29,14 +24,11 @@ public class Dialogue : MonoBehaviour {
 		}
 	}
 
-	void LoadXML(string file, int sceneID) {
+	public void LoadXML(string file, int sceneID) {
 		XmlDocument sceneDoc = new XmlDocument();
 		sceneDoc.Load("Assets/scripts/Cutscene/" + file + ".xml");
 		XmlNode sceneNode = sceneDoc.GetElementsByTagName("scene")[sceneID];
 		speakerList = sceneNode.ChildNodes;
-	}
-
-	void CreateUIElements() {
 		dialogueObject = (GameObject)Instantiate(Resources.Load("dialogue"));
 		dialogueObject.transform.SetParent(this.gameObject.transform, false);
 		this.FillElements();
@@ -69,7 +61,11 @@ public class Dialogue : MonoBehaviour {
 	public void makeChoice(int x) {
 		Debug.Log ("Button #" + x);
 		Destroy(GameObject.Find("decision(Clone)"));
-		speakerList = speakerList[spTracker+x].NextSibling.ChildNodes;
+		if (speakerList[spTracker].ChildNodes[x].Attributes["flag"].Value == "repeat") {
+			spTracker = 0;
+			diaTracker = 0;
+		}
+		else speakerList = speakerList[spTracker+x].NextSibling.ChildNodes;
 		this.FillElements();
 	}
 

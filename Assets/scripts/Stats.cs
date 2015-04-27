@@ -9,14 +9,13 @@ public class Stats : MonoBehaviour {
 	
 	public int health = 0;
 	public int mana = 0;
-	public int gumption = 0;
 	public int strength = 0;
 	public int willpower = 0;
 	public int dexterity = 0;
-	public int speed = 0;
 	public int defense = 0;
 	public int resilience = 0;
 	public int range = 0;
+	public int baseDamage = 0;
 
 	void Start(){
 		SetHealthBar(health);

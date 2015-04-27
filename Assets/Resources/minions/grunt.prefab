@@ -1452,15 +1452,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   healthBar: {fileID: 11481754}
   health: 100
-  mana: 0
-  gumption: 0
-  strength: 0
+  mana: 100
+  strength: 20
   willpower: 0
   dexterity: 0
-  speed: 0
-  defense: 0
+  defense: 12
   resilience: 0
   range: 10
+  baseDamage: 5
 --- !u!114 &11416328
 MonoBehaviour:
   m_ObjectHideFlags: 1

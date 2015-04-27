@@ -20,13 +20,12 @@ MonoBehaviour:
       repeatuntil=&quot;running&quot; name=&quot;detect minion&quot; matchtype=&quot;best&quot;
       entityobjectvariable=&quot;&quot; debugbreak=&quot;False&quot; consistent=&quot;True&quot;
       aspectvariable=&quot;&quot; aspectobjectvariable=&quot;target&quot; aspect=&quot;&amp;quot;minionAspect&amp;quot;&quot;
-      /&gt;&lt;selector usepriorities=&quot;False&quot; repeatuntil=&quot;&quot; name=&quot;move
-      or fight&quot; debugbreak=&quot;False&quot;&gt;&lt;sequencer usepriorities=&quot;False&quot;
-      repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;move through dungeon&quot;
-      debugbreak=&quot;False&quot;&gt;&lt;constraint repeatuntil=&quot;&quot; priority=&quot;&quot;
-      name=&quot;target == null&quot; debugbreak=&quot;False&quot; constraint=&quot;target
-      == null&quot;&gt;&lt;parallel tiebreaker=&quot;fail&quot; succeed=&quot;any&quot;
-      repeatuntil=&quot;&quot; name=&quot;run&quot; fail=&quot;any&quot; debugbreak=&quot;False&quot;&gt;&lt;waypointpatrol
+      /&gt;&lt;sequencer usepriorities=&quot;False&quot; repeatuntil=&quot;&quot;
+      name=&quot;move through dungeon&quot; debugbreak=&quot;False&quot;&gt;&lt;constraint
+      repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;target == null&quot;
+      debugbreak=&quot;False&quot; constraint=&quot;target == null&quot;&gt;&lt;parallel
+      tiebreaker=&quot;fail&quot; succeed=&quot;any&quot; repeatuntil=&quot;&quot;
+      name=&quot;run&quot; fail=&quot;any&quot; debugbreak=&quot;False&quot;&gt;&lt;waypointpatrol
       waypointsetvariable=&quot;&amp;quot;dungeon crawl&amp;quot;&quot; waypointactiontype=&quot;patrol&quot;
       traversetype=&quot;oneway&quot; traverseorder=&quot;forward&quot; repeatuntil=&quot;&quot;
       pathtargetvariable=&quot;&quot; name=&quot;dungeon crawl&quot; movetargetvariable=&quot;nextWaypoint&quot;
@@ -37,7 +36,7 @@ MonoBehaviour:
       repeatuntil=&quot;&quot; parametertype=&quot;boolean&quot; parametername=&quot;running&quot;
       name=&quot;running = true&quot; debugbreak=&quot;False&quot; damptime=&quot;0&quot;
       /&gt;&lt;/parallel&gt;&lt;/constraint&gt;&lt;/sequencer&gt;&lt;selector usepriorities=&quot;False&quot;
-      repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;fight&quot; debugbreak=&quot;False&quot;&gt;&lt;constraint
+      repeatuntil=&quot;&quot; name=&quot;fight&quot; debugbreak=&quot;False&quot;&gt;&lt;constraint
       repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;target != null &amp;amp;&amp;amp;
       !inRange&quot; debugbreak=&quot;False&quot; constraint=&quot;target != null
       &amp;amp;&amp;amp; !inRange&quot;&gt;&lt;parallel tiebreaker=&quot;fail&quot;
@@ -55,11 +54,14 @@ MonoBehaviour:
       inRange&quot; debugbreak=&quot;False&quot; constraint=&quot;target != null &amp;amp;&amp;amp;
       inRange&quot;&gt;&lt;mecparam valueexpression=&quot;false&quot; repeatuntil=&quot;&quot;
       parametertype=&quot;boolean&quot; parametername=&quot;running&quot; name=&quot;running
-      = false&quot; debugbreak=&quot;False&quot; damptime=&quot;0&quot; /&gt;&lt;move
-      turnspeed=&quot;turnSpeed&quot; repeatuntil=&quot;&quot; name=&quot;face enemy&quot;
-      movetarget=&quot;&quot; movespeed=&quot;&quot; facetarget=&quot;target&quot;
-      debugbreak=&quot;False&quot; closeenoughdistance=&quot;&quot; closeenoughangle=&quot;&quot;
-      /&gt;&lt;parallel tiebreaker=&quot;fail&quot; succeed=&quot;any&quot; repeatuntil=&quot;&quot;
+      = false&quot; debugbreak=&quot;False&quot; damptime=&quot;0&quot; /&gt;&lt;action
+      repeatuntil=&quot;&quot; parametervalues=&quot;&quot; parameters=&quot;&quot;
+      namespace=&quot;&quot; name=&quot;check range&quot; debugbreak=&quot;False&quot;
+      classname=&quot;CheckRange&quot; /&gt;&lt;move turnspeed=&quot;turnSpeed&quot;
+      repeatuntil=&quot;&quot; name=&quot;face enemy&quot; movetarget=&quot;&quot;
+      movespeed=&quot;&quot; facetarget=&quot;target&quot; debugbreak=&quot;False&quot;
+      closeenoughdistance=&quot;&quot; closeenoughangle=&quot;&quot; /&gt;&lt;parallel
+      tiebreaker=&quot;fail&quot; succeed=&quot;any&quot; repeatuntil=&quot;&quot;
       name=&quot;attack&quot; fail=&quot;any&quot; debugbreak=&quot;False&quot;&gt;&lt;action
       repeatuntil=&quot;&quot; parametervalues=&quot;&quot; parameters=&quot;&quot;
       namespace=&quot;&quot; name=&quot;PhysicalAttack&quot; debugbreak=&quot;False&quot;
@@ -67,15 +69,12 @@ MonoBehaviour:
       repeatuntil=&quot;&quot; parametertype=&quot;trigger&quot; parametername=&quot;attacking&quot;
       name=&quot;trigger attacking&quot; debugbreak=&quot;False&quot; damptime=&quot;0&quot;
       /&gt;&lt;/parallel&gt;&lt;timer waitforsec=&quot;attackDelay&quot; returnvalue=&quot;success&quot;
-      name=&quot;attack delay&quot; debugbreak=&quot;False&quot; /&gt;&lt;action repeatuntil=&quot;&quot;
-      parametervalues=&quot;&quot; parameters=&quot;&quot; namespace=&quot;&quot;
-      name=&quot;check range&quot; debugbreak=&quot;False&quot; classname=&quot;CheckRange&quot;
-      /&gt;&lt;/constraint&gt;&lt;constraint repeatuntil=&quot;&quot; priority=&quot;&quot;
-      name=&quot;target == null &amp;amp;&amp;amp; inRange&quot; debugbreak=&quot;False&quot;
-      constraint=&quot;target == null &amp;amp;&amp;amp; inRange&quot;&gt;&lt;action
-      repeatuntil=&quot;&quot; parametervalues=&quot;&quot; parameters=&quot;&quot;
-      namespace=&quot;&quot; name=&quot;check range&quot; debugbreak=&quot;False&quot;
-      classname=&quot;CheckRange&quot; /&gt;&lt;/constraint&gt;&lt;/selector&gt;&lt;/selector&gt;&lt;/parallel&gt;&lt;/behaviortree&gt;"
+      name=&quot;attack delay&quot; debugbreak=&quot;False&quot; /&gt;&lt;/constraint&gt;&lt;constraint
+      repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;target == null &amp;amp;&amp;amp;
+      inRange&quot; debugbreak=&quot;False&quot; constraint=&quot;target == null &amp;amp;&amp;amp;
+      inRange&quot;&gt;&lt;action repeatuntil=&quot;&quot; parametervalues=&quot;&quot;
+      parameters=&quot;&quot; namespace=&quot;&quot; name=&quot;check range&quot;
+      debugbreak=&quot;False&quot; classname=&quot;CheckRange&quot; /&gt;&lt;/constraint&gt;&lt;/selector&gt;&lt;/parallel&gt;&lt;/behaviortree&gt;"
       type="System.String" id="treeData" /><field type="System.Array" id="treeBindings"
       elementtype="System.String" /></fields><references /></scriptableobject>
     _serializedGameObjects: []

@@ -8,7 +8,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 402432}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ GameObject:
   - 33: {fileID: 3302432}
   - 23: {fileID: 2302432}
   - 95: {fileID: 9502432}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - 33: {fileID: 3302434}
   - 23: {fileID: 2302434}
   - 95: {fileID: 9502434}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -62,7 +62,7 @@ GameObject:
   - 33: {fileID: 3302436}
   - 23: {fileID: 2302436}
   - 95: {fileID: 9502436}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80,7 +80,7 @@ GameObject:
   - 33: {fileID: 3302438}
   - 23: {fileID: 2302438}
   - 95: {fileID: 9502438}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   - 33: {fileID: 3302440}
   - 23: {fileID: 2302440}
   - 95: {fileID: 9502440}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor Barrier 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   - 33: {fileID: 3302442}
   - 23: {fileID: 2302442}
   - 95: {fileID: 9502442}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,7 +134,7 @@ GameObject:
   - 33: {fileID: 3302448}
   - 23: {fileID: 2302448}
   - 95: {fileID: 9502448}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,7 +152,7 @@ GameObject:
   - 33: {fileID: 3302452}
   - 23: {fileID: 2302452}
   - 95: {fileID: 9502452}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor Barrier 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,7 +170,7 @@ GameObject:
   - 33: {fileID: 3302460}
   - 23: {fileID: 2302460}
   - 95: {fileID: 9502460}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -188,7 +188,7 @@ GameObject:
   - 33: {fileID: 3302462}
   - 23: {fileID: 2302462}
   - 95: {fileID: 9502462}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,7 +206,7 @@ GameObject:
   - 33: {fileID: 3302464}
   - 23: {fileID: 2302464}
   - 95: {fileID: 9502464}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -224,7 +224,7 @@ GameObject:
   - 33: {fileID: 3302470}
   - 23: {fileID: 2302470}
   - 95: {fileID: 9502470}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor Barrier 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -242,7 +242,7 @@ GameObject:
   - 33: {fileID: 3302474}
   - 23: {fileID: 2302474}
   - 95: {fileID: 9502474}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,7 +260,7 @@ GameObject:
   - 33: {fileID: 3302478}
   - 23: {fileID: 2302478}
   - 95: {fileID: 9502478}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -278,7 +278,7 @@ GameObject:
   - 33: {fileID: 3302480}
   - 23: {fileID: 2302480}
   - 95: {fileID: 9502480}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -296,7 +296,7 @@ GameObject:
   - 33: {fileID: 3302484}
   - 23: {fileID: 2302484}
   - 95: {fileID: 9502484}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor Barrier 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -314,7 +314,7 @@ GameObject:
   - 33: {fileID: 3302486}
   - 23: {fileID: 2302486}
   - 95: {fileID: 9502486}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor Barrier 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -332,7 +332,7 @@ GameObject:
   - 33: {fileID: 3302492}
   - 23: {fileID: 2302492}
   - 95: {fileID: 9502492}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -350,7 +350,7 @@ GameObject:
   - 33: {fileID: 3302494}
   - 23: {fileID: 2302494}
   - 95: {fileID: 9502494}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -368,7 +368,7 @@ GameObject:
   - 33: {fileID: 3302500}
   - 23: {fileID: 2302500}
   - 95: {fileID: 9502500}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -386,7 +386,7 @@ GameObject:
   - 33: {fileID: 3302508}
   - 23: {fileID: 2302508}
   - 95: {fileID: 9502508}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -404,7 +404,7 @@ GameObject:
   - 33: {fileID: 3302510}
   - 23: {fileID: 2302510}
   - 95: {fileID: 9502510}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -422,7 +422,7 @@ GameObject:
   - 33: {fileID: 3302512}
   - 23: {fileID: 2302512}
   - 95: {fileID: 9502512}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -440,7 +440,7 @@ GameObject:
   - 33: {fileID: 3302514}
   - 23: {fileID: 2302514}
   - 95: {fileID: 9502514}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor Barrier 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -458,7 +458,7 @@ GameObject:
   - 33: {fileID: 3382804}
   - 23: {fileID: 2382804}
   - 95: {fileID: 9582804}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -476,7 +476,7 @@ GameObject:
   - 33: {fileID: 3382806}
   - 23: {fileID: 2382806}
   - 95: {fileID: 9582806}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -494,7 +494,7 @@ GameObject:
   - 33: {fileID: 3382808}
   - 23: {fileID: 2382808}
   - 95: {fileID: 9582808}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -512,7 +512,7 @@ GameObject:
   - 33: {fileID: 3382810}
   - 23: {fileID: 2382810}
   - 95: {fileID: 9582810}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -530,7 +530,7 @@ GameObject:
   - 33: {fileID: 3382812}
   - 23: {fileID: 2382812}
   - 95: {fileID: 9582812}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor Barrier 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -548,7 +548,7 @@ GameObject:
   - 33: {fileID: 3382814}
   - 23: {fileID: 2382814}
   - 95: {fileID: 9582814}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -566,7 +566,7 @@ GameObject:
   - 33: {fileID: 3382816}
   - 23: {fileID: 2382816}
   - 95: {fileID: 9582816}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor Barrier 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -584,7 +584,7 @@ GameObject:
   - 33: {fileID: 3382818}
   - 23: {fileID: 2382818}
   - 95: {fileID: 9582818}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -602,7 +602,7 @@ GameObject:
   - 33: {fileID: 3382820}
   - 23: {fileID: 2382820}
   - 95: {fileID: 9582820}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -620,7 +620,7 @@ GameObject:
   - 33: {fileID: 3382822}
   - 23: {fileID: 2382822}
   - 95: {fileID: 9582822}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor Barrier 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -638,7 +638,7 @@ GameObject:
   - 33: {fileID: 3382824}
   - 23: {fileID: 2382824}
   - 95: {fileID: 9582824}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -656,7 +656,7 @@ GameObject:
   - 33: {fileID: 3382826}
   - 23: {fileID: 2382826}
   - 95: {fileID: 9582826}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -674,7 +674,7 @@ GameObject:
   - 33: {fileID: 3382828}
   - 23: {fileID: 2382828}
   - 95: {fileID: 9582828}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor Barrier 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -692,7 +692,7 @@ GameObject:
   - 33: {fileID: 3382830}
   - 23: {fileID: 2382830}
   - 95: {fileID: 9582830}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor Barrier 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -710,7 +710,7 @@ GameObject:
   - 33: {fileID: 3382832}
   - 23: {fileID: 2382832}
   - 95: {fileID: 9582832}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -728,7 +728,7 @@ GameObject:
   - 33: {fileID: 3382834}
   - 23: {fileID: 2382834}
   - 95: {fileID: 9582834}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -746,7 +746,7 @@ GameObject:
   - 33: {fileID: 3382836}
   - 23: {fileID: 2382836}
   - 95: {fileID: 9582836}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Wall 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -764,7 +764,7 @@ GameObject:
   - 33: {fileID: 3382838}
   - 23: {fileID: 2382838}
   - 95: {fileID: 9582838}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Floor Barrier 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}

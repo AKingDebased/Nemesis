@@ -13,17 +13,6 @@ public class MagicalCombat : MonoBehaviour {
 		Stats enemyStats = target.GetComponent<Stats>();
 		
 		this.Attack(target); 
-		Debug.Log (target.name + " health: " + enemyStats.health);
-		
-		if(this.stats.health <= 0){ 
-			Debug.Log (gameObject.name + " falls!");
-			Destroy(gameObject);
-		}
-		
-		if(enemyStats.health <= 0){
-			Debug.Log (gameObject.name + " killed " + target.name);
-			Destroy (target);
-		}
 	}
 	
 	private void Attack(GameObject target){

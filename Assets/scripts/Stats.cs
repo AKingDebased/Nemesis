@@ -24,6 +24,8 @@ public class Stats : MonoBehaviour {
 	public void TakeDamage(int damage){
 		this.health -= damage;
 		healthBar.value = health;
+
+		CheckDeath();
 	}
 
 	private void SetHealthBar(int health){
@@ -31,4 +33,9 @@ public class Stats : MonoBehaviour {
 		healthBar.value = health;
 	}
 
+	private void CheckDeath(){
+		if(this.health <= 0){
+			Destroy(gameObject);
+		} else return;
+	}
 }

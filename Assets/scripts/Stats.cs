@@ -36,6 +36,7 @@ public class Stats : MonoBehaviour {
 	private void CheckDeath(){
 		if(this.health <= 0){
 			Destroy(gameObject);
+			Debug.Log (gameObject.name + " falls!");
 		} else return;
 	}
 }

@@ -3,10 +3,10 @@ using System.Collections;
 
 public class MoveCamera : MonoBehaviour {
 
-	public int zMin = 0;
-	public int zMax = 0;
-	public int xMin = 0;
-	public int xMax = 0;
+	public int leftBorder = 0;
+	public int rightBorder = 0;
+	public int bottomBorder = 0;
+	public int topBorder = 0;
 
 	void Update () {
 		if(Input.mousePosition.x >= Screen.width){
@@ -34,11 +34,10 @@ public class MoveCamera : MonoBehaviour {
 		}
 
 		ClampCameraZ();
-
 	}
 
 	void ClampCameraZ(){
-		transform.position = new Vector3(Mathf.Clamp(transform.position.x,xMin,xMax),transform.position.y,
-		                                 Mathf.Clamp (transform.position.z,zMin,zMax));
+		transform.position = new Vector3(Mathf.Clamp(transform.position.x,leftBorder,rightBorder),transform.position.y,
+		                                 Mathf.Clamp (transform.position.z,bottomBorder,topBorder));
 	}
 }

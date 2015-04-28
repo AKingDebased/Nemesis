@@ -3,10 +3,16 @@ using System.Collections;
 using System;
 
 public class MagicalCombat : MonoBehaviour {
+	public AudioClip fireSound;
+	public GameObject projectileObj;
+	public Transform launchPoint;
+
 	private Stats stats;
+	private AudioSource fireSource;
 	
 	void Awake (){
 		stats = gameObject.GetComponent<Stats>();
+		fireSource = this.GetComponent<AudioSource>();
 	}
 	
 	public void Fight(GameObject target){
@@ -16,8 +22,13 @@ public class MagicalCombat : MonoBehaviour {
 	}
 	
 	private void Attack(GameObject target){
-		gameObject.GetComponent<FireProjectile>().Fire(target);
-		this.DoDamage(target);
+		GameObject projectile = Instantiate(projectileObj, launchPoint.position, Quaternion.identity) as GameObject;
+		
+		projectile.GetComponent<FireTowardsTarget>().enabled = true;
+		projectile.GetComponent<FireTowardsTarget>().target = target;
+		projectile.GetComponent<FireTowardsTarget>().caster = gameObject;
+		
+		fireSource.PlayOneShot(fireSound);
 	}
 	
 	private void DoDamage (GameObject target){
@@ -29,5 +40,6 @@ public class MagicalCombat : MonoBehaviour {
 		
 		else target.GetComponent<Stats>().TakeDamage(1);
 	}
+
 }
 

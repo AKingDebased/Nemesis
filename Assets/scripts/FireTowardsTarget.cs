@@ -5,6 +5,7 @@ public class FireTowardsTarget : MonoBehaviour {
 	public AudioClip collisionSound;
 	public GameObject target;
 	public GameObject collisionEffect;
+	public GameObject caster;
 	public float speed = 18;
 
 	private AudioSource collisionSource;
@@ -19,13 +20,15 @@ public class FireTowardsTarget : MonoBehaviour {
 		transform.position = Vector3.MoveTowards(transform.position, target.transform.position, step);
 	}
 	
-	void OnCollisionEnter(Collision other) {
+	void OnTriggerEnter(Collider other) {
 		Impact ();
 	}
 
 	private void Impact(){
-		collisionSource.PlayOneShot(collisionSound);
+		caster.GetComponent<MagicalCombat>().Fight(target);
+		//collisionSource.PlayOneShot(collisionSound);
 		Instantiate (collisionEffect, transform.position, Quaternion.identity);
 		Destroy(gameObject);
+		Debug.Log ("destroyed fireball");
 	}
 }

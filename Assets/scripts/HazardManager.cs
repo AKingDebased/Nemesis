@@ -33,6 +33,11 @@ public class HazardManager : MonoBehaviour {
 			UpdateUI();
 			InstantiateAtRayCast();
 		}
+
+		if(Input.GetKeyDown (KeyCode.Alpha4)){
+			UpdateUI("flame trap");
+			gameObject.GetComponent<TrapPlacement>().NewTrap();
+		}
 	}
 
 	private void InstantiateAtRayCast(){
@@ -48,5 +53,9 @@ public class HazardManager : MonoBehaviour {
 
 	private void UpdateUI(){
 		uiText.text = hazard.name;
+	}
+
+	private void UpdateUI(string name){
+		uiText.text = name;
 	}
 }

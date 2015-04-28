@@ -472,11 +472,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 451622}
   - 95: {fileID: 9565316}
-  - 114: {fileID: 11492858}
   - 114: {fileID: 11475996}
   - 114: {fileID: 11454488}
   - 114: {fileID: 11439128}
-  - 114: {fileID: 11451308}
+  - 82: {fileID: 8222562}
   m_Layer: 0
   m_Name: mage
   m_TagString: Untagged
@@ -1189,7 +1188,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 149188}
   m_LocalRotation: {x: 0, y: -.965210259, z: 0, w: .261475176}
-  m_LocalPosition: {x: -1.70000005, y: .5, z: -46.0999985}
+  m_LocalPosition: {x: -9.73109627, y: .5, z: 45.1394691}
   m_LocalScale: {x: 8, y: 8, z: 8}
   m_Children:
   - {fileID: 407118}
@@ -1518,6 +1517,75 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 123726}
   m_Mesh: {fileID: 4300000, guid: ce611ce816afe70449ed700cf07076dc, type: 3}
+--- !u!82 &8222562
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 149188}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!95 &9565316
 Animator:
   serializedVersion: 3
@@ -1588,6 +1656,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8caa1cd8539724166a581cebe12e6294, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireSound: {fileID: 8300000, guid: ba4682d39543941c1a1b2e1d2be60dd0, type: 3}
+  projectileObj: {fileID: 149340, guid: 16ae03b7025784bc683186ae422617a1, type: 2}
+  launchPoint: {fileID: 446200}
 --- !u!114 &11451218
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1609,21 +1680,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &11451308
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 149188}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39aa094537a6f4fa79f2ebba993a2ae3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fireSound: {fileID: 0}
-  projectileObj: {fileID: 149340, guid: 16ae03b7025784bc683186ae422617a1, type: 2}
-  launchPoint: {fileID: 446200}
-  speed: 25
 --- !u!114 &11451384
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1724,14 +1780,13 @@ MonoBehaviour:
   healthBar: {fileID: 11451384}
   health: 100
   mana: 100
-  gumption: 0
   strength: 20
   willpower: 40
   dexterity: 20
-  speed: 20
   defense: 20
   resilience: 20
   range: 40
+  baseDamage: 0
 --- !u!114 &11488030
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1753,17 +1808,6 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
---- !u!114 &11492858
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 149188}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8caa1cd8539724166a581cebe12e6294, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &11493344
 MonoBehaviour:
   m_ObjectHideFlags: 1

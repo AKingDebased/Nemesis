@@ -8,12 +8,7 @@ public class TrapPlacement : MonoBehaviour {
 	private GameObject trap;
 	private Ray ray;
 	private RaycastHit hit;
-
-	// Use this for initialization
-	void Start () {
-	}
 	
-	// Update is called once per frame
 	void Update () {
 		if (GameObject.Find("Trap(Clone)")) {
 			Vector3 mouse = Input.mousePosition;

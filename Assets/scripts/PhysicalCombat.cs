@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-//using System;
 
 public class PhysicalCombat : MonoBehaviour {
 	public AudioClip attackSound;
@@ -30,19 +29,16 @@ public class PhysicalCombat : MonoBehaviour {
 	}
 	
 	private void Attack(GameObject target){
-		//if (this.AttackHit(target)){
-			warriorSource.PlayOneShot(attackSound);
-			this.DoDamage(target);
-		/*} else {
-			Debug.Log (gameObject.name + " misses!");
-		}*/
+		warriorSource.PlayOneShot(attackSound);
+		this.DoDamage(target);
 	}
 	
 	private void DoDamage (GameObject target){
 		if (this.stats.strength > target.GetComponent<Stats>().defense){ 
-			int damage = (Random.Range (1,this.stats.baseDamage) + this.stats.strength - target.GetComponent<Stats>().defense);
+			int damage = (Random.Range (1,this.stats.baseDamage + 1 ) + this.stats.strength - target.GetComponent<Stats>().defense);
 			
 			if (this.IsCrit(target)) {
+				Debug.Log (gameObject.name + " crits!");
 				target.GetComponent<Stats>().TakeDamage(damage * 2); //crit for double damage
 			} else target.GetComponent<Stats>().TakeDamage(damage); 
 		}

@@ -2242,7 +2242,7 @@ MonoBehaviour:
   strength: 20
   willpower: 10
   dexterity: 0
-  defense: 15
+  defense: 16
   resilience: 10
   range: 5
   baseDamage: 10

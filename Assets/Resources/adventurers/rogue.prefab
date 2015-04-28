@@ -1425,16 +1425,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 11461616}
-  health: 100
-  mana: 100
-  gumption: 100
-  strength: 20
-  willpower: 10
-  dexterity: 40
-  speed: 40
-  defense: 20
-  resilience: 10
+  health: 150
+  mana: 0
+  strength: 16
+  willpower: 0
+  dexterity: 20
+  defense: 0
+  resilience: 0
   range: 8
+  baseDamage: 5
 --- !u!114 &11418654
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1475,12 +1474,12 @@ MonoBehaviour:
       id="_ai" /></fields><references><reference type="RAIN.Core.AI" refcount="1"
       id="0"><field value="True" type="System.Boolean" id="_isActive" /><field type="UnityEngine.GameObject"
       id="_body" gameobject="0" /><field type="RAIN.Memory.BasicMemory" reference="1"
-      id="_workingMemory" childrenvisible="False" /><field type="RAIN.Minds.BasicMind"
+      id="_workingMemory" childrenvisible="True" /><field type="RAIN.Minds.BasicMind"
       reference="3" id="_mind" childrenvisible="False" /><field type="RAIN.Motion.BasicMotor"
       reference="4" id="_motor" /><field type="RAIN.Animation.MecanimAnimator" reference="5"
       id="_animator" /><field type="RAIN.Navigation.BasicNavigator" reference="11"
       id="_navigator" /><field type="RAIN.Perception.BasicSenses" reference="12" id="_senses"
-      childrenvisible="True" /><field type="System.Collections.Generic.List" id="_customElements"
+      childrenvisible="False" /><field type="System.Collections.Generic.List" id="_customElements"
       elementtype="RAIN.Core.CustomAIElement" /></reference><reference type="RAIN.Memory.BasicMemory"
       refcount="1" id="1"><field type="System.Collections.Generic.List" id="_memoryItems"
       elementtype="RAIN.Memory.BasicMemory+MemoryItem"><field type="RAIN.Memory.BasicMemory+MemoryItem"
@@ -1562,7 +1561,7 @@ MonoBehaviour:
       /><field value="System.Single" type="System.Type" id="ValueType" /><field value="15"
       type="System.Single" id="Value" /></reference><reference type="RAIN.Memory.BasicMemory+MemoryItem"
       refcount="1" id="15"><field value="turnSpeed" type="System.String" id="Key"
-      /><field value="System.Single" type="System.Type" id="ValueType" /><field value="240"
+      /><field value="System.Single" type="System.Type" id="ValueType" /><field value="320"
       type="System.Single" id="Value" /></reference><reference type="RAIN.Memory.BasicMemory+MemoryItem"
       refcount="1" id="16"><field value="attackDelay" type="System.String" id="Key"
       /><field value="System.Single" type="System.Type" id="ValueType" /><field value="2"
@@ -1779,7 +1778,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 170820}
   m_LocalRotation: {x: 0, y: -1, z: 0, w: -1.62920685e-07}
-  m_LocalPosition: {x: 0, y: 0, z: 108.599998}
+  m_LocalPosition: {x: 0, y: 0, z: 88.5999985}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_Children:
   - {fileID: 486668}
@@ -1791,7 +1790,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -14, y: .49000001}
+  m_AnchoredPosition: {x: -9.69999981, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: .5, y: .5}
 --- !u!224 &22440342

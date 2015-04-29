@@ -62,14 +62,15 @@ MonoBehaviour:
       repeatuntil=&quot;&quot; name=&quot;face target&quot; movetarget=&quot;&quot;
       movespeed=&quot;&quot; facetarget=&quot;target&quot; debugbreak=&quot;False&quot;
       closeenoughdistance=&quot;&quot; closeenoughangle=&quot;&quot; /&gt;&lt;timer
-      waitforsec=&quot;2.00&quot; returnvalue=&quot;success&quot; name=&quot;attack
+      waitforsec=&quot;attackDelay&quot; returnvalue=&quot;success&quot; name=&quot;attack
       delay&quot; debugbreak=&quot;False&quot; /&gt;&lt;parallel tiebreaker=&quot;fail&quot;
       succeed=&quot;any&quot; repeatuntil=&quot;&quot; name=&quot;attack&quot; fail=&quot;any&quot;
       debugbreak=&quot;False&quot;&gt;&lt;mecparam valueexpression=&quot;true&quot;
       repeatuntil=&quot;&quot; parametertype=&quot;trigger&quot; parametername=&quot;attacking&quot;
       name=&quot;trigger attacking&quot; debugbreak=&quot;False&quot; damptime=&quot;0&quot;
-      /&gt;&lt;timer waitforsec=&quot;1.0&quot; returnvalue=&quot;success&quot; name=&quot;timer&quot;
-      debugbreak=&quot;False&quot; /&gt;&lt;/parallel&gt;&lt;/constraint&gt;&lt;constraint
+      /&gt;&lt;action repeatuntil=&quot;&quot; parametervalues=&quot;&quot; parameters=&quot;&quot;
+      namespace=&quot;&quot; name=&quot;magical attack&quot; debugbreak=&quot;False&quot;
+      classname=&quot;MagicalAttack&quot; /&gt;&lt;/parallel&gt;&lt;/constraint&gt;&lt;constraint
       repeatuntil=&quot;&quot; priority=&quot;&quot; name=&quot;target == null &amp;amp;&amp;amp;
       inRange&quot; debugbreak=&quot;False&quot; constraint=&quot;target == null &amp;amp;&amp;amp;
       inRange&quot;&gt;&lt;action repeatuntil=&quot;&quot; parametervalues=&quot;&quot;

@@ -476,6 +476,7 @@ GameObject:
   - 114: {fileID: 11454488}
   - 114: {fileID: 11439128}
   - 82: {fileID: 8222562}
+  - 136: {fileID: 13601154}
   m_Layer: 0
   m_Name: mage
   m_TagString: Untagged
@@ -1188,7 +1189,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 149188}
   m_LocalRotation: {x: 0, y: -.965210259, z: 0, w: .261475176}
-  m_LocalPosition: {x: -9.73109627, y: .5, z: 45.1394691}
+  m_LocalPosition: {x: 4.30547523, y: .5, z: 33.7422981}
   m_LocalScale: {x: 8, y: 8, z: 8}
   m_Children:
   - {fileID: 407118}
@@ -1785,7 +1786,7 @@ MonoBehaviour:
   dexterity: 20
   defense: 20
   resilience: 20
-  range: 40
+  range: 35
   baseDamage: 0
 --- !u!114 &11488030
 MonoBehaviour:
@@ -1861,8 +1862,8 @@ MonoBehaviour:
       id="_ai" /></fields><references><reference type="RAIN.Core.AI" refcount="1"
       id="0"><field value="True" type="System.Boolean" id="_isActive" /><field type="UnityEngine.GameObject"
       id="_body" gameobject="0" /><field type="RAIN.Memory.BasicMemory" reference="1"
-      id="_workingMemory" childrenvisible="False" /><field type="RAIN.Minds.BasicMind"
-      reference="2" id="_mind" childrenvisible="True" /><field type="RAIN.Motion.BasicMotor"
+      id="_workingMemory" childrenvisible="True" /><field type="RAIN.Minds.BasicMind"
+      reference="2" id="_mind" childrenvisible="False" /><field type="RAIN.Motion.BasicMotor"
       reference="3" id="_motor" childrenvisible="False" /><field type="RAIN.Animation.MecanimAnimator"
       reference="4" id="_animator" childrenvisible="False" /><field type="RAIN.Navigation.BasicNavigator"
       reference="5" id="_navigator" childrenvisible="False" /><field type="RAIN.Perception.BasicSenses"
@@ -1870,7 +1871,10 @@ MonoBehaviour:
       id="_customElements" elementtype="RAIN.Core.CustomAIElement" /></reference><reference
       type="RAIN.Memory.BasicMemory" refcount="1" id="1"><field type="System.Collections.Generic.List"
       id="_memoryItems" elementtype="RAIN.Memory.BasicMemory+MemoryItem"><field type="RAIN.Memory.BasicMemory+MemoryItem"
-      reference="8" id="element0" /></field></reference><reference type="RAIN.Minds.BasicMind"
+      reference="8" id="element0" /><field type="RAIN.Memory.BasicMemory+MemoryItem"
+      reference="14" id="element1" /><field type="RAIN.Memory.BasicMemory+MemoryItem"
+      reference="15" id="element2" /><field type="RAIN.Memory.BasicMemory+MemoryItem"
+      reference="16" id="element3" /></field></reference><reference type="RAIN.Minds.BasicMind"
       refcount="1" id="2"><field type="RAIN.BehaviorTrees.BTAsset" id="_behaviorTreeAsset"
       gameobject="2" /><field type="System.Collections.Generic.List" id="_behaviorTreeBindings"
       elementtype="RAIN.BehaviorTrees.BTAssetBinding" /></reference><reference type="RAIN.Motion.BasicMotor"
@@ -1907,7 +1911,7 @@ MonoBehaviour:
       /><field value="38.59994" type="System.Single" id="_range" /><field value="False"
       type="System.Boolean" id="_canDetectSelf" /><field value="360" type="System.Single"
       id="_horizontalAngle" /><field value="360" type="System.Single" id="_verticalAngle"
-      /><field value="True" type="System.Boolean" id="_lineOfSight" /><field value="-1"
+      /><field value="False" type="System.Boolean" id="_lineOfSight" /><field value="0"
       type="UnityEngine.LayerMask" id="_lineOfSightMask" /></reference><reference
       type="RAIN.Memory.BasicMemory+MemoryItem" refcount="1" id="8"><field value="inRange"
       type="System.String" id="Key" /><field value="System.Boolean" type="System.Type"
@@ -1939,12 +1943,34 @@ MonoBehaviour:
       type="System.Single" id="lookAtEyesWeight" /><field value="0" type="System.Single"
       id="lookAtClampWeight" /><field value="90" type="System.Single" id="maxTurnRate"
       /><field value="0,0,0" type="UnityEngine.Vector3" id="positionVector" /><field
-      value="0,0,0" type="UnityEngine.Vector3" id="lastPositionVector" /></reference></references></component>
+      value="0,0,0" type="UnityEngine.Vector3" id="lastPositionVector" /></reference><reference
+      type="RAIN.Memory.BasicMemory+MemoryItem" refcount="1" id="14"><field value="moveSpeed"
+      type="System.String" id="Key" /><field value="System.Single" type="System.Type"
+      id="ValueType" /><field value="10" type="System.Single" id="Value" /></reference><reference
+      type="RAIN.Memory.BasicMemory+MemoryItem" refcount="1" id="15"><field value="turnSpeed"
+      type="System.String" id="Key" /><field value="System.Single" type="System.Type"
+      id="ValueType" /><field value="320" type="System.Single" id="Value" /></reference><reference
+      type="RAIN.Memory.BasicMemory+MemoryItem" refcount="1" id="16"><field value="attackDelay"
+      type="System.String" id="Key" /><field value="System.Single" type="System.Type"
+      id="ValueType" /><field value="2" type="System.Single" id="Value" /></reference></references></component>
     _serializedGameObjects:
     - {fileID: 149188}
     - {fileID: 451622}
     - {fileID: 11400000, guid: 474ba8c77744e1a4eae012007dac5e2c, type: 2}
     _serializedCustomData: []
+--- !u!136 &13601154
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 149188}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: .100000001
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: .5, z: 0}
 --- !u!137 &13722010
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

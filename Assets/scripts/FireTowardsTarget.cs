@@ -21,14 +21,16 @@ public class FireTowardsTarget : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter(Collider other) {
-		Impact ();
+		Debug.Log ("target is " + other.gameObject);
+		if (other.gameObject == target) {
+			Impact ();
+		}
 	}
 
 	private void Impact(){
-		caster.GetComponent<MagicalCombat>().Fight(target);
-		//collisionSource.PlayOneShot(collisionSound);
-		Instantiate (collisionEffect, transform.position, Quaternion.identity);
 		Destroy(gameObject);
-		Debug.Log ("destroyed fireball");
+		Instantiate (collisionEffect, transform.position, Quaternion.identity);
+		caster.GetComponent<MagicalCombat>().DoDamage(target);
+		collisionSource.PlayOneShot(collisionSound);
 	}
 }

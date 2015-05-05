@@ -13,11 +13,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _version: 1
   _updateMetaformRequired: 0
-  _lastLoadSaveDirectory: /Users/gabrielgonzalvez/Desktop
-<<<<<<< Updated upstream
-  _lastUpdateCheck: 4/28/2015 10:49:31 PM
-  _lastMetricsUpdate: 4/28/2015 10:49:31 PM
-=======
-  _lastUpdateCheck: 04/28/2015 18:31:44
-  _lastMetricsUpdate: 05/04/2015 17:15:23
->>>>>>> Stashed changes
+  _lastLoadSaveDirectory: 
+  _lastUpdateCheck: 05/04/2015 17:16:49
+  _lastMetricsUpdate: 05/04/2015 17:16:47

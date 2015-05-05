@@ -6,7 +6,7 @@ public class TitleFade : MonoBehaviour {
 	public RawImage FadeImg;
 	public Object scene;
 
-	private float fadeSpeed = 1.5f;
+	private float fadeSpeed = 0.66f;
 	private bool sceneStarting = true;
 	private bool sceneEnding = false;
 

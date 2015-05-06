@@ -11,6 +11,7 @@ public class Dialogue : MonoBehaviour {
 	private Text nameText;
 	private int spTracker;
 	private int diaTracker;
+	private bool dialogueOver = false;
  
 	void Start() {
 	}
@@ -20,8 +21,12 @@ public class Dialogue : MonoBehaviour {
 			if (spTracker != speakerList.Count && !GameObject.Find("decision(Clone)"))
 				this.NextLine();
 			else if (GameObject.Find("decision(Clone)")){}
-			else Destroy(dialogueObject);
+			else Destroy(this.gameObject);
 		}
+	}
+
+	void OnDestroy() {
+		dialogueOver = true;
 	}
 
 	public void LoadXML(string file, int sceneID) {
@@ -61,10 +66,11 @@ public class Dialogue : MonoBehaviour {
 	public void makeChoice(int x) {
 		Debug.Log ("Button #" + x);
 		Destroy(GameObject.Find("decision(Clone)"));
-		if (speakerList[spTracker].ChildNodes[x].Attributes["flag"].Value == "repeat") {
-			spTracker = 0;
-			diaTracker = 0;
+		if (speakerList [spTracker].ChildNodes [1].Attributes ["flag"].Value == "repeat") {
+			if (x != 0)
+				speakerList = speakerList [spTracker].NextSibling.ChildNodes;
 		}
+
 		else speakerList = speakerList[spTracker+x].NextSibling.ChildNodes;
 		this.FillElements();
 	}
@@ -85,4 +91,9 @@ public class Dialogue : MonoBehaviour {
 
 		else diaTracker++;
 	}
+
+	public bool isOver() {
+		return dialogueOver;
+	}
+
 }

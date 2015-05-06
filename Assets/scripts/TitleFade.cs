@@ -6,16 +6,15 @@ public class TitleFade : MonoBehaviour {
 	public RawImage FadeImg;
 	public Object scene;
 
-	private float fadeSpeed = 1f;
+	private float fadeSpeed = 1.5f;
 	private bool sceneStarting = true;
 	private bool sceneEnding = false;
-	private bool tutorialComplete = false;
 	private Dialogue tutorial;
 
 	void Awake() {
 		FadeImg.uvRect = new Rect (0, 0, Screen.width, Screen.height);
 		FadeImg.SetNativeSize ();
-		tutorial = gameObject.transform.parent.gameObject.AddComponent<Dialogue>();
+		tutorial = GameObject.Find("DialogueParent").AddComponent<Dialogue>();
 	}
  
 	void Update () {
@@ -23,12 +22,13 @@ public class TitleFade : MonoBehaviour {
 			StartScene();
 
 		else if(Input.GetKeyUp("space") && scene.name == "main_game") {
-			if (!GameObject.Find("dialogue(Clone)") && !tutorialComplete) {
-				tutorial.LoadXML("TestDialogue", 0);
+			if (!GameObject.Find("dialogue(Clone)") && !tutorial.isOver()) {
 				Destroy(GameObject.Find("nemesis"));
 				Destroy(GameObject.Find("press spacebar"));
+				tutorial.LoadXML("TestDialogue", 0);
 			}
-			else if (tutorialComplete)
+
+			else if (tutorial.isOver())
 				sceneEnding = true;
 		}
 

@@ -4,13 +4,25 @@
 			<speaker character="Cyan">
 				<text>Welcome to Nemesis.</text>
 				<text>Lots of tutorial information will go here!</text>
+				<text>ahaha yes</text>
+			</speaker>			
+
+			<speaker character="Magenta">
+				<text>For real, though.</text>
+				<text>Shit's whack.</text>
 			</speaker>
-			
+
 			<decision>
 				<prompt>Would you like to repeat this tutorial?</prompt>
 				<choice flag="repeat">Yes</choice>
-				<choice>No</choice>
+				<choice flag="advance">No</choice>
 			</decision>
+
+			<outcome>
+				<speaker character="Magenta">
+					<text>you are the man right now</text>
+				</speaker>
+			</outcome>
 	</scene>
 	
 </dialogue>

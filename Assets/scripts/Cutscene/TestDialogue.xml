@@ -2,14 +2,25 @@
 <dialogue>
 	<scene>
 			<speaker character="Cyan">
-				<text>Welcome to Nemesis.</text>
-				<text>Lots of tutorial information will go here!</text>
-				<text>ahaha yes</text>
+				<text>Welcome to Nemesis!</text>
 			</speaker>			
 
 			<speaker character="Magenta">
-				<text>For real, though.</text>
-				<text>Shit's whack.</text>
+				<text>This is a dungeon-crawler game where you are NOT the hero. In fact, you're the villain! The heroes are swanning in to loot your stuff!</text>
+			</speaker>
+
+			<speaker character="Cyan">
+				<text>For the purposes of this alpha build, you have 100 gold coins in your bank. Spend them wisely to keep the heroes out!</text>
+				<text>Select a type of MINION or TRAP to place in the dungeon with the number keys, and CLICK anywhere in the dungeon to spent 10 gold and place your choice. Hallways don't count!</text>
+			</speaker>
+
+			<speaker character="Magenta">
+				<text>When you've spent all your gold, click on [START WAVE] to bring forth the heroes! You win if you can rout them all.</text>
+				<text>And if you don't want to spend everything at the beginning, don't worry! You can still purchase minions or traps mid-wave.</text>
+			</speaker>
+
+			<speaker character="Cyan">
+				<text>You lose if even one of the heroes penetrates the heart of your dungeon! Ready to try?</text>
 			</speaker>
 
 			<decision>
@@ -20,7 +31,7 @@
 
 			<outcome>
 				<speaker character="Magenta">
-					<text>you are the man right now</text>
+					<text>Good luck!</text>
 				</speaker>
 			</outcome>
 	</scene>

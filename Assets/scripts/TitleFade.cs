@@ -6,7 +6,7 @@ public class TitleFade : MonoBehaviour {
 	public RawImage FadeImg;
 	public Object scene;
 
-	private float fadeSpeed = 0.66f;
+	private float fadeSpeed = 1f;
 	private bool sceneStarting = true;
 	private bool sceneEnding = false;
 	private bool tutorialComplete = false;
@@ -25,6 +25,8 @@ public class TitleFade : MonoBehaviour {
 		else if(Input.GetKeyUp("space") && scene.name == "main_game") {
 			if (!GameObject.Find("dialogue(Clone)") && !tutorialComplete) {
 				tutorial.LoadXML("TestDialogue", 0);
+				Destroy(GameObject.Find("nemesis"));
+				Destroy(GameObject.Find("press spacebar"));
 			}
 			else if (tutorialComplete)
 				sceneEnding = true;

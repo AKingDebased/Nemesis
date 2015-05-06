@@ -4,7 +4,6 @@ using System.Collections;
  
 public class TitleFade : MonoBehaviour {
 	public RawImage FadeImg;
-	public Object scene;
 
 	private float fadeSpeed = 1.5f;
 	private bool sceneStarting = true;
@@ -21,7 +20,7 @@ public class TitleFade : MonoBehaviour {
 		if(sceneStarting)
 			StartScene();
 
-		else if(Input.GetKeyUp("space") && scene.name == "main_game") {
+		else if(Input.GetKeyUp("space") && Application.loadedLevelName == "title_screen") {
 			if (!GameObject.Find("dialogue(Clone)") && !tutorial.isOver()) {
 				Destroy(GameObject.Find("nemesis"));
 				Destroy(GameObject.Find("press spacebar"));
@@ -50,6 +49,6 @@ public class TitleFade : MonoBehaviour {
 		FadeImg.enabled = true;
 		FadeImg.color = Color.Lerp(FadeImg.color, Color.black, fadeSpeed * Time.deltaTime);
 		if(FadeImg.color.a >= 0.95f)
-			Application.LoadLevel(scene.name);
+			Application.LoadLevel("main_game");
 	}
 }

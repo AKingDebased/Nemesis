@@ -6,32 +6,33 @@ public class HazardManager : MonoBehaviour {
 	private Ray ray;
 	private RaycastHit hit;
 	private GameObject hazard;
+	private int cost = 0;
 
 	public Text uiText;
 	public GameObject resourceManager;
 
 	void Update () {
 		SelectHazard ();
-		InstantiateAtRayCast();
+		InstantiateAtRayCast(cost);
 	}
 	
 	private void SelectHazard(){
 		if(Input.GetKeyDown (KeyCode.Alpha1)){
 			hazard = Resources.Load ("minions/grunt") as GameObject;
 			UpdateUI();
-			InstantiateAtRayCast();
+			cost = 15;
 		}			
 		
 		if(Input.GetKeyDown (KeyCode.Alpha2)){
 			hazard = Resources.Load ("minions/shanker") as GameObject;
 			UpdateUI();
-			InstantiateAtRayCast();
+			cost = 20;
 		}
 		
 		if(Input.GetKeyDown (KeyCode.Alpha3)){
 			hazard = Resources.Load("minions/mage") as GameObject;
 			UpdateUI();
-			InstantiateAtRayCast();
+			cost = 30;
 		}
 
 		if(Input.GetKeyDown (KeyCode.Alpha4)){
@@ -40,12 +41,12 @@ public class HazardManager : MonoBehaviour {
 		}
 	}
 
-	private void InstantiateAtRayCast(){
+	private void InstantiateAtRayCast(int cost){
 		if (Input.GetMouseButtonDown(0)){
 			if(Physics.Raycast(Camera.main.ScreenPointToRay(new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0)), out hit)){
-				if(resourceManager.GetComponent<ResourceManager>().ValidPurchase()){
+				if(resourceManager.GetComponent<ResourceManager>().ValidPurchase(cost)){
 					Instantiate (hazard, hit.point,Quaternion.identity);
-					resourceManager.GetComponent<ResourceManager>().SubtractGold(20);
+					resourceManager.GetComponent<ResourceManager>().SubtractGold(cost);
 				}
 			}
 		}

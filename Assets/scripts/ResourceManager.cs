@@ -16,8 +16,8 @@ public class ResourceManager : MonoBehaviour {
 		UpdateUI ();
 	}
 
-	public bool ValidPurchase(){
-		return this.gold - 20 >= 0; //remove these magic numbers
+	public bool ValidPurchase(int cost){
+		return this.gold - cost >= 0; //remove these magic numbers
 	}
 
 	private void UpdateUI(){

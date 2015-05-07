@@ -2237,15 +2237,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 11478962}
-  health: 350
+  health: 150
   mana: 100
-  strength: 20
-  willpower: 10
-  dexterity: 0
-  defense: 16
+  strength: 15
+  willpower: 0
+  dexterity: 10
+  defense: 15
   resilience: 10
   range: 5
-  baseDamage: 10
+  baseDamage: 15
 --- !u!114 &11423882
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2309,7 +2309,8 @@ MonoBehaviour:
       /><field value="True" type="System.Boolean" id="_isActive" /><field type="UnityEngine.GameObject"
       id="_form" gameobject="0" /><field type="System.Collections.Generic.List" id="_aspects"
       elementtype="RAIN.Entities.Aspects.RAINAspect"><field type="RAIN.Entities.Aspects.VisualAspect"
-      reference="1" id="element0" /></field></reference><reference type="RAIN.Entities.Aspects.VisualAspect"
+      reference="1" id="element0" /><field type="RAIN.Entities.Aspects.VisualAspect"
+      reference="2" id="element1" /></field></reference><reference type="RAIN.Entities.Aspects.VisualAspect"
       refcount="1" id="1"><field value="True" type="System.Boolean" id="_showVisual"
       /><field value="advAspect" type="System.String" id="_aspectName" /><field value="True"
       type="System.Boolean" id="_isActive" /><field value="0.6,0.6,0.6,1" type="UnityEngine.Color"
@@ -2318,9 +2319,19 @@ MonoBehaviour:
       value="1" type="System.Single" id="_visualSize" /><field type="UnityEngine.Transform"
       id="_mountPoint" gameobject="1" /><field value="-2.667193E-06,1.29465,7.531466E-07"
       type="UnityEngine.Vector3" id="_positionOffset" /><field value="0,0,0" type="UnityEngine.Vector3"
-      id="_angleOffset" /></reference></references></component>
+      id="_angleOffset" /></reference><reference type="RAIN.Entities.Aspects.VisualAspect"
+      refcount="1" id="2"><field value="True" type="System.Boolean" id="_showVisual"
+      /><field value="warAspect" type="System.String" id="_aspectName" /><field value="True"
+      type="System.Boolean" id="_isActive" /><field value="0.6,0,0,1" type="UnityEngine.Color"
+      id="_aspectColor" /><field value="-0.5" type="System.Single" id="_outlineColorOffset"
+      /><field value="0.4" type="System.Single" id="_selectionColorOffset" /><field
+      value="1" type="System.Single" id="_visualSize" /><field type="UnityEngine.Transform"
+      id="_mountPoint" gameobject="2" /><field value="0,0,0" type="UnityEngine.Vector3"
+      id="_positionOffset" /><field value="0,0,0" type="UnityEngine.Vector3" id="_angleOffset"
+      /></reference></references></component>
     _serializedGameObjects:
     - {fileID: 147884}
+    - {fileID: 413776}
     - {fileID: 413776}
     _serializedCustomData: []
 --- !u!114 &11457338
@@ -2342,12 +2353,12 @@ MonoBehaviour:
       id="_ai" /></fields><references><reference type="RAIN.Core.AI" refcount="1"
       id="0"><field value="True" type="System.Boolean" id="_isActive" /><field type="UnityEngine.GameObject"
       id="_body" gameobject="0" /><field type="RAIN.Memory.BasicMemory" reference="1"
-      id="_workingMemory" childrenvisible="True" /><field type="RAIN.Minds.BasicMind"
+      id="_workingMemory" childrenvisible="False" /><field type="RAIN.Minds.BasicMind"
       reference="2" id="_mind" childrenvisible="False" /><field type="RAIN.Motion.BasicMotor"
       reference="3" id="_motor" childrenvisible="False" /><field type="RAIN.Animation.MecanimAnimator"
       reference="4" id="_animator" childrenvisible="False" /><field type="RAIN.Navigation.BasicNavigator"
       reference="5" id="_navigator" /><field type="RAIN.Perception.BasicSenses" reference="6"
-      id="_senses" childrenvisible="False" /><field type="System.Collections.Generic.List"
+      id="_senses" childrenvisible="True" /><field type="System.Collections.Generic.List"
       id="_customElements" elementtype="RAIN.Core.CustomAIElement" /></reference><reference
       type="RAIN.Memory.BasicMemory" refcount="1" id="1"><field type="System.Collections.Generic.List"
       id="_memoryItems" elementtype="RAIN.Memory.BasicMemory+MemoryItem"><field type="RAIN.Memory.BasicMemory+MemoryItem"
@@ -2432,7 +2443,8 @@ MonoBehaviour:
       type="System.Single" id="Value" /></reference><reference type="RAIN.Memory.BasicMemory+MemoryItem"
       refcount="1" id="16"><field value="attackDelay" type="System.String" id="Key"
       /><field value="System.Single" type="System.Type" id="ValueType" /><field value="2"
-      type="System.Single" id="Value" /></reference></references></component>
+      type="System.Single" id="Value" /></reference><reference type="RAIN.Perception.Sensors.VisualSensor"
+      refcount="0" id="17" /></references></component>
     _serializedGameObjects:
     - {fileID: 147884}
     - {fileID: 11400000, guid: 476a75ff7a3dae2438b45890cf28cc86, type: 2}

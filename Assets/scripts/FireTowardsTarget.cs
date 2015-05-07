@@ -23,7 +23,6 @@ public class FireTowardsTarget : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter(Collider other) {
-		Debug.Log ("target is " + other.gameObject);
 		if (other.gameObject == target) {
 			Impact ();
 		}

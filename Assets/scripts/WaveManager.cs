@@ -15,5 +15,6 @@ public class WaveManager : MonoBehaviour {
 		}
 
 		waveStarted = true;
+		GameObject.Find ("minions").GetComponent<ResetMinions>().resettable = false; //MORE KLUDGE FIXES
 	}
 }

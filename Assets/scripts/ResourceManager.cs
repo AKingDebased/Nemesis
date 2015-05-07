@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class ResourceManager : MonoBehaviour {
 
-	public int gold = 100;
+	public int gold = 150;
 	public Text goldDisplay;
 
 	void Start () {
@@ -13,6 +13,11 @@ public class ResourceManager : MonoBehaviour {
 
 	public void SubtractGold(int gold){
 		this.gold -= gold;
+		UpdateUI ();
+	}
+
+	public void AddGold(int gold){
+		this.gold += gold;
 		UpdateUI ();
 	}
 

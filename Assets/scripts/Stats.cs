@@ -17,8 +17,14 @@ public class Stats : MonoBehaviour {
 	public int range = 0;
 	public int baseDamage = 0;
 
+	private GameObject resourceManager;
+	
 	void Start(){
 		SetHealthBar(health);
+
+		if(gameObject.tag == "hero"){ //kludge fix
+			resourceManager = GameObject.Find ("resource manager");
+		}
 	}
 
 	public void TakeDamage(int damage){
@@ -37,6 +43,9 @@ public class Stats : MonoBehaviour {
 		if(this.health <= 0){
 			Destroy(gameObject);
 			Debug.Log (gameObject.name + " falls!");
+			if(gameObject.tag == "hero"){
+				resourceManager.GetComponent<ResourceManager>().AddGold(20); //magic number
+			}
 		} else return;
 	}
 }

@@ -12,8 +12,6 @@ public class PhysicalCombat : MonoBehaviour {
 	}
 
 	public void Fight(GameObject target){
-		Stats enemyStats = target.GetComponent<Stats>(); //does this need to be assigned every time Fight is called?
-		
 		this.Attack(target); 
 	}
 	
@@ -40,7 +38,5 @@ public class PhysicalCombat : MonoBehaviour {
 	private bool IsCrit(GameObject target){
 		return ((this.stats.dexterity / 2) + UnityEngine.Random.Range (0, 100) > target.GetComponent<Stats>().dexterity * 2);
 	}
-	
-	
 }
 

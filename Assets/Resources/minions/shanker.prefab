@@ -445,7 +445,7 @@ GameObject:
   - 136: {fileID: 13662894}
   m_Layer: 0
   m_Name: shanker
-  m_TagString: minion
+  m_TagString: shanker
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

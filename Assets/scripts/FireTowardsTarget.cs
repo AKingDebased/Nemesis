@@ -13,6 +13,8 @@ public class FireTowardsTarget : MonoBehaviour {
 	void Start(){
 		collisionEffect = Resources.Load("fire explosion") as GameObject;
 		collisionSource = this.GetComponent<AudioSource>();
+
+		Invoke("DestroySelf",3); //kludge fix for lingering fireballs
 	}
 
 	void Update(){
@@ -25,6 +27,12 @@ public class FireTowardsTarget : MonoBehaviour {
 		if (other.gameObject == target) {
 			Impact ();
 		}
+	}
+
+	void DestroySelf(){
+		/*gameObject.GetComponent<ParticleEmitter>().emit = false;
+		yield return new WaitForSeconds(1);*/
+		Destroy (gameObject);
 	}
 
 	private void Impact(){

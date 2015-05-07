@@ -4,11 +4,16 @@ using UnityEngine.UI;
 
 public class EndGame : MonoBehaviour {
 
-	public Text endText;
-	public Button restartButton;
+	public GameObject endText;
+	public GameObject restartButton;
+
+	public void RestartLevel(){
+		Application.LoadLevel ("main_game");
+	}
 
 	void OnTriggerEnter(Collider other){
-		Instantiate(endText);
-		Instantiate(restartButton);
+		Destroy (other.gameObject);
+		endText.SetActive(true);
+		restartButton.SetActive(true);
 	}
 }

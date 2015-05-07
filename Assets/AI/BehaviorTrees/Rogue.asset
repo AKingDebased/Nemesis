@@ -27,7 +27,7 @@ MonoBehaviour:
       name=&quot;target == null&quot; debugbreak=&quot;False&quot; constraint=&quot;target
       == null&quot;&gt;&lt;parallel tiebreaker=&quot;fail&quot; succeed=&quot;any&quot;
       repeatuntil=&quot;&quot; name=&quot;run&quot; fail=&quot;any&quot; debugbreak=&quot;False&quot;&gt;&lt;waypointpatrol
-      waypointsetvariable=&quot;&amp;quot;dungeon crawl&amp;quot;&quot; waypointactiontype=&quot;patrol&quot;
+      waypointsetvariable=&quot;&amp;quot;rogue path&amp;quot;&quot; waypointactiontype=&quot;patrol&quot;
       traversetype=&quot;oneway&quot; traverseorder=&quot;forward&quot; repeatuntil=&quot;&quot;
       pathtargetvariable=&quot;&quot; name=&quot;dungeon crawl&quot; movetargetvariable=&quot;nextWaypoint&quot;
       debugbreak=&quot;False&quot;&gt;&lt;move turnspeed=&quot;turnSpeed&quot; repeatuntil=&quot;&quot;

@@ -13,6 +13,7 @@ TagManager:
   - grunt
   - mage
   - shanker
+  - the big man
   layers:
   - Default
   - TransparentFX

@@ -28,5 +28,8 @@ public class TrapPlacement : MonoBehaviour {
 		trap = (GameObject)Instantiate (Resources.Load ("Trap"));
 		trap.GetComponent<BoxCollider>().enabled = !trap.GetComponent<BoxCollider>().enabled;
 		Cursor.visible = false;
+
+		GameObject.Find ("resource manager").GetComponent<ResourceManager>().SubtractGold(50); //MAGIC NUMBERS AND KLUDGE FIXES
+
 	}
 }

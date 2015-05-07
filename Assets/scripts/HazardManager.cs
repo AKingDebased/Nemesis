@@ -36,8 +36,9 @@ public class HazardManager : MonoBehaviour {
 		}
 
 		if(Input.GetKeyDown (KeyCode.Alpha4)){
-			UpdateUI("flame trap");
-			gameObject.GetComponent<TrapPlacement>().NewTrap();
+			hazard = Resources.Load("minions/the big man") as GameObject;
+			UpdateUI();
+			cost = 75;
 		}
 	}
 

@@ -1460,7 +1460,7 @@ MonoBehaviour:
   defense: 15
   resilience: 5
   range: 10
-  baseDamage: 15
+  baseDamage: 10
 --- !u!114 &11416328
 MonoBehaviour:
   m_ObjectHideFlags: 1

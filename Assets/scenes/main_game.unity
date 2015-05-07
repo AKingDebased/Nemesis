@@ -2294,7 +2294,7 @@ RectTransform:
   m_Children:
   - {fileID: 843149868}
   m_Father: {fileID: 1868147725}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 82, y: -195}
@@ -3619,7 +3619,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1868147725}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 0, y: 1.52587891e-05}
@@ -6372,7 +6372,7 @@ RectTransform:
   - {fileID: 689709119}
   - {fileID: 416396928}
   m_Father: {fileID: 1868147725}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 84, y: -58}
@@ -7385,7 +7385,7 @@ RectTransform:
   - {fileID: 1466114752}
   - {fileID: 162404563}
   m_Father: {fileID: 1868147725}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 84, y: -132}
@@ -7737,7 +7737,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22486780, guid: 08e694944d3f146bb9aeb2a029034954, type: 2}
       propertyPath: m_RootOrder
-      value: 3
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 22486780, guid: 08e694944d3f146bb9aeb2a029034954, type: 2}
       propertyPath: m_AnchoredPosition.x
@@ -12825,7 +12825,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1868147725}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
   m_AnchoredPosition: {x: 0, y: 33.7999992}
@@ -13065,6 +13065,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ResourceManager: {fileID: 1937750880}
+  resettable: 1
 --- !u!1 &1526179714
 GameObject:
   m_ObjectHideFlags: 0
@@ -15666,14 +15667,14 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 2005928868}
   - {fileID: 833677302}
   - {fileID: 650612631}
   - {fileID: 166696570}
-  - {fileID: 592566240}
-  - {fileID: 339188762}
   - {fileID: 1507701893}
+  - {fileID: 339188762}
   - {fileID: 1843811119}
-  - {fileID: 2005928868}
+  - {fileID: 592566240}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_AnchorMin: {x: 0, y: 0}
@@ -17016,7 +17017,7 @@ RectTransform:
   m_Children:
   - {fileID: 1954886384}
   m_Father: {fileID: 1868147725}
-  m_RootOrder: 7
+  m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 82, y: -245.199997}
